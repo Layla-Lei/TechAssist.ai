@@ -18,6 +18,39 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
       	  {:title => 'Chicken Run', :rating => 'G', :release_date => '21-Jun-2000'},
   	 ]
 
+users = [
+	{:uid => '60167372', :name => 'Addrish Roy'},
+	{:uid => '30127163', :name => 'Tawab Safi'},
+	{:uid => '38813921', :name => 'Weijia Song'},
+	{:uid => '44506649', :name => 'Yuanqing Lei'},
+]
+
+projects = [
+	{:uid => '01686764', :name => 'superlative project', :description => 'full-stack'},
+	{:uid => '27116551', :name => 'superb project', :description => 'back-end'},
+	{:uid => '79832691', :name => 'peerless project', :description => 'front-end'},
+	{:uid => '63681342', :name => 'incomparable project', :description => 'machine-learning'},
+]
+
+user_projects = [
+	{:user => '60167372', :project => '01686764', :process => 0},
+	{:user => '60167372', :project => '27116551', :process => 100},
+	{:user => '30127163', :project => '79832691', :process => 25},
+	{:user => '38813921', :project => '01686764', :process => 75},
+]
+
 movies.each do |movie|
   Movie.create!(movie)
+end
+
+users.each do |user|
+  User.create!(user)
+end
+
+projects.each do |project|
+  Project.create!(project)
+end
+
+user_projects.each do |user_project|
+  UserProject.create!(user_project)
 end
