@@ -25,7 +25,7 @@ gem install bundler:1.3.0
 ```bash
 bundle install --without production
 bundle exec rake db:migrate
-bundle exec rake db:test:prepare
+bundle exec rake db:seed
 ```
 
 ## Run
@@ -33,4 +33,11 @@ bundle exec rake db:test:prepare
 ```bash
 rails s
 #navigate to /newprojects to see project interest page
+```
+
+## Test
+
+```bash
+bundle exec rake db:test:prepare
+bundle exec rake RAILS_ENV=test db:seed
 ```

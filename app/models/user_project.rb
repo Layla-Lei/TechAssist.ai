@@ -10,8 +10,8 @@ class UserProject < ActiveRecord::Base
   end
 
   def UserProject.get_uncompleted_project_by_user(user)
-  	@project_ids = UserProject.where(:user => user).where.not(:process => 100)
-    @projects = Project.where(:id => @project_ids)
+    @projects = UserProject.where(:user => user).where.not(:process => 100).joins("LEFT JOIN projects ON projects.id = user_projects.project_id").select("*")
+    logger.debug @projects
     return @projects
   end
 
