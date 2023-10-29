@@ -31,6 +31,5 @@ bundle exec rake db:test:prepare
 ## Run
 
 ```bash
-bundle exec rake db:seed # init database
 rails s
 ```
