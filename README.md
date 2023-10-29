@@ -11,7 +11,7 @@ docker run --rm -it tech_assist.ai bash
 
 ### ruby
 
-- version: 3.0.6
+- version: 2.6.6
 - installation: <https://www.ruby-lang.org/en/downloads/>
 
 ### rails & bundler
@@ -26,4 +26,10 @@ gem install bundler:1.3.0
 bundle install --without production
 bundle exec rake db:migrate
 bundle exec rake db:test:prepare
+```
+
+## Run
+
+```bash
+rails s
 ```

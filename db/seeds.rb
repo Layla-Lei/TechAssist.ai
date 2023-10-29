@@ -19,24 +19,24 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
   	 ]
 
 users = [
-	{:uid => '60167372', :name => 'Addrish Roy'},
-	{:uid => '30127163', :name => 'Tawab Safi'},
-	{:uid => '38813921', :name => 'Weijia Song'},
-	{:uid => '44506649', :name => 'Yuanqing Lei'},
+	{:name => 'Addrish Roy'},
+	{:name => 'Tawab Safi'},
+	{:name => 'Weijia Song'},
+	{:name => 'Yuanqing Lei'},
 ]
 
 projects = [
-	{:uid => '01686764', :name => 'superlative project', :description => 'full-stack'},
-	{:uid => '27116551', :name => 'superb project', :description => 'back-end'},
-	{:uid => '79832691', :name => 'peerless project', :description => 'front-end'},
-	{:uid => '63681342', :name => 'incomparable project', :description => 'machine-learning'},
+	{:name => 'superlative project', :description => 'full-stack'},
+	{:name => 'superb project', :description => 'back-end'},
+	{:name => 'peerless project', :description => 'front-end'},
+	{:name => 'incomparable project', :description => 'machine-learning'},
 ]
 
 user_projects = [
-	{:user => '60167372', :project => '01686764', :process => 0},
-	{:user => '60167372', :project => '27116551', :process => 100},
-	{:user => '30127163', :project => '79832691', :process => 100},
-	{:user => '38813921', :project => '01686764', :process => 100},
+	{:user => 1, :project => 1, :process => 0},
+	{:user => 1, :project => 2, :process => 100},
+	{:user => 2, :project => 3, :process => 100},
+	{:user => 3, :project => 1, :process => 100},
 ]
 
 movies.each do |movie|
@@ -52,5 +52,7 @@ projects.each do |project|
 end
 
 user_projects.each do |user_project|
-  UserProject.create!(user_project)
+  user = User.find(user_project[:user])
+  project = Project.find(user_project[:project])
+  UserProject.create!(:user => user, :project => project, :process => user_project[:process])
 end
