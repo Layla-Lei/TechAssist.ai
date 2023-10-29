@@ -11,7 +11,7 @@ docker run --rm -it tech_assist.ai bash
 
 ### ruby
 
-- version: 2.6.6
+- version: 3.0.6
 - installation: <https://www.ruby-lang.org/en/downloads/>
 
 ### rails & bundler
