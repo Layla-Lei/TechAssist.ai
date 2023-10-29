@@ -13,7 +13,11 @@
               <p class="card-text"><%= uncompleted_project.description%></p>
               <div class="row row-cols-2">
                 <div class="col pl-0 pr-1">
-                  <%= link_to 'Complete', user_path(@user), :class => 'btn btn-primary btn-block'%>
+                  <%= form_tag user_path(@user), :method => :put do %> 
+                    <%= hidden_field_tag 'project', uncompleted_project.id %>
+                    <%= hidden_field_tag 'process', 100 %>
+                    <%= submit_tag 'Complete', :class => 'btn btn-primary btn-block' %>
+                  <% end %>
                 </div>
                 <div class="col pr-0 pl-1">
                   <%= link_to 'Details', user_path(@user), :class => 'btn btn-primary btn-block'%>
@@ -32,8 +36,17 @@
             <div class="card-body">
               <h5 class="card-title"><%= completed_project.name%></h5>
               <p class="card-text"><%= completed_project.description%></p>
-              <div class="row row-cols-1">
-                <%= link_to 'Details', user_path(@user), :class => 'btn btn-primary'%>
+              <div class="row row-cols-2">
+                <div class="col pl-0 pr-1">
+                  <%= form_tag user_path(@user), :method => :put do %> 
+                    <%= hidden_field_tag 'project', completed_project.id %>
+                    <%= hidden_field_tag 'process', 0 %>
+                    <%= submit_tag 'Redo', :class => 'btn btn-primary btn-block' %>
+                  <% end %>
+                </div>
+                <div class="col pr-0 pl-1">
+                  <%= link_to 'Details', user_path(@user), :class => 'btn btn-primary btn-block'%>
+                </div>
               </div>
             </div>
           </div>
