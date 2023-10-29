@@ -32,4 +32,5 @@ bundle exec rake db:test:prepare
 
 ```bash
 rails s
+#navigate to /newprojects to see project interest page
 ```
