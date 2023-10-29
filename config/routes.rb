@@ -7,7 +7,5 @@ Rottenpotatoes::Application.routes.draw do
   resources :projects
   resources :newprojects
 
-  #post 'projects/filter', to: 'projects#filter', as: 'filter_projects'
-  #get 'projects/interests', to: 'projects#interests', as: 'interest_form'
 
 end
