@@ -35,8 +35,8 @@ projects = [
 user_projects = [
 	{:user => '60167372', :project => '01686764', :process => 0},
 	{:user => '60167372', :project => '27116551', :process => 100},
-	{:user => '30127163', :project => '79832691', :process => 25},
-	{:user => '38813921', :project => '01686764', :process => 75},
+	{:user => '30127163', :project => '79832691', :process => 100},
+	{:user => '38813921', :project => '01686764', :process => 100},
 ]
 
 movies.each do |movie|
