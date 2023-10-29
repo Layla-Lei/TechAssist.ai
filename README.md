@@ -31,6 +31,6 @@ bundle exec rake db:test:prepare
 ## Run
 
 ```bash
-bundle exec rake db:seed # init database
 rails s
+#navigate to /newprojects to see project interest page
 ```

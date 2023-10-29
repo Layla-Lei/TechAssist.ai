@@ -4,4 +4,8 @@ Rottenpotatoes::Application.routes.draw do
   root :to => redirect('/movies')
 
   resources :users
+  resources :projects
+  resources :newprojects
+
+
 end
