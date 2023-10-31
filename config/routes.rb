@@ -3,10 +3,13 @@ Rottenpotatoes::Application.routes.draw do
   # map '/' to be a redirect to '/movies'
   # root :to => redirect('/movies')
 
-  root :to => redirect('/users/1')
+  root :to => redirect('users#index')
   resources :users
   resources :projects
   resources :newprojects
+
+    #get '/' => 'users#index'
+    post '/sessions' => 'sessions#create'
 
 
 end

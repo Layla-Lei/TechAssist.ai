@@ -23,6 +23,10 @@ users = [
 	{:name => 'Tawab Safi'},
 	{:name => 'Weijia Song'},
 	{:name => 'Yuanqing Lei'},
+    {:name => 'Test',
+     :email => 'test@example.com',
+     :password => 'password'}
+
 ]
 
 projects = [
