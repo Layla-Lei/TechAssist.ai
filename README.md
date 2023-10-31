@@ -6,6 +6,7 @@
 docker build -t tech_assist.ai .
 docker run --rm -it tech_assist.ai bash
 #docker run --rm -it -p 3000:3000 tech_assist.ai bash
+# For M1 & M2 Chips: docker build --platform=linux/amd64 -t tech_assist.ai .
 
 ```
 

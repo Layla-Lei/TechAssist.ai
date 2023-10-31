@@ -5,11 +5,11 @@ class UsersController < ApplicationController
         if user.save
             session[:id] = user.id
             #redirect_to '/dashboard'
-            flash[:registration_message] = ['The account was successfully created!']
-            redirect_to '/'
+            flash[:registration_message] = ['The Account Was Successfully Created!']
+            redirect_to root_path
         else
             flash[:registration_errors] = user.errors.full_messages
-            redirect_to '/'
+            redirect_to root_path
         end
 
     end
