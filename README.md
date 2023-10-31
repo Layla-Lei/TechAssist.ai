@@ -43,4 +43,6 @@ rails s
 ```bash
 bundle exec rake db:test:prepare
 bundle exec rake RAILS_ENV=test db:seed
+bundle exec cucumber
+
 ```
