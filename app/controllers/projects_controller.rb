@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
     end
     def index
         #id = params[:id]
-        @user = User.find(1)
+        #@user = User.find(1)
     end
       
     

@@ -5,6 +5,6 @@ WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
- RUN bundle exec rake db:migrate
- RUN bundle exec rake db:test:prepare
+ #RUN bundle exec rake db:migrate
+ #RUN bundle exec rake db:test:prepare
 COPY . /app
