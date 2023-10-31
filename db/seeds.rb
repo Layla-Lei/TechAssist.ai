@@ -19,14 +19,11 @@
 #   	 ]
 
 users = [
-	{:name => 'Addrish Roy'},
-	{:name => 'Tawab Safi'},
-	{:name => 'Weijia Song'},
-	{:name => 'Yuanqing Lei'},
-    {:name => 'Test',
-     :email => 'test@example.com',
-     :password => 'password'}
-
+	{:name => 'Addrish Roy', :email => 'a@example.com', :password => 'password'},
+	{:name => 'Tawab Safi', :email => 't@example.com', :password => 'password'},
+	{:name => 'Weijia Song', :email => 'w@example.com', :password => 'password'},
+	{:name => 'Yuanqing Lei', :email => 'l@example.com', :password => 'password'},
+    {:name => 'Test', :email => 'test@example.com', :password => 'password'},
 ]
 
 projects = [

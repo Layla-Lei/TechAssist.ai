@@ -4,6 +4,7 @@ class UserProject < ActiveRecord::Base
   before_create :check_duplicate
 
   def check_duplicate
+    # TODO: give error message
   	if UserProject.where(:user_id => self.user_id, :project_id => self.project_id).count > 0
   		return false
   	end
