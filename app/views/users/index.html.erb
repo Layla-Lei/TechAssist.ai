@@ -1,0 +1,51 @@
+
+<!--  app/views/users/index.html.erb -->
+
+<div class = "messages">
+  <% if flash[:login_errors] %>
+    <% flash[:login_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+  <% if flash[:registration_errors] %>
+    <% flash[:registration_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+  <% if flash[:registration_message] %>
+    <% flash[:registration_message].each do |m| %>
+      <p><%= m %></p>
+    <% end %>
+  <% end %>
+</div>
+
+
+<div class = "login">
+    <h1>
+        Login Here
+    </h1>
+
+    <form action = '/sessions' method = 'POST'>
+        <input type = 'hidden' name = 'authenticity_token' value = "<%=form_authenticity_token%>">
+        <input type = 'email' name = 'login[email]' placeholder = "Email: ">
+        <input type = 'password' name = 'login[password]' placeholder = "Password: ">
+        <input type = 'submit' name = 'submit' class = 'submit'>
+    </form>
+
+</div>
+
+
+<div class = "registration">
+    <h1>
+        Register Here
+    </h1>
+
+    <form action = '/users' method = 'POST'>
+        <input type = 'hidden' name = 'authenticity_token' value = "<%=form_authenticity_token%>">
+        <input type = 'name' name = 'user[name]' placeholder = "Name: ">
+        <input type = 'email' name = 'user[email]' placeholder = "Email: ">
+        <input type = 'password' name = 'user[password]' placeholder = "Password: " id="user_password">
+        <input type = 'password' name = 'user[password_confirmation]' placeholder = "Confirm Password: " id="user_password_confirmation">
+        <input type = 'submit' name = 'submit' class = 'submit'>
+    </form>
+</div>
