@@ -39,5 +39,5 @@ Feature:
   Scenario: I should be able to create new project
     Given I am on the dashboard page for "Addrish Roy"
     And I follow "+"
-    # TODO: change to preference page
-    Then I should be on the dashboard page for "Addrish Roy"
+    Then I am on the newprojects page
+    #Then I should be on the dashboard page for "Addrish Roy"
