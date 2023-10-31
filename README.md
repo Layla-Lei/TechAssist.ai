@@ -5,6 +5,8 @@
 ```bash
 docker build -t tech_assist.ai .
 docker run --rm -it tech_assist.ai bash
+#docker run --rm -it -p 3000:3000 tech_assist.ai bash
+
 ```
 
 ## Pre-requisition
@@ -32,6 +34,7 @@ bundle exec rake db:seed
 
 ```bash
 rails s
+#rails s -b 0.0.0.0
 #navigate to /newprojects to see project interest page
 ```
 
