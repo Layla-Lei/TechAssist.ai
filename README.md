@@ -1,5 +1,4 @@
 # TechAssist.ai
-SaaS application iteration 1 - Group 14
 
 ## Develop with Docker
 
