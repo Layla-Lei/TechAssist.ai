@@ -22,18 +22,19 @@ class UsersController < ApplicationController
 
 
     def show
-        if session[:user_id] == nil
+        if session[:user_id].blank?
             redirect_to '/'
+        else
+            id = session[:user_id]
+            if params[:id] != id.to_s
+                redirect_to user_path(id)
+            # session[:id] = id
+            end
+            @user = User.find(id)
+            @completed_projects = UserProject.get_completed_project_by_user(@user)
+            @uncompleted_projects = UserProject.get_uncompleted_project_by_user(@user)
         end
-        id = session[:user_id]
-        if params[:id] != id.to_s
-            redirect_to user_path(id)
-        # session[:id] = id
-        end
-        @user = User.find(id)
-
-        @completed_projects = UserProject.get_completed_project_by_user(@user)
-        @uncompleted_projects = UserProject.get_uncompleted_project_by_user(@user)
+        
         # will render app/views/users/show.<extension> by default
     end
 
