@@ -13,6 +13,12 @@ class SessionsController < ApplicationController
       end
     end
 
+    def destroy
+      session.delete(:user_id)
+      @user = nil
+      redirect_to root_url, notice: "Logged out!"
+    end
+
 
     private
     def login_params

@@ -8,9 +8,11 @@ Rottenpotatoes::Application.routes.draw do
   resources :projects
   resources :newprojects
 
-    #get '/' => 'users#index'
-    post '/sessions' => 'sessions#create'
-    post '/user_projects' => 'user_projects#create'
+  #get '/' => 'users#index'
+  post '/sessions' => 'sessions#create'
+  post '/user_projects' => 'user_projects#create'
 
+  # logout route
+  delete '/logout' => 'sessions#destroy', as: :logout
 
 end
