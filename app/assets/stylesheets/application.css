@@ -99,3 +99,30 @@ header {
 .nav-link:last-child {
     margin-right: 0;
 }
+
+.nav-icon {
+    color: #5a67d8;
+    height: 30px;      /* or whatever height you prefer */
+    width: auto;       /* keeps the image aspect ratio */
+    margin-right: 5px; /* space between the image and text */
+    vertical-align: middle; /* aligns the image with the text */
+}
+
+.icon-text-container {
+    display: inline-block; /* Makes the whole container behave like an inline element */
+    text-align: center;   /* Centers the text and the SVG */
+}
+
+.icon-text-container img {
+    display: block;        /* Ensures the SVG takes up the full width of its container */
+    margin: 0 auto;        /* Centers the SVG horizontally */
+    width: 24px;           /* Adjust size as needed */
+    height: 24px;          /* Adjust size as needed */
+}
+
+.icon-text-container span {
+    display: block;        /* Makes the text appear below the SVG */
+}
+
+
+

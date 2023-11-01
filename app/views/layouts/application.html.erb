@@ -14,8 +14,21 @@
       <h1 class="title">TechAssist.ai</h1>
       <% if session[:user_id] !=  nil then %>
         <% logger.info request.url %>
-        <%= link_to 'Dashboard', user_path(session[:user_id]), :class => 'btn btn-primary'%>
-        <%= link_to 'Projects', projects_path, :class => 'btn btn-primary' %>
+        <%= link_to user_path(session[:user_id]), :class => 'btn btn-primary' do %>
+          <div class="icon-text-container">
+              <%= image_tag 'dashboard.svg', alt: 'Dashboard Icon' %>
+              <span>Dashboard</span>
+          </div>
+       <% end %>
+      
+        
+        <%= link_to projects_path, :class => 'btn btn-primary' do %>
+          <div class="icon-text-container">
+              <%= image_tag 'projects.svg', alt: 'projects Icon' %>
+              <span>Projects</span>
+          </div>
+       <% end %>
+        
       <% end %>
     </nav>
     <div class="container">
