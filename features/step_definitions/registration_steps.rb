@@ -10,7 +10,7 @@ When /they register with valid details/ do
         fill_in 'user[email]', with: 'test123@example.com'
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
-        find('input[type="submit"]').click
+        find('button[type="submit"]').click
     end
 end
 
@@ -20,7 +20,7 @@ When /they register with an already registered email/ do
         fill_in 'user[email]', with: 't@example.com'
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
-        find('input[type="submit"]').click
+        find('button[type="submit"]').click
     end
 end
 
@@ -30,7 +30,7 @@ When /they register with password that doesnot match/ do
         fill_in 'user[email]', with: 'test12345@example.com'
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password12345'
-        find('input[type="submit"]').click
+        find('button[type="submit"]').click
     end
 end
 
