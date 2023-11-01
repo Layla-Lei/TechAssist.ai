@@ -27,10 +27,10 @@ users = [
 ]
 
 projects = [
-	{:name => 'superlative project', :description => 'full-stack'},
-	{:name => 'superb project', :description => 'back-end'},
-	{:name => 'peerless project', :description => 'front-end'},
-	{:name => 'incomparable project', :description => 'machine-learning'},
+	{:name => 'superlative project', :description => 'full-stack', :language => 'ruby', :tech_area => 'full-stack', :tech_stack => 'rails', :skill_level => 'intermediate', :project_scale => 10, :url => 'https://github.com/'},
+	{:name => 'superb project', :description => 'back-end', :language => 'java', :tech_area => 'backend', :tech_stack => 'spring', :skill_level => 'advanced', :project_scale => 20, :url => 'https://github.com/'},
+	{:name => 'peerless project', :description => 'front-end', :language => 'javascript', :tech_area => 'frontend', :tech_stack => 'react', :skill_level => 'beginner', :project_scale => 10, :url => 'https://github.com/'},
+	{:name => 'incomparable project', :description => 'data-science', :language => 'python', :tech_area => 'data-science', :tech_stack => 'pandas', :skill_level => 'beginner', :project_scale => 10, :url => 'https://github.com/'},
 ]
 
 user_projects = [

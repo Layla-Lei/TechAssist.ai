@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+    def index
+        if session[:user_id] != nil
+            redirect_to user_path(session[:user_id])
+        end
+    end
+
     def create
         user = User.new(user_params)
         if user.save
@@ -16,8 +22,14 @@ class UsersController < ApplicationController
 
 
     def show
-        # TODO: check if authenticated
-        id = params[:id]
+        if session[:user_id] == nil
+            redirect_to '/'
+        end
+        id = session[:user_id]
+        if params[:id] != id.to_s
+            redirect_to user_path(id)
+        # session[:id] = id
+        end
         @user = User.find(id)
 
         @completed_projects = UserProject.get_completed_project_by_user(@user)

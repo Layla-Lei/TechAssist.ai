@@ -10,6 +10,7 @@ Rottenpotatoes::Application.routes.draw do
 
     #get '/' => 'users#index'
     post '/sessions' => 'sessions#create'
+    post '/user_projects' => 'user_projects#create'
 
 
 end
