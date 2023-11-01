@@ -23,7 +23,7 @@ Feature: Find a Project Based on Preferences
     Then I should see projects related to the "React" framework
   
   Scenario: User can specify their skill level
-    When I select "Intermediate" from the "Level of Skill" dropdown
+    I select "Intermediate" from the "Level of Skill" dropdown
     And I press "Find Project"
     Then I should see "Intermediate" level projects
 
