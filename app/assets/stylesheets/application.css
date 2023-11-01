@@ -124,5 +124,17 @@ header {
     display: block;        /* Makes the text appear below the SVG */
 }
 
+.icon-title-container {
+    display: flex;
+    align-items: center; /* To align icon and title vertically in the center */
+    gap: 0px; /* Spacing between icon and title */
+}
+
+.title-icon {
+    margin-left: 10px;
+    width: 80px;  /* Adjust based on the size you want for your icon */
+    height: 80px; /* Adjust based on the size you want for your icon */
+    
+}
 
 
