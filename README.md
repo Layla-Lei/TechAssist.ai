@@ -29,6 +29,8 @@ gem install bundler:1.3.0
 bundle install --without production
 bundle exec rake db:migrate
 bundle exec rake db:seed
+#please run the following instead if you have already done seed before:
+#bundle exec rake db:reset db:seed
 ```
 
 ## Run
