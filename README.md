@@ -20,7 +20,7 @@ docker run --rm -it tech_assist.ai bash
 
 ```
 
-## Pre-requisition
+## Pre-requisites
 
 ### ruby
 
