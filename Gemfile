@@ -15,6 +15,7 @@ group :development, :test do
   gem 'bootstrap', '~> 5.3.2'
   gem 'sassc-rails'
   gem 'sprockets-rails'
+  gem 'popper_js'
   
 end
 

@@ -248,6 +248,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  popper_js
   rails (= 4.2.10)
   rspec-rails (= 3.7.2)
   sass-rails (~> 5.0.3)
