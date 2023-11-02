@@ -1,6 +1,6 @@
 FROM ruby:2.6.6
-RUN apt-get update -qq && apt-get install -y nodejs
-RUN mkdir /app
+RUN apt-get update -qq && apt-get install -y nodejs curl gnupg
+RUN curl https://cli-assets.heroku.com/install.sh | shRUN mkdir /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
