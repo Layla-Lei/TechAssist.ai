@@ -12,7 +12,6 @@ class NewprojectsController < ApplicationController
         session[:tech_stack] = params[:tech_stack]
         session[:skill_level] = params[:skill_level]
         session[:project_scale] = params[:project_scale]
-        puts session[:language]
 #     @movie = Movie.create!(movie_params)
 #     flash[:notice] = "#{@movie.title} was successfully created."
         redirect_to projects_path

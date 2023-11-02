@@ -34,3 +34,11 @@ Then /the progress of "(.*)" should be "(.*)"/ do |name, progress|
   # expect(page.body).to have_content(/Director: #{e2}/)
   expect(page.body.index(name) < page.body.index(progress))
 end
+
+Then /I log in as "Addrish Roy"/ do
+  within("#login_form") do
+      fill_in 'login[email]', with: 'a@example.com'
+      fill_in 'login[password]', with: 'password'
+      find('button[type="submit"]').click
+  end
+end

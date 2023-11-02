@@ -22,6 +22,11 @@ class UsersController < ApplicationController
 
 
     def show
+        session[:language] = nil
+        session[:tech_area] = nil
+        session[:tech_stack] = nil
+        session[:skill_level] = nil
+        session[:project_scale] = nil
         if session[:user_id].blank?
             redirect_to '/'
         else

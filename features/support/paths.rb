@@ -26,6 +26,12 @@ module NavigationHelpers
     when /^the dashboard page for "(.*)"$/
       user_path(User.find_by_name($1))
 
+    when /^the home page$/
+      users_path
+
+    when /^the project details page for "(.*)"$/
+      project_path(Project.find_by_name($1))
+
     else
       begin
         page_name =~ /^the (.*) page$/

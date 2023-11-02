@@ -31,7 +31,7 @@
 	<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
 		<%= form_tag user_projects_path, :method => :post do %> 
 			<%= hidden_field_tag 'project_id', @project.id %>
-			<%= submit_tag ' Add to my projects', :class => 'btn btn-primary btn-block' %>
+			<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
 		<% end %>
 	<% end %>
 
