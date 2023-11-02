@@ -59,3 +59,15 @@ bundle exec rake RAILS_ENV=test db:seed
 bundle exec cucumber
 
 ```
+
+## heroku deployment
+
+```bash
+heroku login
+heroku create [app_name]
+git push heroku iter1
+heroku stack:set heroku-20
+git push heroku iter1:master
+
+```
+
