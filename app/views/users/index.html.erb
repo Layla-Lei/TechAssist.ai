@@ -1,0 +1,101 @@
+
+<!--  app/views/users/index.html.erb -->
+
+<!-- Flast Messages Code -->
+
+<div class = "messages">
+  <% if flash[:login_errors] %>
+    <% flash[:login_errors].each do |error| %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if flash[:registration_errors] %>
+    <% flash[:registration_errors].each do |error| %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+  <% if flash[:registration_message] %>
+    <% flash[:registration_message].each do |m| %>
+      <div class="alert alert-info" role="alert">
+        <%= m %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<!-- Login Form Code -->
+
+<div class = "col-4" style = "margin:0 auto;" id = "login_form">
+<form action = '/sessions' method = 'POST'>
+<input type = 'hidden' name = 'authenticity_token' value = "<%=form_authenticity_token%>">
+
+  <p class="h3">
+        Login Here
+  </p>
+    
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email Address</label>
+    <input type = 'email' name = 'login[email]' class="form-control" required 
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type = 'password' name = 'login[password]' required class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" name = 'submit' class="btn btn-primary">Login</button>
+</form>
+
+</div>
+
+<br>
+
+<!-- Registration Form Code -->
+
+<div class = "col-4" style = "margin:0 auto;" id = "registration_form">
+<form action = '/users' method = 'POST'>
+<input type = 'hidden' name = 'authenticity_token' value = "<%=form_authenticity_token%>">
+
+  <p class="h3">
+        Create an Account
+  </p>
+    
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type = 'name' name = 'user[name]' required class="form-control" 
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email Address</label>
+    <input type = 'email' name = 'user[email]' required class="form-control" 
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Password</label>
+    <input type = 'password' name = 'user[password]' required class="form-control" 
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
+    <input type = 'password' name = 'user[password_confirmation]' required class="form-control" 
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" name = 'submit' class="btn btn-primary">Register</button>
+
+</form>
+
+</div>
+
+
+

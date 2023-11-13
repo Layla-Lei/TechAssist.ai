@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* Add Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6; 
+}
+
+.content {
+  padding: 20px;
+}
+
+.card {
+  border: none;
+  background-color: #ffffff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+   
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #5a69d8; 
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+h2, h4 {
+  margin-top: 0;
+  color: #5a69d8; 
+}
+
+header {
+    padding-top: 20px;     
+    padding-bottom: 20px;  
+}
+
+/* Add space around the main title */
+.title {
+    padding: 10px 20px; 
+}
+
+.nav-link {
+    font-family: 'Arial', sans-serif; 
+    font-size: 16px;
+    text-decoration: none; 
+    padding: 5px 15px;
+    margin-right: 15px;
+    text-transform: capitalize; 
+    transition: color 0.3s ease; 
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+
+
+.nav-link.active {
+    font-weight: bold;
+    color: #5a67d8; 
+}
+
+
+.nav-link:last-child {
+    margin-right: 0;
+}
+
+.nav-icon {
+    color: #5a67d8;
+    height: 30px;      
+    width: auto;      
+    margin-right: 5px; 
+    vertical-align: middle; 
+}
+
+.icon-text-container {
+    display: inline-block; 
+    text-align: center;  
+}
+
+.icon-text-container img {
+    display: block;       
+    margin: 0 auto;      
+    width: 24px;          
+    height: 24px;          
+}
+
+.icon-text-container span {
+    display: block;       
+}
+
+.icon-title-container {
+    display: flex;
+    align-items: center; 
+    gap: 0px; 
+}
+
+.title-icon {
+    margin-left: 10px;
+    width: 80px;  
+    height: 80px; 
+    
+}
+
+

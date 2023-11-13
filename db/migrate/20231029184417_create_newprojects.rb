@@ -1,0 +1,13 @@
+class CreateNewprojects < ActiveRecord::Migration
+    def change
+      create_table :newprojects do |t|
+        t.string :language
+        t.string :tech_area
+        t.string :tech_stack
+        t.string :skill_level
+        t.string :project_scale
+        t.timestamps null: false
+        end
+    end
+  end
+  
