@@ -1,0 +1,60 @@
+<%# Our "base" layout should be a valid HTML document. %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TechAssist.ai</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', 'media' => 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%# These classes come from the Bootstrap CSS framework. %>
+    <nav class="navbar navbar-expand-lg bg-primary text-white mb-3">
+      <div class="icon-title-container">
+        <%= image_tag 'techassisticon.png', alt: 'Title Icon', class: 'title-icon' %>
+        <h1 class="title">TechAssist.ai</h1>
+      </div>
+
+      <% if session[:user_id] !=  nil then %>
+
+        <% logger.info request.url %>
+        <%= link_to user_path(session[:user_id]), :class => 'btn btn-primary' do %>
+          <div class="icon-text-container">
+              <%= image_tag 'dashboard.svg', alt: 'Dashboard Icon' %>
+              <span>Dashboard</span>
+          </div>
+        <% end %>
+      
+        
+        <%= link_to projects_path, :class => 'btn btn-primary' do %>
+          <div class="icon-text-container">
+              <%= image_tag 'projects.svg', alt: 'projects Icon' %>
+              <span>Projects</span>
+          </div>
+        <% end %>
+        
+        <div class='ml-auto'>
+          <%= link_to logout_path, method: :delete, :class => 'btn btn-primary' do %>
+            <div class="icon-text-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                <path d="M7.5 1v7h1V1h-1z"/>
+                <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+              </svg>
+              <span>Logout</span>
+            </div>
+          <% end %>
+        </div>
+        
+      <% end %>
+    </nav>
+
+    <div class="container">
+      <%# Render "flash" messages in our application. This loads _flash.erb %>
+      <%= render 'layouts/flash' %>
+      <main id="main">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>
