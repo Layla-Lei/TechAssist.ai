@@ -11,7 +11,15 @@
 			<% if @step == '0' %>
 				<%= @project.description.html_safe %>
 			<% else %>
-				<%= @project.send("step#{@step}").html_safe %>
+                <% if @project.send("step#{@step}")[0] != "<" %>
+                    <div class="card" style="height: 100%">
+                        <div class="card-body">
+                            <%= markdown(@project.send("step#{@step}")) %>
+                        </div>
+                    </div>
+                <% else %>
+                    <%= @project.send("step#{@step}").html_safe %>
+                <% end %>
 			<% end %>
 		<% else %>
 		<%= @project.description.html_safe %>
