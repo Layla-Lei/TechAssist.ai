@@ -5,12 +5,17 @@ Rottenpotatoes::Application.routes.draw do
 
   root :to => redirect('users#index')
   resources :users
-  resources :projects
+  resources :projects do
+    member do
+      patch :start
+    end
+  end
   resources :newprojects
 
   #get '/' => 'users#index'
   post '/sessions' => 'sessions#create'
   post '/user_projects' => 'user_projects#create'
+
 
   # logout route
   delete '/logout' => 'sessions#destroy', as: :logout

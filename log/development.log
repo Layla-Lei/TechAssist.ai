@@ -3913,3 +3913,1556 @@ Processing by UsersController#show as HTML
 http://127.0.0.1:3000/users/6
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 81ms (Views: 74.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:03:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.6ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (39.4ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (1.1ms)
+Completed 200 OK in 839ms (Views: 686.9ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:03:19 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (33.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 94.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:03:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (4.1ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-9c534ea79fef90aaf4aa150b6644c1f5f7222bc4a7279a382fc38352f2c70e92.css?body=1" for 127.0.0.1 at 2023-11-14 07:03:29 +0000
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:07:22 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.3ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 117ms (Views: 114.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:10:44 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (11.5ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 125ms (Views: 123.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:13:30 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:13:49 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (10.9ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 83ms (Views: 79.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:14:12 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.5ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 67.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (9.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  select sqlite_version(*)
+  [1m[36m (3.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "abstract" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "step1" varchar, "step2" varchar, "step3" varchar, "step4" varchar, "step5" varchar, "step6" varchar, "step7" varchar, "step8" varchar, "step9" varchar, "step10" varchar, "step11" varchar, "step12" varchar, "step13" varchar, "step14" varchar, "step15" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$QnGB5CT/r5h.CIX.7Is1R.YFc/ux.p08bYAI8V2fIxbOEnVckAIk6' LIMIT 1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$QnGB5CT/r5h.CIX.7Is1R.YFc/ux.p08bYAI8V2fIxbOEnVckAIk6"], ["created_at", "2023-11-14 07:19:50.476852"], ["updated_at", "2023-11-14 07:19:50.476852"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$hu0zFDpR7qZv.SjwGMlGMek0dL/l0BvyNofZ9mCk/nwDbfQ6bKXrq' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$hu0zFDpR7qZv.SjwGMlGMek0dL/l0BvyNofZ9mCk/nwDbfQ6bKXrq"], ["created_at", "2023-11-14 07:19:50.575258"], ["updated_at", "2023-11-14 07:19:50.575258"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$WcUtm.Vx3BTfcM4SC.UXAuK0uXEZraYWqsB3bwd5GcMOQgpbElE86' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$WcUtm.Vx3BTfcM4SC.UXAuK0uXEZraYWqsB3bwd5GcMOQgpbElE86"], ["created_at", "2023-11-14 07:19:50.669002"], ["updated_at", "2023-11-14 07:19:50.669002"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$.VJIhrBJbvHWtKd17GEgvepJjSXZAnTtlBsXMMxL.Bdn1GHNuOijW' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$.VJIhrBJbvHWtKd17GEgvepJjSXZAnTtlBsXMMxL.Bdn1GHNuOijW"], ["created_at", "2023-11-14 07:19:50.757761"], ["updated_at", "2023-11-14 07:19:50.757761"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$AQQeYFyJI4Y6oINMuo58a.OZK4BUOra2r2DXgPICVPnYswJpOnyCa' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$AQQeYFyJI4Y6oINMuo58a.OZK4BUOra2r2DXgPICVPnYswJpOnyCa"], ["created_at", "2023-11-14 07:19:50.846258"], ["updated_at", "2023-11-14 07:19:50.846258"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Introduction to Building a Notes App"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Introduction to Building a Notes App</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up Your Project: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Introduction to HTML, CSS, and JavaScript</li><li class=\"nav-item mb-1\">Creating the project structure (file setup)</li><li class=\"nav-item mb-1\">Basic HTML structure for a notes app</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Styling Your Application (CSS): </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Introduction to CSS for styling your app</li><li class=\"nav-item mb-1\">Responsive design principles</li><li class=\"nav-item mb-1\">Styling the notes list, form, and buttons</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>JavaScript Basics: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Fundamental JavaScript concepts</li><li class=\"nav-item mb-1\">Understanding variables, data types, functions, and control structures</li><li class=\"nav-item mb-1\">DOM manipulation and event handling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Adding a Note (JavaScript): </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Capturing user input from a form</li><li class=\"nav-item mb-1\">Implementing the &apos;Add Note&apos; functionality</li><li class=\"nav-item mb-1\">Updating the notes display dynamically</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Editing and Deleting Notes: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Creating functions to edit and delete notes</li><li class=\"nav-item mb-1\">Integrating these functions with the user interface</li><li class=\"nav-item mb-1\">Event handling for edit and delete actions</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Handling Categories: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Implementing category management</li><li class=\"nav-item mb-1\">Adding and displaying categories</li><li class=\"nav-item mb-1\">Associating notes with categories</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Implementing Search Functionality: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Building a search feature to filter notes</li><li class=\"nav-item mb-1\">Live updating of notes display based on search input</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Advanced Features and Best Practices: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Error handling and input validation</li><li class=\"nav-item mb-1\">Code refactoring and optimization</li><li class=\"nav-item mb-1\">Introduction to local storage for saving notes</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Debugging and Testing: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Techniques for debugging your web application</li><li class=\"nav-item mb-1\">Basic principles of testing frontend code</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Conclusion and Next Steps: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Review of key learnings</li><li class=\"nav-item mb-1\">Suggestions for further improvements and features</li><li class=\"nav-item mb-1\">Resources for continued learning</li></ul></li></ul></div></div></div></div></div>"], ["abstract", "Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step."], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "HTML/CSS"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:19:50.890839"], ["updated_at", "2023-11-14 07:19:50.890839"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A FastAPI powered IMDB web service"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">A FastAPI powered IMDB web service</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project.</p><p class=\"card-text\">This tutorial will guide you through understanding and setting up the project, highlighting its key components and how they interact. The project is structured for educational purposes, focusing on FastAPI, database interactions, and serving static files.</p><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\"><b> Purpose: </b> An introductory project for database concepts using FastAPI</li><li class=\"nav-item mb-1\"><b> Key Features: </b> <ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item mb-1\"> FastAPI Application Setup. </li><li class=\"nav-item mb-1\"> Serving Static Files. </li><li class=\"nav-item mb-1\"> Simple API Endpoints. </li><li class=\"nav-item mb-1\"> Integration with a Database (implied from the project&#39;s context). </li></ul> </li></ul> <a href=\"https://github.com/donald-f-ferguson/W4111_FastAPI_IMDB_Api\" class=\"btn btn-primary\" role=\"button\">Project GitHub Repo</a></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Project Overview and Setup - In Depth Understanding: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Goal and Scope</li><li class=\"nav-item mb-1\">Key Technologies</li><li class=\"nav-item mb-1\">Environment Setup</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Exploring Main Components - In Depth Understanding of <code> main.py </code> :</b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">FastAPI Application Instance</li><li class=\"nav-item mb-1\">Routing</li><li class=\"nav-item mb-1\">Request Handling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Handling - In Depth Understanding of <code>data</code> Folder: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Data Source</li><li class=\"nav-item mb-1\">Data Structure</li><li class=\"nav-item mb-1\">Data Parsing</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Creating API Endpoints - In Depth Understanding of <code>service_factory.py</code> : </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Service Abstraction</li><li class=\"nav-item mb-1\">Endpoint Functionality</li><li class=\"nav-item mb-1\">Response Formatting</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Testing and Documentation - In Depth Understanding of <code>test_main.http</code> : </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">API Testing</li><li class=\"nav-item mb-1\">Test Scenarios</li><li class=\"nav-item mb-1\">Documentation Importance</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment and Further Improvements - In Depth Understanding of Deployment: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deployment Platforms</li><li class=\"nav-item mb-1\">Scalability and Performance</li><li class=\"nav-item mb-1\">Continuous Development</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Python Programming Skills:</b> Proficiency in Python is necessary, as FastAPI and most related tools are Python-based.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of FastAPI:</b> Knowledge of FastAPI, a modern, fast (high-performance) web framework for building APIs with Python 3.7+.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Database Knowledge:</b> Familiarity with database systems (like PostgreSQL, MySQL, or SQLite) and SQL, as the project likely involves database interactions.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>API Design and Development:</b> Understanding of RESTful API principles and experience in designing and developing APIs.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Dependency Management:</b> Ability to manage Python dependencies, typically using pip and requirements.txt.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Basic Web Development Knowledge:</b> Understanding of basic web technologies like HTML, CSS, and JavaScript might be useful, especially for handling the frontend or static content.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Version Control Systems:</b> Knowledge of version control systems, particularly Git, for managing the project&#39;s codebase.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Testing and Debugging Skills:</b> Familiarity with testing frameworks and practices for debugging Python code and APIs.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Environment Setup:</b> Skills in setting up and configuring Python development environments, including virtual environments.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Reading Technical Documentation:</b> Ability to understand and follow technical documentation, as you&#39;ll likely need to refer to FastAPI documentation and any project-specific instructions.</li></div></div></div></div></div>"], ["abstract", "This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project."], ["language", "python"], ["tech_area", "backend"], ["tech_stack", "FASTAPI"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:19:50.897561"], ["updated_at", "2023-11-14 07:19:50.897561"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "abstract", "tech_stack", "skill_level", "project_scale", "step1", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Sentiment Analysis Tool Using BERT"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Sentiment Analysis Tool Using BERT</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Introduction to BERT and Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Overview of BERT</li><li class=\"nav-item mb-1\">Basics of Sentiment Analysis</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up the Environment</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Installing necessary libraries and dependencies</li><li class=\"nav-item mb-1\">Loading the pre-trained BERT model</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Preparation</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Collecting and preprocessing text data</li><li class=\"nav-item mb-1\">Understanding data labeling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Fine-Tuning BERT for Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Adapting BERT for classification tasks</li><li class=\"nav-item mb-1\">Training the model with labeled data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Evaluation and Testing</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Methods for evaluating model performance</li><li class=\"nav-item mb-1\">Testing the model with new data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment (Optional) </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deploying the model for real-time analysis</li><li class=\"nav-item mb-1\">Building a simple user interface</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><p class=\"card-text\">To successfully undertake a sentiment analysis project using BERT, certain prerequisites need to be met. These include:</p><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts, particularly in NLP.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Knowledge of Neural Networks:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic understanding of neural networks, especially how they are used in NLP.</li><li class=\"nav-item mb-1\">Familiarity with concepts like embeddings, layers, and activation functions.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Experience with TensorFlow or PyTorch:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Practical experience with TensorFlow, as BERT is originally implemented in this framework.</li><li class=\"nav-item mb-1\">Alternatively, knowledge of PyTorch, as there are PyTorch versions of BERT available.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Text Preprocessing:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Skills in text preprocessing: tokenization, stemming, lemmatization, etc.</li><li class=\"nav-item mb-1\">Understanding of how to clean and prepare text data for model input.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Computational Resources:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Access to a machine with adequate computational power (preferably with a GPU) for training deep learning models.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as TensorFlow, Hugging Face Transformers, Pandas, and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Familiarity with Git and GitHub:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of Git for version control and GitHub for accessing repositories like the BERT GitHub repository.</li></ul></li></ul><p class=\"card-text\">Having these prerequisites are not required and can be learned on the go. Knowing them will ensure a smoother learning curve and enable you to efficiently carry out the sentiment analysis project using BERT.</p></div></div></div></div></div>"], ["language", "python"], ["tech_area", "machine-learning"], ["abstract", "Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification."], ["tech_stack", "BERT"], ["skill_level", "beginner"], ["project_scale", "10"], ["step1", "<div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h1 class=\"card-title\">PART 1: Introduction to BERT and Sentiment Analysis</h1> </div></div></div></div></div><div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h2 class=\"card-title\">Overview of BERT</h2> <p class=\"card-text\">BERT (Bidirectional Encoder Representations from Transformers) is a revolutionary model in the field of natural language processing (NLP). Developed by Google, BERT&apos;s key innovation lies in its ability to understand the context of a word in a sentence from both directions (left and right of the word), unlike previous models which read text sequentially. This bidirectional context understanding allows BERT to grasp the nuanced meanings of words in different contexts more effectively. BERT is pre-trained on a large corpus of text and can be fine-tuned for various NLP tasks like sentiment analysis, question-answering, and language translation.</p></div></div></div></div></div><div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h2 class=\"card-title\">Basics of Sentiment Analysis</h2> <p class=\"card-text\">Sentiment analysis is an NLP technique used to determine whether data is positive, negative, or neutral. It is commonly applied to understand opinions, emotions, and responses in text data like reviews, social media posts, and survey responses. Sentiment analysis models analyze the text to detect sentiment signals, classify them into categories, and sometimes even measure the intensity of emotions. This technique helps businesses gauge public opinion, understand customer sentiments, and monitor brand reputation. With models like BERT, sentiment analysis can be more accurate and nuanced, as BERT&apos;s deep understanding of language context allows for a better interpretation of sentiments in text.</p></div></div></div></div></div>"], ["created_at", "2023-11-14 07:19:50.903046"], ["updated_at", "2023-11-14 07:19:50.903046"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Predicting and Analyzing Energy Stock Prices"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Predicting and analyzing Energy Stock Prices</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Predict & analyze the closing stock prices of energy sector companies based on historical data and relevant features.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Collection</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Exploration</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Cleaning</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Feature Engineering</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Model Building</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Model Evaluation</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Hyperparameter Tuning</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment(Optional)</b></li></ul> </div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as scikit-learn, Pandas, and NumPy.</li></ul> </li></div></div></div></div></div>"], ["abstract", "Predict & analyze the closing stock prices of energy sector companies based on historical data and relevant features."], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:19:50.909325"], ["updated_at", "2023-11-14 07:19:50.909325"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (1.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-14 07:19:50.957927"], ["updated_at", "2023-11-14 07:19:50.957927"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-14 07:19:50.965584"], ["updated_at", "2023-11-14 07:19:50.965584"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-14 07:19:50.971748"], ["updated_at", "2023-11-14 07:19:50.971748"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-14 07:19:50.978001"], ["updated_at", "2023-11-14 07:19:50.978001"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:20:04 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:20:04 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 38ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:20:05 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 404 Not Found in 99ms (ActiveRecord: 20.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  app/controllers/users_controller.rb:38:in `show'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.8ms)
+
+
+Started GET "/users/6/logout" for 127.0.0.1 at 2023-11-14 07:20:19 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users/6/logout"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:20:23 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:20:23 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:20:23 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  app/controllers/users_controller.rb:38:in `show'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-14 07:20:36 +0000
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.1ms)
+
+
+Started GET "/logout/6" for 127.0.0.1 at 2023-11-14 07:20:39 +0000
+
+ActionController::RoutingError (No route matches [GET] "/logout/6"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-14 07:20:48 +0000
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:20:57 +0000
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 127.0.0.1 at 2023-11-14 07:20:57 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (48.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:20:57 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 660ms (Views: 659.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apple-touch-icon.png" for 127.0.0.1 at 2023-11-14 07:20:57 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-9c534ea79fef90aaf4aa150b6644c1f5f7222bc4a7279a382fc38352f2c70e92.css?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/popper.self-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/jquery3.self-cbcb1f1497554e07e08a1a99e549bf33b1fe31225841f585aaa72043b3b08580.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started GET "/assets/bootstrap.self-f1b23f5e3500b5e96ff6463bf537b6573558bfe6bf7f2f88bac63d667fba670d.js?body=1" for 127.0.0.1 at 2023-11-14 07:20:59 +0000
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-14 07:21:17 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"IQm3p/LeVY6x+RcKTg70O6A2FaEwHfStI+OhOURbRqfHa1Vgj2Hc03VUE1i4HGtZ8Fah50IqX8r3hh7Ks7bcVQ==", "user"=>{"name"=>"A", "email"=>"a@tawab.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>""}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@tawab.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$Ec1ztO0eb3ChNhv1V1GD6.7Tp0vWn2NdOkSuwTFc8DoVMbGSw/aw2' LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "A"], ["email", "a@tawab.com"], ["password_digest", "$2a$10$Ec1ztO0eb3ChNhv1V1GD6.7Tp0vWn2NdOkSuwTFc8DoVMbGSw/aw2"], ["created_at", "2023-11-14 07:21:18.003368"], ["updated_at", "2023-11-14 07:21:18.003368"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 137ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:21:18 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:21:18 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-14 07:21:24 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"IfYdJS9VRp8+eVOhU2sI+hQ21DPAJq8WGUMDau12ndnHlP/iUurPwvrUV/OleZeYRFZgdbIRBHHNJryZGpsHKw==", "login"=>{"email"=>"a@tawab.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "a@tawab.com"]]
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 97ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:21:24 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (3.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.6ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (13.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 78ms (Views: 60.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:21:31 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:21:31 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:21:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:21:35 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (1.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (47.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 112ms (Views: 103.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:21:39 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (8.0ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/user_projects" for 127.0.0.1 at 2023-11-14 07:21:42 +0000
+Processing by UserProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dvccibsLhII5lR1TiCY81/s1zRKYy/nXwSOaaeWZNFKZvOjG6GCxA3xnz9xrOmT7//N69Wk0Szz9vCS0AJxkBA==", "project_id"=>"3", "commit"=>"Add to my projects"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.6ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 6) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["project_id", 3], ["process", 0], ["created_at", "2023-11-14 07:21:42.557742"], ["updated_at", "2023-11-14 07:21:42.557742"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 47ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:21:42 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:21:44 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3[0m
+  Rendered projects/show.html.erb within layouts/application (6.7ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 75.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:22:16 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3[0m
+  Rendered projects/show.html.erb within layouts/application (6.5ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:52:52 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3[0m
+  Rendered projects/show.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 4.7ms)
+
+ActionView::Template::Error (undefined method `project_started' for #<UserProject::ActiveRecord_Relation:0x00000040250d50d8>):
+    2: 
+    3: <div class="content">
+    4: 
+    5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).project_started %>
+    6: 
+    7: 		<%= @project.step1.html_safe %>
+    8: 
+  app/views/projects/show.html.erb:5:in `_app_views_projects_show_html_erb___2828579271191356237_137749395020'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.8ms)
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  select sqlite_version(*)
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "abstract" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "step1" varchar, "step2" varchar, "step3" varchar, "step4" varchar, "step5" varchar, "step6" varchar, "step7" varchar, "step8" varchar, "step9" varchar, "step10" varchar, "step11" varchar, "step12" varchar, "step13" varchar, "step14" varchar, "step15" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "project_started" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$1CRWcwsVuwpETbE4No1Lz.yrqvFaiOmqWKwV45.91CZLvBNHovu3i' LIMIT 1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$1CRWcwsVuwpETbE4No1Lz.yrqvFaiOmqWKwV45.91CZLvBNHovu3i"], ["created_at", "2023-11-14 07:53:25.991734"], ["updated_at", "2023-11-14 07:53:25.991734"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$41oodOJKg/0AZl6hJtb0eO4VWeEDYyWephLSjPCIsWgW5NmlvnAy2' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$41oodOJKg/0AZl6hJtb0eO4VWeEDYyWephLSjPCIsWgW5NmlvnAy2"], ["created_at", "2023-11-14 07:53:26.092187"], ["updated_at", "2023-11-14 07:53:26.092187"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$rupRyivhKMfAgt.Mlx7NZuLnI9bIBiptlJtKUgmQbyyLgQjB7vHFu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$rupRyivhKMfAgt.Mlx7NZuLnI9bIBiptlJtKUgmQbyyLgQjB7vHFu"], ["created_at", "2023-11-14 07:53:26.182383"], ["updated_at", "2023-11-14 07:53:26.182383"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$eGPTsx3owNBpqONvlVUct.lPFVXp0k1y3oL6uCz4jNeP4pHpul4z6' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$eGPTsx3owNBpqONvlVUct.lPFVXp0k1y3oL6uCz4jNeP4pHpul4z6"], ["created_at", "2023-11-14 07:53:26.270598"], ["updated_at", "2023-11-14 07:53:26.270598"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$YYL3iJoH0ri3ABR5IQABheGGzC.lMBDvGCPwNoJTcKJraozwZZK0y' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$YYL3iJoH0ri3ABR5IQABheGGzC.lMBDvGCPwNoJTcKJraozwZZK0y"], ["created_at", "2023-11-14 07:53:26.358074"], ["updated_at", "2023-11-14 07:53:26.358074"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Introduction to Building a Notes App"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Introduction to Building a Notes App</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up Your Project: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Introduction to HTML, CSS, and JavaScript</li><li class=\"nav-item mb-1\">Creating the project structure (file setup)</li><li class=\"nav-item mb-1\">Basic HTML structure for a notes app</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Styling Your Application (CSS): </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Introduction to CSS for styling your app</li><li class=\"nav-item mb-1\">Responsive design principles</li><li class=\"nav-item mb-1\">Styling the notes list, form, and buttons</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>JavaScript Basics: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Fundamental JavaScript concepts</li><li class=\"nav-item mb-1\">Understanding variables, data types, functions, and control structures</li><li class=\"nav-item mb-1\">DOM manipulation and event handling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Adding a Note (JavaScript): </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Capturing user input from a form</li><li class=\"nav-item mb-1\">Implementing the &apos;Add Note&apos; functionality</li><li class=\"nav-item mb-1\">Updating the notes display dynamically</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Editing and Deleting Notes: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Creating functions to edit and delete notes</li><li class=\"nav-item mb-1\">Integrating these functions with the user interface</li><li class=\"nav-item mb-1\">Event handling for edit and delete actions</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Handling Categories: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Implementing category management</li><li class=\"nav-item mb-1\">Adding and displaying categories</li><li class=\"nav-item mb-1\">Associating notes with categories</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Implementing Search Functionality: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Building a search feature to filter notes</li><li class=\"nav-item mb-1\">Live updating of notes display based on search input</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Advanced Features and Best Practices: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Error handling and input validation</li><li class=\"nav-item mb-1\">Code refactoring and optimization</li><li class=\"nav-item mb-1\">Introduction to local storage for saving notes</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Debugging and Testing: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Techniques for debugging your web application</li><li class=\"nav-item mb-1\">Basic principles of testing frontend code</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Conclusion and Next Steps: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Review of key learnings</li><li class=\"nav-item mb-1\">Suggestions for further improvements and features</li><li class=\"nav-item mb-1\">Resources for continued learning</li></ul></li></ul></div></div></div></div></div>"], ["abstract", "Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step."], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "HTML/CSS"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:53:26.403081"], ["updated_at", "2023-11-14 07:53:26.403081"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "A FastAPI powered IMDB web service"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">A FastAPI powered IMDB web service</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project.</p><p class=\"card-text\">This tutorial will guide you through understanding and setting up the project, highlighting its key components and how they interact. The project is structured for educational purposes, focusing on FastAPI, database interactions, and serving static files.</p><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\"><b> Purpose: </b> An introductory project for database concepts using FastAPI</li><li class=\"nav-item mb-1\"><b> Key Features: </b> <ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item mb-1\"> FastAPI Application Setup. </li><li class=\"nav-item mb-1\"> Serving Static Files. </li><li class=\"nav-item mb-1\"> Simple API Endpoints. </li><li class=\"nav-item mb-1\"> Integration with a Database (implied from the project&#39;s context). </li></ul> </li></ul> <a href=\"https://github.com/donald-f-ferguson/W4111_FastAPI_IMDB_Api\" class=\"btn btn-primary\" role=\"button\">Project GitHub Repo</a></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Project Overview and Setup - In Depth Understanding: </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Goal and Scope</li><li class=\"nav-item mb-1\">Key Technologies</li><li class=\"nav-item mb-1\">Environment Setup</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Exploring Main Components - In Depth Understanding of <code> main.py </code> :</b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">FastAPI Application Instance</li><li class=\"nav-item mb-1\">Routing</li><li class=\"nav-item mb-1\">Request Handling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Handling - In Depth Understanding of <code>data</code> Folder: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Data Source</li><li class=\"nav-item mb-1\">Data Structure</li><li class=\"nav-item mb-1\">Data Parsing</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Creating API Endpoints - In Depth Understanding of <code>service_factory.py</code> : </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Service Abstraction</li><li class=\"nav-item mb-1\">Endpoint Functionality</li><li class=\"nav-item mb-1\">Response Formatting</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Testing and Documentation - In Depth Understanding of <code>test_main.http</code> : </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">API Testing</li><li class=\"nav-item mb-1\">Test Scenarios</li><li class=\"nav-item mb-1\">Documentation Importance</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment and Further Improvements - In Depth Understanding of Deployment: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deployment Platforms</li><li class=\"nav-item mb-1\">Scalability and Performance</li><li class=\"nav-item mb-1\">Continuous Development</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Python Programming Skills:</b> Proficiency in Python is necessary, as FastAPI and most related tools are Python-based.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of FastAPI:</b> Knowledge of FastAPI, a modern, fast (high-performance) web framework for building APIs with Python 3.7+.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Database Knowledge:</b> Familiarity with database systems (like PostgreSQL, MySQL, or SQLite) and SQL, as the project likely involves database interactions.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>API Design and Development:</b> Understanding of RESTful API principles and experience in designing and developing APIs.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Dependency Management:</b> Ability to manage Python dependencies, typically using pip and requirements.txt.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Basic Web Development Knowledge:</b> Understanding of basic web technologies like HTML, CSS, and JavaScript might be useful, especially for handling the frontend or static content.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Version Control Systems:</b> Knowledge of version control systems, particularly Git, for managing the project&#39;s codebase.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Testing and Debugging Skills:</b> Familiarity with testing frameworks and practices for debugging Python code and APIs.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Environment Setup:</b> Skills in setting up and configuring Python development environments, including virtual environments.</li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Reading Technical Documentation:</b> Ability to understand and follow technical documentation, as you&#39;ll likely need to refer to FastAPI documentation and any project-specific instructions.</li></div></div></div></div></div>"], ["abstract", "This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project."], ["language", "python"], ["tech_area", "backend"], ["tech_stack", "FASTAPI"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:53:26.409762"], ["updated_at", "2023-11-14 07:53:26.409762"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "abstract", "tech_stack", "skill_level", "project_scale", "step1", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Sentiment Analysis Tool Using BERT"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Sentiment Analysis Tool Using BERT</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Introduction to BERT and Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Overview of BERT</li><li class=\"nav-item mb-1\">Basics of Sentiment Analysis</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up the Environment</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Installing necessary libraries and dependencies</li><li class=\"nav-item mb-1\">Loading the pre-trained BERT model</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Preparation</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Collecting and preprocessing text data</li><li class=\"nav-item mb-1\">Understanding data labeling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Fine-Tuning BERT for Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Adapting BERT for classification tasks</li><li class=\"nav-item mb-1\">Training the model with labeled data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Evaluation and Testing</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Methods for evaluating model performance</li><li class=\"nav-item mb-1\">Testing the model with new data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment (Optional) </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deploying the model for real-time analysis</li><li class=\"nav-item mb-1\">Building a simple user interface</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><p class=\"card-text\">To successfully undertake a sentiment analysis project using BERT, certain prerequisites need to be met. These include:</p><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts, particularly in NLP.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Knowledge of Neural Networks:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic understanding of neural networks, especially how they are used in NLP.</li><li class=\"nav-item mb-1\">Familiarity with concepts like embeddings, layers, and activation functions.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Experience with TensorFlow or PyTorch:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Practical experience with TensorFlow, as BERT is originally implemented in this framework.</li><li class=\"nav-item mb-1\">Alternatively, knowledge of PyTorch, as there are PyTorch versions of BERT available.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Text Preprocessing:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Skills in text preprocessing: tokenization, stemming, lemmatization, etc.</li><li class=\"nav-item mb-1\">Understanding of how to clean and prepare text data for model input.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Computational Resources:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Access to a machine with adequate computational power (preferably with a GPU) for training deep learning models.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as TensorFlow, Hugging Face Transformers, Pandas, and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Familiarity with Git and GitHub:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of Git for version control and GitHub for accessing repositories like the BERT GitHub repository.</li></ul></li></ul><p class=\"card-text\">Having these prerequisites are not required and can be learned on the go. Knowing them will ensure a smoother learning curve and enable you to efficiently carry out the sentiment analysis project using BERT.</p></div></div></div></div></div>"], ["language", "python"], ["tech_area", "machine-learning"], ["abstract", "Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification."], ["tech_stack", "BERT"], ["skill_level", "beginner"], ["project_scale", "10"], ["step1", "<div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h1 class=\"card-title\">PART 1: Introduction to BERT and Sentiment Analysis</h1> </div></div></div></div></div><div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h2 class=\"card-title\">Overview of BERT</h2> <p class=\"card-text\">BERT (Bidirectional Encoder Representations from Transformers) is a revolutionary model in the field of natural language processing (NLP). Developed by Google, BERT&apos;s key innovation lies in its ability to understand the context of a word in a sentence from both directions (left and right of the word), unlike previous models which read text sequentially. This bidirectional context understanding allows BERT to grasp the nuanced meanings of words in different contexts more effectively. BERT is pre-trained on a large corpus of text and can be fine-tuned for various NLP tasks like sentiment analysis, question-answering, and language translation.</p></div></div></div></div></div><div class=\"container-fluid\"> <div class=\"row\"> <div class=\"col\"> <div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"> <div class=\"card-body\"> <h2 class=\"card-title\">Basics of Sentiment Analysis</h2> <p class=\"card-text\">Sentiment analysis is an NLP technique used to determine whether data is positive, negative, or neutral. It is commonly applied to understand opinions, emotions, and responses in text data like reviews, social media posts, and survey responses. Sentiment analysis models analyze the text to detect sentiment signals, classify them into categories, and sometimes even measure the intensity of emotions. This technique helps businesses gauge public opinion, understand customer sentiments, and monitor brand reputation. With models like BERT, sentiment analysis can be more accurate and nuanced, as BERT&apos;s deep understanding of language context allows for a better interpretation of sentiments in text.</p></div></div></div></div></div>"], ["created_at", "2023-11-14 07:53:26.415298"], ["updated_at", "2023-11-14 07:53:26.415298"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Predicting and Analyzing Energy Stock Prices"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Predicting and analyzing Energy Stock Prices</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Predict & analyze the closing stock prices of energy sector companies based on historical data and relevant features.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Collection</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Exploration</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Cleaning</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Feature Engineering</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Model Building</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Model Evaluation</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Hyperparameter Tuning</b></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment(Optional)</b></li></ul> </div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"> <li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul> </li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools: </b> <ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"> <li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as scikit-learn, Pandas, and NumPy.</li></ul> </li></div></div></div></div></div>"], ["abstract", "Predict & analyze the closing stock prices of energy sector companies based on historical data and relevant features."], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["created_at", "2023-11-14 07:53:26.421282"], ["updated_at", "2023-11-14 07:53:26.421282"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (1.4ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-14 07:53:26.472216"], ["updated_at", "2023-11-14 07:53:26.472216"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-14 07:53:26.480142"], ["updated_at", "2023-11-14 07:53:26.480142"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-14 07:53:26.486490"], ["updated_at", "2023-11-14 07:53:26.486490"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-14 07:53:26.493112"], ["updated_at", "2023-11-14 07:53:26.493112"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:53:43 +0000
+
+
+Started GET "/apple-touch-icon.png" for 127.0.0.1 at 2023-11-14 07:53:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (34.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.8ms)
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 127.0.0.1 at 2023-11-14 07:53:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:53:43 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_flash.erb (1.3ms)
+Completed 200 OK in 689ms (Views: 688.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:53:44 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:53:44 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-9c534ea79fef90aaf4aa150b6644c1f5f7222bc4a7279a382fc38352f2c70e92.css?body=1" for 127.0.0.1 at 2023-11-14 07:53:44 +0000
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:45 +0000
+
+
+Started GET "/assets/jquery3.self-cbcb1f1497554e07e08a1a99e549bf33b1fe31225841f585aaa72043b3b08580.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:45 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:45 +0000
+
+
+Started GET "/assets/popper.self-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:45 +0000
+
+
+Started GET "/assets/bootstrap.self-f1b23f5e3500b5e96ff6463bf537b6573558bfe6bf7f2f88bac63d667fba670d.js?body=1" for 127.0.0.1 at 2023-11-14 07:53:45 +0000
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-14 07:54:00 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BQ6qH2twuNvMrgwu0YnNXYSMHc7p4nmQ3YxfEbp4+bjHw0TVgYwL1zrnigzxNYKCUpn2oq09wjh/3zvB22gBVg==", "user"=>{"name"=>"A", "email"=>"a@tawab.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>""}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@tawab.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$HtjfwGp9CH7taCqE3T351urnrwPD3qI8mkYYl2BTV8heQy8/0SMue' LIMIT 1[0m
+  [1m[35mSQL (4.5ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "A"], ["email", "a@tawab.com"], ["password_digest", "$2a$10$HtjfwGp9CH7taCqE3T351urnrwPD3qI8mkYYl2BTV8heQy8/0SMue"], ["created_at", "2023-11-14 07:54:01.079051"], ["updated_at", "2023-11-14 07:54:01.079051"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 254ms (ActiveRecord: 28.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:54:01 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:54:01 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-14 07:54:05 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QW9ZnmAofuquu7ADKZyHVeExMRJg8yKF60MGqy3mIvGDordUitTN5ljyNiEJIMiKNyTafiQsmS1JEGJ7TPbaHw==", "login"=>{"email"=>"a@tawab.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "a@tawab.com"]]
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 108ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:54:05 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (3.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.7ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (18.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 150ms (Views: 126.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 07:54:12 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 07:54:12 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 07:54:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 07:54:17 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (1.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (54.7ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 120ms (Views: 112.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:54:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (1.7ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (62.9ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 3.0ms)
+
+ActionView::Template::Error (undefined method `project_started' for #<ActiveRecord::Relation []>):
+    2: 
+    3: <div class="content">
+    4: 
+    5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).project_started %>
+    6: 
+    7: 		<%= @project.step1.html_safe %>
+    8: 
+  app/views/projects/show.html.erb:5:in `_app_views_projects_show_html_erb__4609867552987385418_138279772620'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:54:24 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (1.0ms)[0m  SELECT "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `project_started' for #<ActiveRecord::Relation []>):
+    2: 
+    3: <div class="content">
+    4: 
+    5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).project_started %>
+    6: 
+    7: 		<%= @project.step1.html_safe %>
+    8: 
+  app/views/projects/show.html.erb:5:in `_app_views_projects_show_html_erb__4609867552987385418_138279772620'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 07:55:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (0.8ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `project_started' for nil:NilClass):
+    2: 
+    3: <div class="content">
+    4: 
+    5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).first.project_started %>
+    6: 
+    7: 		<%= @project.step1.html_safe %>
+    8: 
+  app/views/projects/show.html.erb:5:in `_app_views_projects_show_html_erb__4609867552987385418_138285850260'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.1ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:00:43 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 75.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 08:00:44 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (1.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (6.2ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:00:46 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.2ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (15.3ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 77.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/user_projects" for 127.0.0.1 at 2023-11-14 08:00:48 +0000
+Processing by UserProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CVQPrmP4e2VnxcbEK7mbDsTU4J22+nkc4K2sAtc0tHDmH/vhMJNO5CI3FEvIpcMiwBJXekcFy/fcMhLfMjHkJg==", "project_id"=>"3", "commit"=>"Add to my projects"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 6) LIMIT 1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["project_id", 3], ["process", 0], ["created_at", "2023-11-14 08:00:48.957366"], ["updated_at", "2023-11-14 08:00:48.957366"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 50ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:00:48 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 54.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:00:50 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.2ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (11.9ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 77.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:01:20 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (1.0ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3[0m
+  Rendered projects/show.html.erb within layouts/application (12.6ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 101.4ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/projects/3/start" for 127.0.0.1 at 2023-11-14 08:01:25 +0000
+Processing by ProjectsController#start as HTML
+  Parameters: {"authenticity_token"=>"y+SIlg1IaKdV2fVfS+TYECrUH5NCRlQN4yMuQ5mzC6Ykr3zZXiNdJhArJ9Co+IA8LhKodLO55ubfvJCefLZb8A==", "id"=>"3"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'project_started' for Project.):
+  app/controllers/projects_controller.rb:8:in `start'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 08:03:26 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 08:03:26 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 32ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:03:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.8ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (42.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (1.4ms)
+Completed 200 OK in 836ms (Views: 713.1ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:03:30 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered projects/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (undefined method `project_started' for nil:NilClass):
+    3: <div class="content">
+    4: 
+    5: 	
+    6: 	<% if @user_project.project_started %>
+    7: 
+    8: 		<%= @project.step1.html_safe %>
+    9: 
+  app/views/projects/show.html.erb:6:in `_app_views_projects_show_html_erb___763823793246778856_137682144420'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (38.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 08:04:52 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 08:04:52 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 33ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:04:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.7ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.7ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (41.6ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 820ms (Views: 693.5ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:04:55 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered projects/show.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 2.1ms)
+
+ActionView::Template::Error (undefined method `project_started' for nil:NilClass):
+    3: <div class="content">
+    4: 
+    5: 	
+    6: 	<% if @user_project.project_started %>
+    7: 
+    8: 		<%= @project.step1.html_safe %>
+    9: 
+  app/views/projects/show.html.erb:6:in `_app_views_projects_show_html_erb___3125792585454587143_137681787040'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 08:08:12 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (1.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (85.3ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (1.6ms)
+Completed 200 OK in 859ms (Views: 750.2ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 08:08:15 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (4.9ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 67ms (Views: 63.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:08:16 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.9ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (39.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 89.8ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:08:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (1.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.8ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (8.3ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 62.7ms | ActiveRecord: 3.9ms)
+
+
+Started PATCH "/projects/3/start" for 127.0.0.1 at 2023-11-14 08:08:21 +0000
+Processing by ProjectsController#start as HTML
+  Parameters: {"authenticity_token"=>"ubA0pHc0hG4dr+jnom3GASFJJzH0e+dOtKDfelVvSLNW+8DrJF+x71hdOmhBcZ4tJY+Q1gWEVaWIP2GnsGoY5Q==", "id"=>"3"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  app/controllers/projects_controller.rb:10:in `start'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 08:11:01 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 08:11:01 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 36ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:11:02 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.7ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.9ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (43.6ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (1.1ms)
+Completed 200 OK in 837ms (Views: 714.3ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:11:04 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (1.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.3ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (7.3ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 123ms (Views: 61.9ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/projects/3/start" for 127.0.0.1 at 2023-11-14 08:11:06 +0000
+Processing by ProjectsController#start as HTML
+  Parameters: {"authenticity_token"=>"qMCV5Ivn/Glz1n/H+Z46NWFav7PEaYUNIDQ8895iVaZHi2Gr2IzJ6DYkrUgagmIZZZwIVDWWN+Ycq4IuO2cF8A==", "id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  app/controllers/projects_controller.rb:10:in `start'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 08:11:55 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 08:11:56 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 32ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:11:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (4.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.9ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (44.6ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (1.1ms)
+Completed 200 OK in 841ms (Views: 719.0ms | ActiveRecord: 26.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:11:59 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.3ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3
+  Rendered projects/show.html.erb within layouts/application (7.4ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 65.1ms | ActiveRecord: 4.4ms)
+
+
+Started PATCH "/projects/3/start" for 127.0.0.1 at 2023-11-14 08:12:01 +0000
+Processing by ProjectsController#start as HTML
+  Parameters: {"authenticity_token"=>"i2yUmvGzVsNP6pHSTUqiwUMtFwic6QmZ2ZqYz6AgGPtkJ2DVothjQgoYQ12uVvrtR+ug720Wu3LlBSYSRSVIrQ==", "id"=>"3"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (0.9ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."id" != 5 AND "user_projects"."user_id" = 6) LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m  UPDATE "user_projects" SET "project_started" = ?, "updated_at" = ? WHERE "user_projects"."id" = ?  [["project_started", "t"], ["updated_at", "2023-11-14 08:12:01.458921"], ["id", 5]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/projects/3
+Completed 302 Found in 61ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:12:01 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (0.5ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (0.1ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:12:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.5ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (8.0ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 79ms (Views: 72.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:12:17 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (0.8ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 70.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:13:08 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:13:10 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (0.7ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 108ms (Views: 103.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:13:21 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 122ms (Views: 114.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:13:23 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (1.0ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 112ms (Views: 103.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:13:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (7.3ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 74.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:13:28 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (1.6ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (0.3ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 72.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:13:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUserProject Load (0.3ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:13:32 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (0.7ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 70.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-14 08:13:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+http://127.0.0.1:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 90.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 08:13:40 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUserProject Load (0.6ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 6 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (0.2ms)
+http://127.0.0.1:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 1.0ms)

@@ -45,7 +45,21 @@ ActiveRecord::Schema.define(version: 20231029190407) do
     t.string   "tech_stack"
     t.string   "skill_level"
     t.string   "project_scale"
-    t.string   "url"
+    t.string   "step1"
+    t.string   "step2"
+    t.string   "step3"
+    t.string   "step4"
+    t.string   "step5"
+    t.string   "step6"
+    t.string   "step7"
+    t.string   "step8"
+    t.string   "step9"
+    t.string   "step10"
+    t.string   "step11"
+    t.string   "step12"
+    t.string   "step13"
+    t.string   "step14"
+    t.string   "step15"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -54,8 +68,9 @@ ActiveRecord::Schema.define(version: 20231029190407) do
     t.integer  "user_id"
     t.integer  "project_id"
     t.integer  "process"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "project_started", default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "user_projects", ["project_id"], name: "index_user_projects_on_project_id"
