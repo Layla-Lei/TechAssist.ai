@@ -52,7 +52,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  
+
   # See https://github.com/rails/rails/issues/34790#issuecomment-450502805
   if RUBY_VERSION>='2.6.0'
     if Rails.version < '5'
@@ -67,4 +67,3 @@ RSpec.configure do |config|
     end
   end
 end
-

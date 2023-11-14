@@ -1,0 +1,2117 @@
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /app/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (1.0ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$D0zI1BpriI9JD9VTipEn4uxnkgOW3yVnB59jNeieTwAM38XrBXzAG' LIMIT 1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$D0zI1BpriI9JD9VTipEn4uxnkgOW3yVnB59jNeieTwAM38XrBXzAG"], ["created_at", "2023-11-13 05:10:44.620733"], ["updated_at", "2023-11-13 05:10:44.620733"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$LHIxqEGhZxiNPjURps4lS.mNsyccoAqczcliHokka9J/GO2orkfm.' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$LHIxqEGhZxiNPjURps4lS.mNsyccoAqczcliHokka9J/GO2orkfm."], ["created_at", "2023-11-13 05:10:44.716006"], ["updated_at", "2023-11-13 05:10:44.716006"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$9QedTUDwBg5c2bQG22vE7.Pt2BX5K2PcjfVE9kpFJETgJNZLjl10.' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$9QedTUDwBg5c2bQG22vE7.Pt2BX5K2PcjfVE9kpFJETgJNZLjl10."], ["created_at", "2023-11-13 05:10:44.804469"], ["updated_at", "2023-11-13 05:10:44.804469"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$0f0Ar2Xqvjh5rpz1w0vVmuAOkEIclL3ZsYX/OkLUpoo.XeD3DLpCW' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$0f0Ar2Xqvjh5rpz1w0vVmuAOkEIclL3ZsYX/OkLUpoo.XeD3DLpCW"], ["created_at", "2023-11-13 05:10:44.892671"], ["updated_at", "2023-11-13 05:10:44.892671"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$6iP5VT5qwYDXak6JZSXk0OOyMyMX6YzxhM/jqQqctGoYAHNMMMwlG' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$6iP5VT5qwYDXak6JZSXk0OOyMyMX6YzxhM/jqQqctGoYAHNMMMwlG"], ["created_at", "2023-11-13 05:10:44.981025"], ["updated_at", "2023-11-13 05:10:44.981025"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "superlative project"], ["description", "full-stack"], ["language", "ruby"], ["tech_area", "full-stack"], ["tech_stack", "rails"], ["skill_level", "intermediate"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 05:10:45.023194"], ["updated_at", "2023-11-13 05:10:45.023194"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "superb project"], ["description", "back-end"], ["language", "java"], ["tech_area", "backend"], ["tech_stack", "spring"], ["skill_level", "advanced"], ["project_scale", "20"], ["url", "https://github.com/"], ["created_at", "2023-11-13 05:10:45.027850"], ["updated_at", "2023-11-13 05:10:45.027850"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "peerless project"], ["description", "front-end"], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 05:10:45.031582"], ["updated_at", "2023-11-13 05:10:45.031582"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "incomparable project"], ["description", "data-science"], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 05:10:45.035181"], ["updated_at", "2023-11-13 05:10:45.035181"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (1.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-13 05:10:45.082408"], ["updated_at", "2023-11-13 05:10:45.082408"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-13 05:10:45.089186"], ["updated_at", "2023-11-13 05:10:45.089186"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-13 05:10:45.094849"], ["updated_at", "2023-11-13 05:10:45.094849"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-13 05:10:45.100606"], ["updated_at", "2023-11-13 05:10:45.100606"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$RF0189HVkfx2viR7b1p8gOjAOl48Dl8Kaaq/j2qe8Zd7b9g3PIA.S' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:16:07 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 05:16:07 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_flash.erb (2.7ms)
+Completed 200 OK in 44980ms (Views: 44948.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:16:52 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:17:33 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 05:17:33 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_flash.erb (1.0ms)
+Completed 200 OK in 708ms (Views: 674.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-3d8b3ae66e8e88489bc901963ada77b186cdbd916cc55550a351db61116fb2bf.css?body=1" for 127.0.0.1 at 2023-11-13 05:17:34 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:34 +0000
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:34 +0000
+
+
+Started GET "/assets/jquery3.self-cbcb1f1497554e07e08a1a99e549bf33b1fe31225841f585aaa72043b3b08580.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:35 +0000
+
+
+Started GET "/assets/bootstrap.self-f1b23f5e3500b5e96ff6463bf537b6573558bfe6bf7f2f88bac63d667fba670d.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:35 +0000
+
+
+Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:35 +0000
+
+
+Started GET "/assets/popper.self-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js?body=1" for 127.0.0.1 at 2023-11-13 05:17:35 +0000
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-13 05:17:44 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qdVO+Jd9rRvHrpAcz8hwVc4jfcxGvDbtAKyQ9PomhSahsIHd2pzOEwhoLGROh6gDomf9zMdfw8gERt/FKQcVkA==", "login"=>{"email"=>"tawab@example.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "tawab@example.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:17:44 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 05:17:44 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-13 05:18:10 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"u2LzoS9zVlihDYpIiAZ1Z1AXzv6hZf/FmfRnXtDWPymzBzyEYpI1UG7LNjAJSa0xPFNO/iCGCuCdHihvA/evnw==", "user"=>{"name"=>"Tawab", "email"=>"tawab@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "submit"=>""}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tawab@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$iYBXqE8YN0jHLEarheO3j.5yF60ndFZ8s/zTq24myUtz4GR1Tm4Ka' LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tawab"], ["email", "tawab@gmail.com"], ["password_digest", "$2a$10$iYBXqE8YN0jHLEarheO3j.5yF60ndFZ8s/zTq24myUtz4GR1Tm4Ka"], ["created_at", "2023-11-13 05:18:10.476675"], ["updated_at", "2023-11-13 05:18:10.476675"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 157ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:18:10 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 05:18:10 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-13 05:18:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"2Zcx+CrXdPVt0PnKAiGZyjQLZ7zdsP2MBeQULft9IU3R8v7dZzYX/aIWRbKDbkGcWE/nvFxTCKkBDlscKFyx+w==", "login"=>{"email"=>"tawab@example.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "tawab@example.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 05:18:17 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 05:18:17 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-13 05:18:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"2ntECPSO/qeXWZq3yNUna+tHRxIoLWCY/CWx80cjsmTSHostuW+dr1ifJs9Jmv89hwPHEqnOlb34z/7ClAIi0g==", "login"=>{"email"=>"tawab@gmail.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "tawab@gmail.com"]]
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 109ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-13 05:18:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (3.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.7ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+http://localhost:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 57.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/newprojects" for 127.0.0.1 at 2023-11-13 05:18:33 +0000
+Processing by NewprojectsController#index as HTML
+  Rendered newprojects/index.html.erb within layouts/application (4.2ms)
+http://localhost:3000/newprojects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/newprojects" for 127.0.0.1 at 2023-11-13 05:18:37 +0000
+Processing by NewprojectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TFEQnN5v99HK+fzOOOqKGybEOPXn0tBcZfmIGsrF4VdENN+5k46U2QU/QLa5pVJNSoC49WYxJXlhE8crGeRx4Q==", "language"=>"java", "tech_area"=>"frontend", "tech_stack"=>"react", "skill_level"=>"beginner", "project_scale"=>"10", "commit"=>"Find Project"}
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-13 05:18:37 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (6.3ms)
+http://localhost:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 59.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-13 05:18:39 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?[0m  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (4.3ms)
+http://localhost:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/newprojects" for 127.0.0.1 at 2023-11-13 05:18:40 +0000
+Processing by NewprojectsController#index as HTML
+  Rendered newprojects/index.html.erb within layouts/application (1.5ms)
+http://localhost:3000/newprojects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-13 05:18:41 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+http://localhost:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-13 05:18:42 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.1ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+http://localhost:3000/users/6
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 54.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/newprojects" for 127.0.0.1 at 2023-11-13 05:18:46 +0000
+Processing by NewprojectsController#index as HTML
+  Rendered newprojects/index.html.erb within layouts/application (1.2ms)
+http://localhost:3000/newprojects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/newprojects" for 127.0.0.1 at 2023-11-13 05:18:49 +0000
+Processing by NewprojectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9bqI/3daIM6u3FjmWTFultVBgp5qUYaD71Jzpzu/zTz930faOrtDxmEa5J7YfrbAuQUCnuuyc6bruDyW6J5dig==", "language"=>"java", "tech_area"=>"frontend", "tech_stack"=>"vue", "skill_level"=>"beginner", "project_scale"=>"10", "commit"=>"Find Project"}
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-13 05:18:49 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "vue"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (2.3ms)
+http://localhost:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-13 05:18:54 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.5ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 6 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+http://localhost:3000/users/6
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 79ms (Views: 71.8ms | ActiveRecord: 1.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$SBx5xERVX0eKBtTu2efOAewr3tLjudz/gtGt2JPj0LVrFwLpDqQD6' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /app/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (1.1ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$kkEdyOQwvOEG8bscNYDHRuoWa2WO9jHOnX6I.G5RpM.o14af5s8hy' LIMIT 1
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$kkEdyOQwvOEG8bscNYDHRuoWa2WO9jHOnX6I.G5RpM.o14af5s8hy"], ["created_at", "2023-11-13 19:44:21.033929"], ["updated_at", "2023-11-13 19:44:21.033929"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$6XRaAumqLS9EKwC9FsIMuO0WdC.bwtzS7/hf21YXXAQScBnziL91K' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$6XRaAumqLS9EKwC9FsIMuO0WdC.bwtzS7/hf21YXXAQScBnziL91K"], ["created_at", "2023-11-13 19:44:21.129315"], ["updated_at", "2023-11-13 19:44:21.129315"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$/waNtf/218Ryt3uKzjn4pOpPP7yrxCssnAUUVsH1TB6Iw3y8He38m' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$/waNtf/218Ryt3uKzjn4pOpPP7yrxCssnAUUVsH1TB6Iw3y8He38m"], ["created_at", "2023-11-13 19:44:21.221684"], ["updated_at", "2023-11-13 19:44:21.221684"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$88ByxBIbRdWwnbP84v32qegajC.r1DXOew3H/UT1mw22l3BFaHd86' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$88ByxBIbRdWwnbP84v32qegajC.r1DXOew3H/UT1mw22l3BFaHd86"], ["created_at", "2023-11-13 19:44:21.312180"], ["updated_at", "2023-11-13 19:44:21.312180"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$EvjUSl/GcSngiL28GRrGLedoonB0U.kTKbooKAqj88sMexQu/dsAi' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$EvjUSl/GcSngiL28GRrGLedoonB0U.kTKbooKAqj88sMexQu/dsAi"], ["created_at", "2023-11-13 19:44:21.402156"], ["updated_at", "2023-11-13 19:44:21.402156"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "superlative project"], ["description", "full-stack"], ["language", "ruby"], ["tech_area", "full-stack"], ["tech_stack", "rails"], ["skill_level", "intermediate"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:44:21.425961"], ["updated_at", "2023-11-13 19:44:21.425961"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "superb project"], ["description", "back-end"], ["language", "java"], ["tech_area", "backend"], ["tech_stack", "spring"], ["skill_level", "advanced"], ["project_scale", "20"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:44:21.431257"], ["updated_at", "2023-11-13 19:44:21.431257"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "peerless project"], ["description", "front-end"], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:44:21.435342"], ["updated_at", "2023-11-13 19:44:21.435342"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "incomparable project"], ["description", "data-science"], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:44:21.439319"], ["updated_at", "2023-11-13 19:44:21.439319"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (1.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-13 19:44:21.493708"], ["updated_at", "2023-11-13 19:44:21.493708"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-13 19:44:21.502846"], ["updated_at", "2023-11-13 19:44:21.502846"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-13 19:44:21.509188"], ["updated_at", "2023-11-13 19:44:21.509188"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-13 19:44:21.515868"], ["updated_at", "2023-11-13 19:44:21.515868"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 127.0.0.1 at 2023-11-13 19:45:13 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 19:45:13 +0000
+
+
+Started GET "/apple-touch-icon.png" for 127.0.0.1 at 2023-11-13 19:45:13 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 19:45:13 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 19:45:15 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 19:45:15 +0000
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2023-11-13 19:45:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 10ms (ActiveRecord: 1.8ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  app/controllers/users_controller.rb:38:in `show'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.6ms)
+  [1m[36m (8.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (4.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /app/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (1.1ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$oy6YfpZMeof3vetveBDQaOhnnPGn6aAVx/wVECT7Wa67hgFoXvVwW' LIMIT 1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$oy6YfpZMeof3vetveBDQaOhnnPGn6aAVx/wVECT7Wa67hgFoXvVwW"], ["created_at", "2023-11-13 19:57:04.186734"], ["updated_at", "2023-11-13 19:57:04.186734"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$vAi.chfzQMdIpptXPT8i1u1gbBdI4VtGCFEc2r8vrXQTZjjZeax0q' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$vAi.chfzQMdIpptXPT8i1u1gbBdI4VtGCFEc2r8vrXQTZjjZeax0q"], ["created_at", "2023-11-13 19:57:04.286006"], ["updated_at", "2023-11-13 19:57:04.286006"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$gVUP8QAEkOAlY9nNx3Ds1enZacGcbqgzg8fN8srxKHZswgoOKhAiy' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$gVUP8QAEkOAlY9nNx3Ds1enZacGcbqgzg8fN8srxKHZswgoOKhAiy"], ["created_at", "2023-11-13 19:57:04.377852"], ["updated_at", "2023-11-13 19:57:04.377852"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$JHnilDxKtBVJHzcOqzkHAOYRmjkaDYticmIclCHkx80eU35czYW3C' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$JHnilDxKtBVJHzcOqzkHAOYRmjkaDYticmIclCHkx80eU35czYW3C"], ["created_at", "2023-11-13 19:57:04.469543"], ["updated_at", "2023-11-13 19:57:04.469543"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$IM4.1gdi/6In0kWnhrlcHeAyr/zJfhvky3Apox3hRZQSnB0eDhiwm' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$IM4.1gdi/6In0kWnhrlcHeAyr/zJfhvky3Apox3hRZQSnB0eDhiwm"], ["created_at", "2023-11-13 19:57:04.560400"], ["updated_at", "2023-11-13 19:57:04.560400"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "superlative project"], ["description", "full-stack"], ["language", "ruby"], ["tech_area", "full-stack"], ["tech_stack", "rails"], ["skill_level", "intermediate"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:57:04.583827"], ["updated_at", "2023-11-13 19:57:04.583827"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "superb project"], ["description", "back-end"], ["language", "java"], ["tech_area", "backend"], ["tech_stack", "spring"], ["skill_level", "advanced"], ["project_scale", "20"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:57:04.589095"], ["updated_at", "2023-11-13 19:57:04.589095"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "peerless project"], ["description", "front-end"], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:57:04.593353"], ["updated_at", "2023-11-13 19:57:04.593353"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "incomparable project"], ["description", "data-science"], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-13 19:57:04.597545"], ["updated_at", "2023-11-13 19:57:04.597545"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (1.4ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-13 19:57:04.647071"], ["updated_at", "2023-11-13 19:57:04.647071"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-13 19:57:04.655399"], ["updated_at", "2023-11-13 19:57:04.655399"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-13 19:57:04.661892"], ["updated_at", "2023-11-13 19:57:04.661892"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUserProject Exists (0.5ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-13 19:57:04.668367"], ["updated_at", "2023-11-13 19:57:04.668367"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 19:57:23 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-13 19:57:23 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 726ms (Views: 691.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-3d8b3ae66e8e88489bc901963ada77b186cdbd916cc55550a351db61116fb2bf.css?body=1" for 127.0.0.1 at 2023-11-13 19:57:24 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2023-11-13 19:57:24 +0000
+
+
+Started GET "/assets/jquery3.self-cbcb1f1497554e07e08a1a99e549bf33b1fe31225841f585aaa72043b3b08580.js?body=1" for 127.0.0.1 at 2023-11-13 19:57:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for 127.0.0.1 at 2023-11-13 19:57:24 +0000
+
+
+Started GET "/assets/bootstrap.self-f1b23f5e3500b5e96ff6463bf537b6573558bfe6bf7f2f88bac63d667fba670d.js?body=1" for 127.0.0.1 at 2023-11-13 19:57:25 +0000
+
+
+Started GET "/assets/popper.self-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js?body=1" for 127.0.0.1 at 2023-11-13 19:57:25 +0000
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-13 19:57:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"JK6L+K02vtfteIqsmX8RkeAKrZmjZVOoG66qq5r7dJ/L5X+3/l2LVqiKWCN6Y0m95MwaflKa4UMnMRR2f/4kyQ==", "login"=>{"email"=>"t@example.com", "password"=>"[FILTERED]"}, "submit"=>""}
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "t@example.com"]]
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 203ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-13 19:57:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUserProject Load (3.4ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.8ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (36.4ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 77.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-13 19:57:34 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (30.4ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 103.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 19:57:46 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (11.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 69.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:39:50 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:40:02 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.7ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:40:13 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:46:36 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:46:48 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.9ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 60.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:51:08 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:51:22 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (8.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 62.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:53:08 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.8ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:53:10 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (3.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:53:11 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (4.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 56.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:53:48 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 76ms (Views: 74.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:55:56 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.1ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 21:58:58 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:01:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.1ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:04:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2023-11-13 22:04:33 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 4
+  Rendered projects/show.html.erb within layouts/application (5.3ms)
+http://127.0.0.1:3000/projects/4
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:04:42 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 95ms (Views: 91.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:05:11 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (9.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:05:23 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:05:32 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.7ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 86ms (Views: 83.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:06:26 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (9.0ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:07:01 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 111ms (Views: 108.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:07:17 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:07:31 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.9ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:07:41 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (9.8ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:09:52 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:10:10 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.7ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:11:13 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:12:48 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:12:59 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:15:08 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.2ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:16:37 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:17:39 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.9ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:18:12 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:18:49 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:19:50 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:21:59 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:22:40 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:23:27 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:24:22 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.7ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:25:28 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:25:46 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:25:49 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 62.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:25:51 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.8ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:26:40 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.0ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:27:19 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.4ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 80ms (Views: 78.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:27:21 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (3.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:28:07 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:32:37 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.0ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:34:21 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:35:42 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (7.8ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:37:56 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:39:29 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:40:52 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.0ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:43:14 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.6ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:45:15 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-13 22:45:33 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1
+  Rendered projects/show.html.erb within layouts/application (6.3ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (9.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (3.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /app/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (1.0ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.7ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$1XRvThH.AxP2R4zd/3HbKeLKTmX9sEB5Y9vtoq6kOubgxtyB6u0S6' LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$1XRvThH.AxP2R4zd/3HbKeLKTmX9sEB5Y9vtoq6kOubgxtyB6u0S6"], ["created_at", "2023-11-14 00:39:44.105135"], ["updated_at", "2023-11-14 00:39:44.105135"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$8ZR6xS0PMIEsVI.uW/Bfd.JGHwuj.fHtO1MmOcsoR5IzLle5g6Jsi' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$8ZR6xS0PMIEsVI.uW/Bfd.JGHwuj.fHtO1MmOcsoR5IzLle5g6Jsi"], ["created_at", "2023-11-14 00:39:44.202961"], ["updated_at", "2023-11-14 00:39:44.202961"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$xPxumAIB.tw.xIQXIuMYk.yzoRdaX0n/cwwh1RIvvzN5eTxmVj2CC' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$xPxumAIB.tw.xIQXIuMYk.yzoRdaX0n/cwwh1RIvvzN5eTxmVj2CC"], ["created_at", "2023-11-14 00:39:44.296417"], ["updated_at", "2023-11-14 00:39:44.296417"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$jF4JXYQ2n5edCSss3NF./em2V1dl5bVTOMSbFyuGTYLSnvmzU15CG' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$jF4JXYQ2n5edCSss3NF./em2V1dl5bVTOMSbFyuGTYLSnvmzU15CG"], ["created_at", "2023-11-14 00:39:44.386353"], ["updated_at", "2023-11-14 00:39:44.386353"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$7bUOlV7C5KsUibegHHvNr.sh9lfmdtOABW83XH6gqf4PCPpV14l.y' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$7bUOlV7C5KsUibegHHvNr.sh9lfmdtOABW83XH6gqf4PCPpV14l.y"], ["created_at", "2023-11-14 00:39:44.475991"], ["updated_at", "2023-11-14 00:39:44.475991"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "superlative project"], ["description", "full-stack"], ["language", "ruby"], ["tech_area", "full-stack"], ["tech_stack", "rails"], ["skill_level", "intermediate"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:39:44.499255"], ["updated_at", "2023-11-14 00:39:44.499255"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "superb project"], ["description", "back-end"], ["language", "java"], ["tech_area", "backend"], ["tech_stack", "spring"], ["skill_level", "advanced"], ["project_scale", "20"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:39:44.505828"], ["updated_at", "2023-11-14 00:39:44.505828"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "peerless project"], ["description", "front-end"], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:39:44.510010"], ["updated_at", "2023-11-14 00:39:44.510010"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "incomparable project"], ["description", "data-science"], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:39:44.513926"], ["updated_at", "2023-11-14 00:39:44.513926"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Sentiment Analysis Tool Using BERT"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Sentiment Analysis Tool Using BERT</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Introduction to BERT and Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Overview of BERT</li><li class=\"nav-item mb-1\">Basics of Sentiment Analysis</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up the Environment</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Installing necessary libraries and dependencies</li><li class=\"nav-item mb-1\">Loading the pre-trained BERT model</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Preparation</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Collecting and preprocessing text data</li><li class=\"nav-item mb-1\">Understanding data labeling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Fine-Tuning BERT for Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Adapting BERT for classification tasks</li><li class=\"nav-item mb-1\">Training the model with labeled data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Evaluation and Testing</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Methods for evaluating model performance</li><li class=\"nav-item mb-1\">Testing the model with new data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment (Optional) </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deploying the model for real-time analysis</li><li class=\"nav-item mb-1\">Building a simple user interface</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><p class=\"card-text\">To successfully undertake a sentiment analysis project using BERT, certain prerequisites need to be met. These include:</p><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts, particularly in NLP.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Knowledge of Neural Networks:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic understanding of neural networks, especially how they are used in NLP.</li><li class=\"nav-item mb-1\">Familiarity with concepts like embeddings, layers, and activation functions.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Experience with TensorFlow or PyTorch:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Practical experience with TensorFlow, as BERT is originally implemented in this framework.</li><li class=\"nav-item mb-1\">Alternatively, knowledge of PyTorch, as there are PyTorch versions of BERT available.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Text Preprocessing:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Skills in text preprocessing: tokenization, stemming, lemmatization, etc.</li><li class=\"nav-item mb-1\">Understanding of how to clean and prepare text data for model input.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Computational Resources:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Access to a machine with adequate computational power (preferably with a GPU) for training deep learning models.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as TensorFlow, Hugging Face Transformers, Pandas, and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Familiarity with Git and GitHub:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of Git for version control and GitHub for accessing repositories like the BERT GitHub repository.</li></ul></li></ul><p class=\"card-text\">Having these prerequisites are not required and can be learned on the go. Knowing them will ensure a smoother learning curve and enable you to efficiently carry out the sentiment analysis project using BERT.</p></div></div></div></div></div>"], ["language", "python"], ["tech_area", "machine-learning"], ["tech_stack", "BERT"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:39:44.517818"], ["updated_at", "2023-11-14 00:39:44.517818"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-14 00:39:44.566482"], ["updated_at", "2023-11-14 00:39:44.566482"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-14 00:39:44.575187"], ["updated_at", "2023-11-14 00:39:44.575187"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-14 00:39:44.581314"], ["updated_at", "2023-11-14 00:39:44.581314"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-14 00:39:44.587300"], ["updated_at", "2023-11-14 00:39:44.587300"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 00:40:01 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 00:40:01 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 36ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:40:01 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserProject Load (3.6ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (1.0ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (49.8ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (1.6ms)
+Completed 200 OK in 914ms (Views: 769.1ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:40:06 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (30.7ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 97ms (Views: 85.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:40:14 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (1.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5[0m
+  Rendered projects/show.html.erb within layouts/application (28.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.5ms)
+
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+     5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
+     6: 		<%= form_tag user_projects_path, :method => :post do %> 
+     7: 			<%= hidden_field_tag 'project_id', @project.id %>
+     8: 			<% html_content @projects.description.html_safe %>
+     9: 			<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
+    10: 		<% end %>
+    11: 	<% end %>
+  app/views/projects/show.html.erb:8:in `block in _app_views_projects_show_html_erb__2682686315848956711_137682856140'
+  app/views/projects/show.html.erb:6:in `_app_views_projects_show_html_erb__2682686315848956711_137682856140'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 00:40:59 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 00:41:00 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 38ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:41:00 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserProject Load (4.0ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.8ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (42.6ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 887ms (Views: 742.6ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:41:03 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (27.2ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 75.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:41:07 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (1.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5[0m
+  Rendered projects/show.html.erb within layouts/application (90.3ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 3.4ms)
+
+ActionView::Template::Error (undefined method `html_content' for #<#<Class:0x000000401caa8fc8>:0x000000401d0d4d48>):
+     5: 	<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
+     6: 		<%= form_tag user_projects_path, :method => :post do %> 
+     7: 			<%= hidden_field_tag 'project_id', @project.id %>
+     8: 			<% html_content @project.description.html_safe %>
+     9: 			<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
+    10: 		<% end %>
+    11: 	<% end %>
+  app/views/projects/show.html.erb:8:in `block in _app_views_projects_show_html_erb___3747705810927941201_137682678180'
+  app/views/projects/show.html.erb:6:in `_app_views_projects_show_html_erb___3747705810927941201_137682678180'
+
+
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (41.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.3ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered /usr/local/bundle/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 00:44:04 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 00:44:04 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 37ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:44:04 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserProject Load (3.7ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.7ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (42.2ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (1.3ms)
+Completed 200 OK in 878ms (Views: 744.6ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:44:07 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (28.8ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 91ms (Views: 81.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:44:10 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5[0m
+  Rendered projects/show.html.erb within layouts/application (7.9ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 00:47:08 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 00:47:09 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 36ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:47:09 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserProject Load (3.9ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (1.0ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (43.5ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (1.4ms)
+Completed 200 OK in 904ms (Views: 764.6ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:47:13 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (26.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 75.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:47:16 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (1.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5[0m
+  Rendered projects/show.html.erb within layouts/application (11.1ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 73ms (Views: 66.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:47:22 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (8.4ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 67.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:48:38 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (6.4ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:48:43 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (4.2ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:49:02 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (7.8ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:49:13 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (7.9ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 95ms (Views: 91.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:49:33 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (15.4ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:49:34 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (6.0ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 66.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:49:35 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5
+  Rendered projects/show.html.erb within layouts/application (3.1ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:51:06 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (5.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 100ms (Views: 97.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:51:06 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (10.4ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 136ms (Views: 133.3ms | ActiveRecord: 1.4ms)
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /app/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (1.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to CreateUsers (20231029080341)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080341"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateProjects (20231029080427)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "abstract" varchar, "description" varchar, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029080427"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateUserProjects (20231029080531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "user_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "process" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_user_id" ON "user_projects" ("user_id")[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_user_projects_on_project_id" ON "user_projects" ("project_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029080531"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNewprojects (20231029184417)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "newprojects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029184417"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateInterests (20231029190407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "interests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar, "tech_area" varchar, "tech_stack" varchar, "skill_level" varchar, "project_scale" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_interests_on_user_id" ON "interests" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029190407"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_interests_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_project_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_projects_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$MDHogLkQGhXbobjzXmlRGOGD2HDjhzy5BJmOaLxsnTihxCAfbvSvu' LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Addrish Roy"], ["email", "a@example.com"], ["password_digest", "$2a$10$MDHogLkQGhXbobjzXmlRGOGD2HDjhzy5BJmOaLxsnTihxCAfbvSvu"], ["created_at", "2023-11-14 00:54:41.863914"], ["updated_at", "2023-11-14 00:54:41.863914"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$TNsk10V63Sj8o5g.oiRJLOIPgQW6AJdeN/wDuZ6jmQN5X/NJA0.O.' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Tawab Safi"], ["email", "t@example.com"], ["password_digest", "$2a$10$TNsk10V63Sj8o5g.oiRJLOIPgQW6AJdeN/wDuZ6jmQN5X/NJA0.O."], ["created_at", "2023-11-14 00:54:41.961687"], ["updated_at", "2023-11-14 00:54:41.961687"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'w@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$H3JfR5ZLtOT33CXmMPMcLOJWSOvUbPk8F28mpeEOQTTCV7O3.AE8q' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Weijia Song"], ["email", "w@example.com"], ["password_digest", "$2a$10$H3JfR5ZLtOT33CXmMPMcLOJWSOvUbPk8F28mpeEOQTTCV7O3.AE8q"], ["created_at", "2023-11-14 00:54:42.053384"], ["updated_at", "2023-11-14 00:54:42.053384"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'l@example.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$XC75cnFAufi030bT76mofuQCAHdMJyINyjKhLFfApzItJnMNATLjW' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Yuanqing Lei"], ["email", "l@example.com"], ["password_digest", "$2a$10$XC75cnFAufi030bT76mofuQCAHdMJyINyjKhLFfApzItJnMNATLjW"], ["created_at", "2023-11-14 00:54:42.143838"], ["updated_at", "2023-11-14 00:54:42.143838"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."password_digest" = '$2a$10$JRlkxOTOCUX1rRQ6yhylS.KwJFyfNhYgwwDmPQbVlWpP9zv.YbFvK' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test"], ["email", "test@example.com"], ["password_digest", "$2a$10$JRlkxOTOCUX1rRQ6yhylS.KwJFyfNhYgwwDmPQbVlWpP9zv.YbFvK"], ["created_at", "2023-11-14 00:54:42.236186"], ["updated_at", "2023-11-14 00:54:42.236186"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "superlative project"], ["description", "full-stack"], ["abstract", "full-stack"], ["language", "ruby"], ["tech_area", "full-stack"], ["tech_stack", "rails"], ["skill_level", "intermediate"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:54:42.260828"], ["updated_at", "2023-11-14 00:54:42.260828"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "superb project"], ["description", "back-end"], ["abstract", "full-stack"], ["language", "java"], ["tech_area", "backend"], ["tech_stack", "spring"], ["skill_level", "advanced"], ["project_scale", "20"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:54:42.266176"], ["updated_at", "2023-11-14 00:54:42.266176"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "peerless project"], ["description", "front-end"], ["abstract", "full-stack"], ["language", "javascript"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:54:42.270262"], ["updated_at", "2023-11-14 00:54:42.270262"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projects" ("name", "description", "abstract", "language", "tech_area", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "incomparable project"], ["description", "data-science"], ["abstract", "full-stack"], ["language", "python"], ["tech_area", "data-science"], ["tech_stack", "pandas"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:54:42.274184"], ["updated_at", "2023-11-14 00:54:42.274184"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "projects" ("name", "description", "language", "tech_area", "abstract", "tech_stack", "skill_level", "project_scale", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Sentiment Analysis Tool Using BERT"], ["description", "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h1 class=\"card-title\">Sentiment Analysis Tool Using BERT</h1><h2 class=\"card-title\">Project Overview</h2><p class=\"card-text\">Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification.</p></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Table of Content</h2><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Introduction to BERT and Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Overview of BERT</li><li class=\"nav-item mb-1\">Basics of Sentiment Analysis</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Setting Up the Environment</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Installing necessary libraries and dependencies</li><li class=\"nav-item mb-1\">Loading the pre-trained BERT model</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Data Preparation</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Collecting and preprocessing text data</li><li class=\"nav-item mb-1\">Understanding data labeling</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Fine-Tuning BERT for Sentiment Analysis</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Adapting BERT for classification tasks</li><li class=\"nav-item mb-1\">Training the model with labeled data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Evaluation and Testing</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Methods for evaluating model performance</li><li class=\"nav-item mb-1\">Testing the model with new data</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Deployment (Optional) </b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Deploying the model for real-time analysis</li><li class=\"nav-item mb-1\">Building a simple user interface</li></ul></li></ul></div></div></div></div></div><div class=\"container-fluid\"><div class=\"row\"><div class=\"col\"><div class=\"card text-bg-light mb-3\" style=\"width: 100%;\"><div class=\"card-body\"><h2 class=\"card-title\">Prerequisites</h2><p class=\"card-text\">To successfully undertake a sentiment analysis project using BERT, certain prerequisites need to be met. These include:</p><ul class=\"nav flex-column\" style=\"list-style-type: decimal; padding-left: 20px;\"><li class=\"nav-item\" style=\"font-size: larger;\"><b>Programming Skills:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Proficiency in Python programming is essential.</li><li class=\"nav-item mb-1\">Familiarity with basic data manipulation using libraries like Pandas and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Understanding of Machine Learning</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of machine learning concepts, particularly in NLP.</li><li class=\"nav-item mb-1\">Understanding of model training, validation, and testing processes.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Knowledge of Neural Networks:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic understanding of neural networks, especially how they are used in NLP.</li><li class=\"nav-item mb-1\">Familiarity with concepts like embeddings, layers, and activation functions.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Experience with TensorFlow or PyTorch:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Practical experience with TensorFlow, as BERT is originally implemented in this framework.</li><li class=\"nav-item mb-1\">Alternatively, knowledge of PyTorch, as there are PyTorch versions of BERT available.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Text Preprocessing:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Skills in text preprocessing: tokenization, stemming, lemmatization, etc.</li><li class=\"nav-item mb-1\">Understanding of how to clean and prepare text data for model input.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Working with APIs and Web Scraping:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">If collecting data from online sources, knowledge of APIs and web scraping techniques can be beneficial.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Computational Resources:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Access to a machine with adequate computational power (preferably with a GPU) for training deep learning models.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Software and Tools:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Python installed on your machine (Python 3.6 or later recommended).</li><li class=\"nav-item mb-1\">Installation of libraries such as TensorFlow, Hugging Face Transformers, Pandas, and NumPy.</li></ul></li><li class=\"nav-item\" style=\"font-size: larger;\"><b>Familiarity with Git and GitHub:</b><ul class=\"nav flex-column\" style=\"list-style-type: disc; padding-left: 20px;\"><li class=\"nav-item mb-1\">Basic knowledge of Git for version control and GitHub for accessing repositories like the BERT GitHub repository.</li></ul></li></ul><p class=\"card-text\">Having these prerequisites are not required and can be learned on the go. Knowing them will ensure a smoother learning curve and enable you to efficiently carry out the sentiment analysis project using BERT.</p></div></div></div></div></div>"], ["language", "python"], ["tech_area", "machine-learning"], ["abstract", "Create a sentiment analysis tool that utilizes the BERT model to understand and classify sentiments in text data, such as tweets, reviews, or comments. The project will involve fine-tuning a pre-trained BERT model for the specific task of sentiment classification."], ["tech_stack", "BERT"], ["skill_level", "beginner"], ["project_scale", "10"], ["url", "https://github.com/"], ["created_at", "2023-11-14 00:54:42.278239"], ["updated_at", "2023-11-14 00:54:42.278239"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["project_id", 1], ["process", 0], ["created_at", "2023-11-14 00:54:42.328202"], ["updated_at", "2023-11-14 00:54:42.328202"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 2 AND "user_projects"."user_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["project_id", 2], ["process", 100], ["created_at", "2023-11-14 00:54:42.336374"], ["updated_at", "2023-11-14 00:54:42.336374"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 3 AND "user_projects"."user_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["project_id", 3], ["process", 100], ["created_at", "2023-11-14 00:54:42.342608"], ["updated_at", "2023-11-14 00:54:42.342608"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUserProject Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["project_id", 1], ["process", 100], ["created_at", "2023-11-14 00:54:42.348841"], ["updated_at", "2023-11-14 00:54:42.348841"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 00:54:55 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 00:54:56 +0000
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 37ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-14 00:54:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserProject Load (3.9ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.8ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 2 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (46.5ms)
+http://127.0.0.1:3000/users/2
+  Rendered layouts/_flash.erb (1.2ms)
+Completed 200 OK in 904ms (Views: 762.0ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:54:59 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (34.1ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 93ms (Views: 84.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:55:26 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (6.9ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2023-11-14 00:55:30 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (2.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 5[0m
+  Rendered projects/show.html.erb within layouts/application (10.8ms)
+http://127.0.0.1:3000/projects/5
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 67.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:55:50 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (6.7ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 64.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 00:57:29 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (3.9ms)
+http://127.0.0.1:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 00:57:32 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 2 AND "user_projects"."project_id" = 1[0m
+  Rendered projects/show.html.erb within layouts/application (7.1ms)
+http://127.0.0.1:3000/projects/1
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 69ms (Views: 65.1ms | ActiveRecord: 2.0ms)
