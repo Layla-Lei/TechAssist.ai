@@ -17,6 +17,5 @@ class ProjectsController < ApplicationController
             @projects = Project.where(language: language, :tech_area => tech_area, :tech_stack => tech_stack, :skill_level => skill_level, :project_scale => project_scale)
         end
     end
-
   end
   

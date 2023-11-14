@@ -1,38 +1,15 @@
 <!--  app/views/projects/show.html.erb -->
 
 <div class="content">
-  <h2>Details about <em><%= @project.name %></em></h2>
-	<h3>Description:</h3>
-	<p id="description">A 
-		<%= @project.description %> project
-	</p>
-	<ul id="details">
-		<li>
-			Language:
-			<%= @project.language %>
-		</li>
-		<li>
-			Tech Area:
-			<%= @project.tech_area %>
-		</li>
-		<li>
-			Tech Stack:
-			<%= @project.tech_stack %>
-		</li>
-		<li>
-			Skill Level:
-			<%= @project.skill_level %>
-		</li>
-		<li>
-			Project Scale:
-			<%= @project.project_scale %>
-		</li>
-	</ul>
+
 	<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
 		<%= form_tag user_projects_path, :method => :post do %> 
 			<%= hidden_field_tag 'project_id', @project.id %>
+			<%= @project.description.html_safe %>
 			<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
 		<% end %>
 	<% end %>
 
 </div>
+
+
