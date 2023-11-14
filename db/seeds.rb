@@ -312,6 +312,84 @@ Styling the notes list, form, and buttons
 </ul>
 </li>
 </ol>
+</p></div></div></div></div></div>', 
+:step3 => '<div class="container-fluid"> 
+<div class="row"> 
+<div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h1 class="card-title">
+STEP 3: JavaScript Basics
+</h1> 
+</div></div></div></div></div>
+<div class="container-fluid"> 
+<div class="row"> <div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h2 class="card-title">
+Fundamental JavaScript concepts
+</h2> 
+<p class="card-text">
+<h3 id="-basic-syntax-and-concepts-"><strong>Basic Syntax and Concepts</strong></h3>
+<ol>
+<li><strong>Variables</strong>:<ul>
+<li><strong><code>var</code></strong>: An older way to declare variables; scope is global or function-level.</li>
+<li><strong><code>let</code></strong>: Modern variable declaration; scope is block-level.</li>
+<li><strong><code>const</code></strong>: Like <strong><code>let</code></strong>, but for constant values; block-level scope and cannot be reassigned.</li>
+</ul>
+</li>
+<li><strong>Data Types</strong>:<ul>
+<li><strong>Strings</strong>: Textual data, e.g., <strong><code>&quot;Hello&quot;</code></strong>.</li>
+<li><strong>Numbers</strong>: Both integers and floats, e.g., <strong><code>5</code></strong>, <strong><code>3.14</code></strong>.</li>
+<li><strong>Booleans</strong>: True or false values, e.g., <strong><code>true</code></strong>, <strong><code>false</code></strong>.</li>
+<li><strong>Arrays</strong>: Ordered lists of values, e.g., <strong><code>[1, 2, 3]</code></strong>.</li>
+<li><strong>Objects</strong>: Collections of key-value pairs, e.g., <strong><code>{name: &quot;Alice&quot;, age: 30}</code></strong>.</li>
+</ul>
+</li>
+<li><strong>Operators</strong>:<ul>
+<li><strong>Arithmetic</strong>: <strong><code>+</code></strong>, <strong>``</strong>, <strong>``</strong>, <strong><code>/</code></strong>, <strong><code>%</code></strong> for basic math operations.</li>
+<li><strong>Assignment</strong>: <strong><code>=</code></strong>, <strong><code>+=</code></strong>, <strong><code>=</code></strong>, etc. to assign and update values.</li>
+<li><strong>Comparison</strong>: <strong><code>==</code></strong>, <strong><code>===</code></strong>, <strong><code>&lt;</code></strong>, <strong><code>&gt;</code></strong>, etc. for comparing values.</li>
+<li><strong>Logical</strong>: <strong><code>&amp;&amp;</code></strong>, <strong><code>||</code></strong>, <strong><code>!</code></strong> for logical operations.</li>
+</ul>
+</li>
+<li><strong>Control Structures</strong>:<ul>
+<li><strong>if-else</strong>: Conditional statements to execute different code based on conditions.</li>
+<li><strong>for loop</strong>: Repeats a block of code a specific number of times.</li>
+<li><strong>while loop</strong>: Repeats a block of code as long as a condition is true.</li>
+</ul>
+</li>
+</ol>
+<h3 id="-functions-"><strong>Functions</strong></h3>
+<ul>
+<li><strong>Defining Functions</strong>: Use <strong><code>function</code></strong> keyword or arrow syntax <strong><code>() =&gt; {}</code></strong>.</li>
+<li><strong>Calling Functions</strong>: Invoke a function using its name followed by parentheses.</li>
+<li><strong>Parameters and Return Values</strong>: Functions can accept inputs (parameters) and return a value.</li>
+</ul>
+</p></div></div></div></div></div>
+<div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> 
+<h2 class="card-title">
+DOM manipulation and event handling
+</h2> 
+<p class="card-text">
+<h3 id="-dom-manipulation-"><strong>DOM Manipulation</strong></h3>
+<ol>
+<li><strong>Selecting Elements</strong>:<ul>
+<li><strong><code>document.querySelector()</code></strong>: Selects the first element that matches a CSS selector.</li>
+<li><strong><code>document.getElementById()</code></strong>: Selects an element by its ID.</li>
+</ul>
+</li>
+<li><strong>Modifying the DOM</strong>:<ul>
+<li>Change text: <strong><code>element.textContent = &quot;New text&quot;</code></strong>.</li>
+<li>Change HTML: <strong><code>element.innerHTML = &quot;&lt;p&gt;New HTML&lt;/p&gt;&quot;</code></strong>.</li>
+<li>Change style: <strong><code>element.style.color = &quot;red&quot;</code></strong>.</li>
+</ul>
+</li>
+<li><strong>Event Handling</strong>:<ul>
+<li>Add event listeners: <strong><code>element.addEventListener(&#39;click&#39;, function)</code></strong>, where <strong><code>function</code></strong> is the code to run when the event occurs.</li>
+</ul>
+</li>
+</ol>
 </p></div></div></div></div></div>',
 	},
 
