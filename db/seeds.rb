@@ -423,48 +423,53 @@ Implementing the Add Note functionality
 </ul>
 <h3 id="-implementation-steps-"><strong>Implementation Steps</strong></h3>
 <ol>
-<li><strong>board.js</strong>:<ul>
+<p><strong>board.js</strong>:<ul>
 <li>Here, you&#39;ll manage the array of notes.</li>
 <li>Add a function to insert a new note into the array.</li>
 </ul>
-</li>
+</p>
 </ol>
+<p><strong>cell.js</strong>:</p>
+<ul>
+<li>This file will handle creating a DOM element for the note and displaying it.</li>
+</ul>
+<p><strong>index.js</strong>:</p>
+<ul>
+<li>Set up the form submission event listener.</li>
+<li>Use functions from <strong><code>board.js</code></strong> and <strong><code>cell.js</code></strong>.</li>
+</ul>
 
-<p>// board.js
-export let notes = [];</p>
-<p>export function addNote(noteContent) {
+<pre><code>
+// board.js
+export let notes = [];
+
+export function addNote(noteContent) {
     const note = {
         id: Date.now(),
         content: noteContent
     };
     notes.push(note);
     return note;
-}</p>
-
-
-<p>// cell.js
-</p>
-<p>export function displayNote(note) {
+}
+// cell.js
+export function displayNote(note) {
     const noteElement = document.createElement(&#39;li&#39;);
     noteElement.textContent = note.content;
     // Add more properties to noteElement as needed
     document.getElementById(&#39;notes-list&#39;).appendChild(noteElement);
-}</p>
-
-
-<p>// index.js
-import { addNote, notes } from &#39;./board.js&#39;;
-import { displayNote } from &#39;./cell.js&#39;;</p>
-<p>document.getElementById(&#39;note-form&#39;).addEventListener(&#39;submit&#39;, function(event) {
+}
+// index.js
+document.getElementById(&#39;note-form&#39;).addEventListener(&#39;submit&#39;, function(event) {
     event.preventDefault();
     const noteInput = document.getElementById(&#39;note-input&#39;);
-    const noteContent = noteInput.value.trim();</p>
-<pre><code><span class="hljs-keyword">if</span> (noteContent) {
+    const noteContent = noteInput.value.trim();
+<span class="hljs-keyword">if</span> (noteContent) {
     const <span class="hljs-keyword">new</span><span class="hljs-type">Note</span> = addNote(noteContent);
     displayNote(<span class="hljs-keyword">new</span><span class="hljs-type">Note</span>);
     noteInput.value = <span class="hljs-string">''</span>;
 }
-</code></pre><p>});</p>
+});
+</code></pre>
 
 <h3 id="-explanation-"><strong>Explanation</strong></h3>
 <ul>
@@ -472,6 +477,78 @@ import { displayNote } from &#39;./cell.js&#39;;</p>
 <li><strong>board.js</strong>: <strong><code>addNote</code></strong> function adds the new note to the notes array and returns it.</li>
 <li><strong>cell.js</strong>: <strong><code>displayNote</code></strong> takes a note object and creates a corresponding DOM element to display the note.</li>
 </ul>
+
+</p></div></div></div></div></div>
+',
+:step5 => '<div class="container-fluid"> 
+<div class="row"> 
+<div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h1 class="card-title">
+STEP 5: Editing and Deleting Notes
+</h1> 
+</div></div></div></div></div>
+<div class="container-fluid"> 
+<div class="row"> <div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h2 class="card-title">
+Creating functions to edit and delete notes
+</h2> 
+<p class="card-text">
+
+<p>Adding editing and deleting features to your notes app involves a few more steps. We&#39;ll continue using the modular structure with board.js, cell.js, and index.js. Let&#39;s start with the editing feature and then move on to deleting notes.</p>
+
+<p><strong>board.js</strong>:</p>
+<ul>
+<li>Add a function to update a note&#39;s content.</li>
+</ul>
+<p><strong>cell.js</strong>:</p>
+<ul>
+<li>Add functionality to create an editable field for the note.</li>
+<li>You&#39;ll also need a way to switch back to display mode after editing.</li>
+</ul>
+<p><strong>index.js</strong>:</p>
+<ul>
+<li>Handle the editing event and call the relevant functions from the other modules.</li>
+<li>You&#39;ll need a way to identify which note is being edited.</li>
+</ul>
+
+<pre><code>
+// board.js
+export function updateNote(noteId, newContent) {
+    const note = notes.find(note => note.id === noteId);
+    if (note) {
+        note.content = newContent;
+    }
+}
+// cell.js
+export function enableNoteEditing(noteElement, note) {
+    noteElement.innerHTML = &lt;input type=&#39;text&#39; value=&#39;${note.content}&#39; /&gt;;
+    // Add a save button or use an event to trigger the save
+}
+
+export function displayEditedNote(noteElement, note) {
+    noteElement.textContent = note.content;
+}
+
+// index.js
+
+// Example function to handle note editing
+function editNoteHandler(noteElement, noteId) {
+    const note = notes.find(n => n.id === noteId);
+    enableNoteEditing(noteElement, note);
+
+    // Setup event listener for saving the edited note
+    // This could be a blur event on the input field or a click event on a save button
+    noteElement.querySelector(&#39;input&#39;).addEventListener(&#39;blur&#39;, (event) =&gt; {
+        const newContent = event.target.value;
+        updateNote(noteId, newContent);
+        displayEditedNote(noteElement, note);
+    });
+}
+</code></pre>
 
 </p></div></div></div></div></div>
 ',
