@@ -24,14 +24,7 @@ Feature:
     #And the description of "superb project" should be "back-end"
     #And the progress of "superb project" should be "100%"
 
-  Scenario: I should be able to mark my progress
-    Given I am on the home page
-    Then I log in as "Addrish Roy"
-    Then I should be on the dashboard page for "Addrish Roy"
-    #Then I should see "superlative project"
-    #Then I press "Complete"
-    #And I should not see "superlative project" in the "Projects In Progress:" section
-    #And I should see "superlative project" in the "Completed" section
+  
 
   Scenario: I should be able to redo my project
     Given I am on the home page
@@ -41,6 +34,30 @@ Feature:
     #Then I press "Redo"
     #And I should not see "superb project" in the "Completed" section
     #And I should see "superb project" in the "Projects In Progress:" section
+  
+  Scenario: I should be able to mark my progress
+    Given I am on the home page
+    Then I log in as "Addrish Roy"
+    Then I should be on the dashboard page for "Addrish Roy"
+    And I follow "+"
+    Then I am on the newprojects page
+    And I select "JavaScript" from the "Programming Language" dropdown
+    And I select "Frontend" from the "Tech Area" dropdown
+    And I select "HTML/CSS" from the "Tech Stack/Framework" dropdown 
+    And I select "Beginner" from the "Level of Skill" dropdown 
+    And I select "10 hours" from the "Project Scale (Estimated Hours)" dropdown 
+    And I press "Find Project"
+    Then I am on the projects page
+    And I should see "Introduction to Building a Notes App"
+    Then I follow "Preview"
+    Then I am on the project details page for "Introduction to Building a Notes App"
+    Then I follow "Start Project"
+    Then I follow "Dashboard"
+    Then I should be on the dashboard page for "Addrish Roy"
+    And I should see "Introduction to Building a Notes App"
+    Then I press "Complete"
+    And I should not see "Introduction to Building a Notes App" in the "Projects In Progress:" section
+    And I should see "Introduction to Building a Notes App" in the "Completed" section
 
   Scenario: I should be able to create new project
     Given I am on the home page

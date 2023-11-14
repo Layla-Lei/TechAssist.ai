@@ -16701,3 +16701,265 @@ Processing by ProjectsController#index as HTML
 http://0.0.0.0:3000/projects
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 169ms (Views: 95.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:12:04 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (3.8ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 386ms (Views: 336.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:12:06 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (1.8ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (2.7ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 202ms (Views: 165.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:12:08 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.3ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (1.9ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (1.3ms)
+Completed 200 OK in 86ms (Views: 83.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:12:09 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (2.0ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 73ms (Views: 67.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:12:10 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.6ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (14.9ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 113ms (Views: 88.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:12:12 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (32.9ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 71.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:12:33 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1[0m
+  Rendered projects/show.html.erb within layouts/application (8.9ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 47.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/user_projects" for 127.0.0.1 at 2023-11-14 22:12:53 +0000
+Processing by UserProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZA4Y4HPKAg5Ebcnt3D0j1QGuY/l0XP/3XBSmjp2dg/XSDoKQoacZNHUDdcNjldTJ2tuhYsa5PbVxO3EzSLUkg==", "project_id"=>"1", "commit"=>"Add to my projects"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mProject Load (11.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUserProject Exists (10.9ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."user_id" = 7) LIMIT 1[0m
+  [1m[35mSQL (9.2ms)[0m  INSERT INTO "user_projects" ("user_id", "project_id", "process", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 7], ["project_id", 1], ["process", 0], ["created_at", "2023-11-14 22:12:53.913439"], ["updated_at", "2023-11-14 22:12:53.913439"]]
+  [1m[36m (48.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/7
+Completed 302 Found in 383ms (ActiveRecord: 80.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:12:54 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (35.4ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (10.7ms)
+Completed 200 OK in 134ms (Views: 131.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:13:07 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.5ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1[0m
+  Rendered projects/show.html.erb within layouts/application (5.5ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 86.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/projects/1/start" for 127.0.0.1 at 2023-11-14 22:13:23 +0000
+Processing by ProjectsController#start as HTML
+  Parameters: {"authenticity_token"=>"u69Y2NrP2oJtb4KeAHdrYwy6uyYfyh0fPmWsAQYn6rbhd1qxGYZu7oWqOG66ici/f9dsLHEBihY20RNf8XNIKw==", "id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUserProject Load (0.5ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."id" != 5 AND "user_projects"."user_id" = 7) LIMIT 1
+  [1m[36mSQL (7.1ms)[0m  [1mUPDATE "user_projects" SET "project_started" = ?, "updated_at" = ? WHERE "user_projects"."id" = ?[0m  [["project_started", "t"], ["updated_at", "2023-11-14 22:13:23.179923"], ["id", 5]]
+  [1m[35m (9.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/projects/1
+Completed 302 Found in 44ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:13:23 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (5.8ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:13:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (8.1ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 90.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:25:57 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.2ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (18.0ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 2080ms (Views: 1681.7ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:26:06 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.3ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (11.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (27.2ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 97.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:26:08 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUserProject Load (0.3ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  Rendered projects/show.html.erb within layouts/application (3.7ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (55.7ms)
+Completed 200 OK in 407ms (Views: 394.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:26:13 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35mUserProject Load (0.6ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (1.3ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (12.0ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 126ms (Views: 114.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2023-11-14 22:26:16 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (2.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.7ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (6.9ms)
+http://0.0.0.0:3000/projects/1
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 153ms (Views: 127.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:26:20 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (1.5ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (9.5ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 111ms (Views: 100.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2023-11-14 22:26:22 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 2  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 2
+  Rendered projects/show.html.erb within layouts/application (5.4ms)
+http://0.0.0.0:3000/projects/2
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 255ms (Views: 232.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:26:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUserProject Load (0.6ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (2.3ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (29.3ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 232ms (Views: 163.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:26:35 +0000
+Processing by ProjectsController#index as HTML
+  [1m[35mUserProject Load (0.5ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (3.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (16.3ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 112ms (Views: 97.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2023-11-14 22:26:37 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUserProject Load (1.3ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 3  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 3[0m
+  Rendered projects/show.html.erb within layouts/application (27.8ms)
+http://0.0.0.0:3000/projects/3
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 314ms (Views: 282.5ms | ActiveRecord: 2.1ms)
