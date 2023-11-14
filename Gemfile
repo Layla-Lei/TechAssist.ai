@@ -40,3 +40,4 @@ gem 'jquery-rails'
 
 gem 'tzinfo-data'
 gem 'redcarpet'
+gem "ruby-openai", "~> 6.0"

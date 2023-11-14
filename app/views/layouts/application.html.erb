@@ -40,7 +40,7 @@
 
         <div class='ml-auto'>
           <p>
-          <span id="popup_link" class="popup_link">Talk with your tech assist! </span>
+            <span id="popup_link" class="popup_link">Talk with your tech assist!</span>
           </p>
         </div>
         
@@ -69,13 +69,24 @@
 
     <div id="popup" class="popup">
         <div class="card-body">
-          this is a card
+          <%= form_tag questions_path, remote: true, :method => :get do %>
+            <%= text_area_tag(:message, nil, style:"width: 100%", placeholder:"Message Tech Assist...") %>
+            <%= submit_tag "Submit" %>
+          <% end %>
+          <% if session[:res] %>
+            <div id="res">
+              <%= session[:res] %>
+            </div>
+          <% else %>
+            <div id="res">
+              Default Content
+            </div>
+          <% end %>
         </div>
         <div class="card-footer">
           <p><a class="popup_draghandle" href="#">Drag handle</a></p>
           <p><a class="popup_closebox" href="#">Close</a></p>
         </div>
-
     </div>
     <script type="text/javascript">
       //<![CDATA[
