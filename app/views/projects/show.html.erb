@@ -3,9 +3,41 @@
 <div class="content">
 
 	
-	<% if @user_project.project_started %>
+	<% if @user_project && @user_project.project_started %>
 
-		<%= @project.step1.html_safe %>
+		
+
+		<% if @step %>
+			<% if @step == '0' %>
+				<%= @project.description.html_safe %>
+			<% else %>
+				<%= @project.send("step#{@step}").html_safe %>
+			<% end %>
+		<% else %>
+		<%= @project.description.html_safe %>
+		<% end %>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item">
+				<%= link_to '<<', project_path(step: @step.to_i - 1, id: @project.id), class: 'page-link' %>
+				</li>
+
+				<% empty_count = [@project.step1, @project.step2, @project.step3, @project.step4, 
+									@project.step5, @project.step6, @project.step7, @project.step8, 
+									@project.step9, @project.step10, @project.step11, @project.step12, 
+									@project.step13, @project.step14, @project.step15].count(&:blank?) %>
+
+				<% step_count = 15 - empty_count%>
+
+				<% for i in 0..step_count %>
+					<li class="page-item"><%= link_to i, project_path(step: i, id: @project.id), class: 'page-link' %></li>
+				<% end %>
+
+				<%= link_to '>>', project_path(step: @step.to_i + 1, id: @project.id), class: 'page-link' %>
+				</li>
+			</ul>
+		</nav>
 
 	<% else %>
 
