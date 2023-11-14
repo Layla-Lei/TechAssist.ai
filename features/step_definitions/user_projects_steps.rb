@@ -42,3 +42,17 @@ Then /I log in as "Addrish Roy"/ do
       find('button[type="submit"]').click
   end
 end
+
+And /I should see the "([^"]*)" button for "(.*)"/ do |button_text, project_name|
+  
+  expect(page).to have_button(button_text, visible: :all)
+
+end
+
+When /I press the "([^"]*)" button for the "(.*)" project/ do |button_text, project_name|
+  
+    project_card = find('.card', text: project_name)
+    button = project_card.find_button(button_text, visible: :all)
+    button.click
+  
+end

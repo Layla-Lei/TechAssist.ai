@@ -32,9 +32,9 @@ end
 World(WithinHelpers)
 
 # Single-line step scoper
-When /^(.*) within (.*[^:])$/ do |step, parent|
-  with_scope(parent) { When step }
-end
+#When /^(.*) within (.*[^:])$/ do |step, parent|
+  #with_scope(parent) { When step }
+#end
 
 # Multi-line step scoper
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
@@ -252,3 +252,10 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^I should see "([^"]*)" within an h4 tag$/ do |text|
+  expect(page).to have_css('h4', text: text)
+end
+
+
+
