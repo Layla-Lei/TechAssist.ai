@@ -16963,3 +16963,65 @@ Processing by ProjectsController#show as HTML
 http://0.0.0.0:3000/projects/3
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 314ms (Views: 282.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 22:38:16 +0000
+
+
+Started GET "/users" for 127.0.0.1 at 2023-11-14 22:38:17 +0000
+Processing by UsersController#index as HTML
+Redirected to http://0.0.0.0:3000/users/7
+Completed 302 Found in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:38:17 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (50.6ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 820ms (Views: 687.8ms | ActiveRecord: 4.9ms)
+
+
+Started PUT "/users/7" for 127.0.0.1 at 2023-11-14 22:38:24 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6b8JFd3+s615k/GRY3Wa4k8Tl7TfWFejZUE8e3055HGzZwt8HrcHwZFWS2HZizk+PH5AvrGTwKpt9YMlim1G7A==", "project"=>"1", "process"=>"100", "commit"=>"Complete", "id"=>"7"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mProject Load (4.6ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUserProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."id" != 5 AND "user_projects"."user_id" = 7) LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "user_projects" SET "process" = ?, "updated_at" = ? WHERE "user_projects"."id" = ?  [["process", 100], ["updated_at", "2023-11-14 22:38:24.774316"], ["id", 5]]
+  [1m[36m (56.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/7
+Completed 302 Found in 450ms (ActiveRecord: 64.7ms)
+
+
+Started PUT "/users/7" for 127.0.0.1 at 2023-11-14 22:38:25 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6b8JFd3+s615k/GRY3Wa4k8Tl7TfWFejZUE8e3055HGzZwt8HrcHwZFWS2HZizk+PH5AvrGTwKpt9YMlim1G7A==", "project"=>"1", "process"=>"100", "commit"=>"Complete", "id"=>"7"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.3ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUserProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "user_projects" WHERE ("user_projects"."project_id" = 1 AND "user_projects"."id" != 5 AND "user_projects"."user_id" = 7) LIMIT 1[0m
+  [1m[35m (10.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/users/7
+Completed 302 Found in 65ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-14 22:38:25 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUserProject Load (0.1ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)  [["process", 100]]
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?[0m  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (15.8ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 363ms (Views: 340.0ms | ActiveRecord: 0.5ms)
