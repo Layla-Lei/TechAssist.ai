@@ -17,6 +17,12 @@ Feature:
     Given I am on the home page
     Then I log in as "Addrish Roy"
     Then I should be on the dashboard page for "Addrish Roy"
+    And I follow "Projects"
+    Then I am on the projects page
+    And I should see "Introduction to Building a Notes App"
+    And I should see "Predicting and Analyzing Energy Stock Prices"
+    And I should see "Sentiment Analysis Tool Using BERT"
+    And I should see "A FastAPI powered IMDB web service"
     #Then I should see "superlative project" in the "Projects In Progress:" section
     #And the description of "superlative project" should be "full-stack"
     #And the progress of "superlative project" should be "0%"
