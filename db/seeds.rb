@@ -85,29 +85,9 @@ projects = [
 							<li class="nav-item mb-1">Event handling for edit and delete actions</li>
 						 </ul>
 					  </li>
-					  <li class="nav-item" style="font-size: larger;">
-						 <b>Handling Categories: </b>
-						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
-							<li class="nav-item mb-1">Implementing category management</li>
-							<li class="nav-item mb-1">Adding and displaying categories</li>
-						 </ul>
-					  </li>
-					  <li class="nav-item" style="font-size: larger;">
-						 <b>Implementing Search Functionality: </b>
-						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
-							<li class="nav-item mb-1">Building a search feature to filter notes</li>
-							<li class="nav-item mb-1">Live updating of notes display based on search input</li>
-						 </ul>
-					  </li>
 					
 					
-					  <li class="nav-item" style="font-size: larger;">
-						 <b>Conclusion and Next Steps: </b>
-						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
-							<li class="nav-item mb-1">Review of key learnings</li>
-							<li class="nav-item mb-1">Suggestions for further improvements and features</li>
-						 </ul>
-					  </li>
+					
 				   </ul>
 				</div>
 			 </div>
