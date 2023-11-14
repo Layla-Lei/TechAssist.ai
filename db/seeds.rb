@@ -29,13 +29,292 @@ users = [
 projects = [
 
 	{:name => 'Introduction to Building a Notes App', 
-	:description => '<div class="container-fluid"><div class="row"><div class="col"><div class="card text-bg-light mb-3" style="width: 100%;"><div class="card-body"><h1 class="card-title">Introduction to Building a Notes App</h1><h2 class="card-title">Project Overview</h2><p class="card-text">Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step.</p></div></div></div></div></div><div class="container-fluid"><div class="row"><div class="col"><div class="card text-bg-light mb-3" style="width: 100%;"><div class="card-body"><h2 class="card-title">Table of Content</h2><ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"><li class="nav-item" style="font-size: larger;"><b>Setting Up Your Project: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Introduction to HTML, CSS, and JavaScript</li><li class="nav-item mb-1">Creating the project structure (file setup)</li><li class="nav-item mb-1">Basic HTML structure for a notes app</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Styling Your Application (CSS): </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Introduction to CSS for styling your app</li><li class="nav-item mb-1">Responsive design principles</li><li class="nav-item mb-1">Styling the notes list, form, and buttons</li></ul></li><li class="nav-item" style="font-size: larger;"><b>JavaScript Basics: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Fundamental JavaScript concepts</li><li class="nav-item mb-1">Understanding variables, data types, functions, and control structures</li><li class="nav-item mb-1">DOM manipulation and event handling</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Adding a Note (JavaScript): </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Capturing user input from a form</li><li class="nav-item mb-1">Implementing the &apos;Add Note&apos; functionality</li><li class="nav-item mb-1">Updating the notes display dynamically</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Editing and Deleting Notes: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Creating functions to edit and delete notes</li><li class="nav-item mb-1">Integrating these functions with the user interface</li><li class="nav-item mb-1">Event handling for edit and delete actions</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Handling Categories: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Implementing category management</li><li class="nav-item mb-1">Adding and displaying categories</li><li class="nav-item mb-1">Associating notes with categories</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Implementing Search Functionality: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Building a search feature to filter notes</li><li class="nav-item mb-1">Live updating of notes display based on search input</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Advanced Features and Best Practices: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Error handling and input validation</li><li class="nav-item mb-1">Code refactoring and optimization</li><li class="nav-item mb-1">Introduction to local storage for saving notes</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Debugging and Testing: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Techniques for debugging your web application</li><li class="nav-item mb-1">Basic principles of testing frontend code</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Conclusion and Next Steps: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Review of key learnings</li><li class="nav-item mb-1">Suggestions for further improvements and features</li><li class="nav-item mb-1">Resources for continued learning</li></ul></li></ul></div></div></div></div></div>', 
+	:description => '
+	<div class="container-fluid">
+	   <div class="row">
+		  <div class="col">
+			 <div class="card text-bg-light mb-3" style="width: 100%;">
+				<div class="card-body">
+				   <h1 class="card-title">Introduction to Building a Notes App</h1>
+				   <h2 class="card-title">Project Overview</h2>
+				   <p class="card-text">Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step.</p>
+				</div>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+	<div class="container-fluid">
+	   <div class="row">
+		  <div class="col">
+			 <div class="card text-bg-light mb-3" style="width: 100%;">
+				<div class="card-body">
+				   <h2 class="card-title">Table of Content</h2>
+				   <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;">
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Setting Up Your Project: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Creating the project structure (file setup)</li>
+							<li class="nav-item mb-1">Basic HTML structure for a notes app</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Styling Your Application (CSS): </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Introduction to CSS for styling your app</li>
+							<li class="nav-item mb-1">Styling the notes list, form, and buttons</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>JavaScript Basics: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Fundamental JavaScript concepts</li>
+							<li class="nav-item mb-1">DOM manipulation and event handling</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Adding a Note (JavaScript): </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Implementing the &apos;Add Note&apos; functionality</li>
+							<li class="nav-item mb-1">Updating the notes display dynamically</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Editing and Deleting Notes: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Creating functions to edit and delete notes</li>
+							<li class="nav-item mb-1">Event handling for edit and delete actions</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Handling Categories: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Implementing category management</li>
+							<li class="nav-item mb-1">Adding and displaying categories</li>
+						 </ul>
+					  </li>
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Implementing Search Functionality: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Building a search feature to filter notes</li>
+							<li class="nav-item mb-1">Live updating of notes display based on search input</li>
+						 </ul>
+					  </li>
+					
+					
+					  <li class="nav-item" style="font-size: larger;">
+						 <b>Conclusion and Next Steps: </b>
+						 <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;">
+							<li class="nav-item mb-1">Review of key learnings</li>
+							<li class="nav-item mb-1">Suggestions for further improvements and features</li>
+						 </ul>
+					  </li>
+				   </ul>
+				</div>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+	',	
 	:abstract => 'Welcome to the tutorial series on building a Notes Application! This series is designed for learners who are new to web development or those looking to strengthen their understanding of building interactive web applications. We&apos;ll start from the basics and gradually move towards more complex features, ensuring a solid foundation at each step.', 
 	:language => 'javascript', 
 	:tech_area => 'frontend', 
 	:tech_stack => 'HTML/CSS', 
 	:skill_level => 'beginner', 
-	:project_scale => 10},
+	:project_scale => 10,
+	:step1 => '<div class="container-fluid"> 
+<div class="row"> 
+<div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h1 class="card-title">
+STEP 1: Setting Up Your Project
+</h1> 
+</div></div></div></div></div>
+<div class="container-fluid"> 
+<div class="row"> <div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h2 class="card-title">
+Creating the project structure (file setup)
+</h2> 
+<p class="card-text">
+<pre><code>
+notes-app/
+│
+├── index.html            # Main HTML file for your app
+│
+├── css/                  # Directory for CSS files
+│   └── styles.css        # Main stylesheet for your app
+│
+├── js/                   # Directory for JavaScript files
+│   ├── main.js           # Main JavaScript file for your app
+│   └── utils.js          # Utility functions for the app (if needed)
+│
+└── assets/               # Directory for static assets (optional)
+    ├── images/           # For images used in the app (if any)
+    └── fonts/            # For custom fonts (if any)
+</code></pre>
+<h3 id="-explanation-of-each-component-"><strong>Explanation of Each Component</strong></h3>
+<ol>
+<li><strong>index.html</strong>: This is your main HTML file where the structure of your notes application will be defined. It will include the HTML elements necessary for displaying and interacting with notes.</li>
+<li><strong>css/styles.css</strong>: This CSS file will contain all the styling for your application. This includes styling for the layout, colors, fonts, buttons, inputs, and any other visual elements of your notes app.</li>
+<li><strong>js/main.js</strong>: This JavaScript file will be the core of your application&#39;s functionality. It will handle creating, displaying, editing, and deleting notes, as well as any other interactive features.</li>
+<li><strong>js/utils.js</strong> (optional): If your app has reusable utility functions, such as date formatting or validation functions, you can keep them in this file. This is optional and depends on the complexity of your app.</li>
+<li><strong>assets/images and assets/fonts</strong> (optional): These directories are for storing any static assets like images or custom fonts your app may use. They&#39;re optional and only needed if you have such assets.</li>
+</ol>
+</p></div></div></div></div></div>
+<div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> 
+<h2 class="card-title">
+Basic HTML structure for a notes app
+</h2> 
+<p class="card-text">
+<h3 id="-writing-the-html-from-scratch-"><strong>Writing the HTML from Scratch</strong></h3>
+<p>Now, let&#39;s write this HTML structure step by step:</p>
+<ol>
+<li><strong>Start with the Basic Structure</strong>:<ul>
+<li>Type the <strong><code>DOCTYPE</code></strong> declaration, the <strong><code>html</code></strong> tag with the language attribute, and open the <strong><code>head</code></strong> and <strong><code>body</code></strong> tags.</li>
+</ul>
+</li>
+<li><strong>Add Head Elements</strong>:<ul>
+<li>Inside the <strong><code>head</code></strong> tag, add the <strong><code>meta</code></strong> tags, the <strong><code>link</code></strong> tags for CSS and Google Fonts, and the <strong><code>title</code></strong> tag.</li>
+</ul>
+</li>
+<li><strong>Build the Body Structure</strong>:<ul>
+<li>Start with the main <strong><code>div</code></strong> (<strong><code>id=&quot;note-app&quot;</code></strong>).</li>
+<li>Inside this div, create the <strong><code>header</code></strong> section with its nested elements like the form, input fields, and buttons.</li>
+<li>Next, create the <strong><code>main</code></strong> section with its three child <strong><code>section</code></strong> elements (<strong><code>categories-list</code></strong>, <strong><code>notes-list</code></strong>, <strong><code>note-editor</code></strong>).</li>
+<li>Finally, add the <strong><code>script</code></strong> tags at the end of the <strong><code>body</code></strong>.</li>
+</ul>
+</li>
+<li><strong>Write HTML Elements with Attributes</strong>:<ul>
+<li>Pay attention to the attributes of each element, like <strong><code>class</code></strong>, <strong><code>id</code></strong>, <strong><code>type</code></strong>, <strong><code>placeholder</code></strong>, etc.</li>
+</ul>
+</li>
+<li><strong>Use Proper Indentation</strong>:<ul>
+<li>Ensure your code is well-indented for readability.</li>
+</ul>
+</li>
+<li><strong>Save and Test Your File</strong>:<ul>
+<li>Save your file as <strong><code>index.html</code></strong>.</li>
+<li>Open it in a browser to see the basic structure (no styles or functionality yet).</li>
+</ul>
+</li>
+</ol>
+
+</p></div></div></div></div></div>',
+:step2 => '<div class="container-fluid"> 
+<div class="row"> 
+<div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h1 class="card-title">
+STEP 2: Styling Your Application (CSS)
+</h1> 
+</div></div></div></div></div>
+<div class="container-fluid"> 
+<div class="row"> <div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h2 class="card-title">
+Introduction to CSS for styling your app
+</h2> 
+<p class="card-text">
+<h3 id="css-cascading-style-sheets-">CSS (Cascading Style Sheets)</h3>
+<p>CSS is used to control the presentation, formatting, and layout of a webpage. It allows you to apply styles to your HTML structure.</p>
+<ul>
+<li><strong>Role</strong>: CSS enhances the look of HTML by providing style features like colors, fonts, and layouts. It separates the content from the presentation layer.</li>
+<li><strong>Selectors and Properties</strong>: CSS works by selecting HTML elements and applying styles to them. Styles are defined by property-value pairs (e.g., <strong><code>color: red;</code></strong>).</li>
+<li><strong>Responsive Design</strong>: With CSS, you can also create responsive designs, meaning your web pages will look good on all devices (desktops, tablets, and phones).</li>
+</ul>
+
+</p></div></div></div></div></div>
+<div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> 
+<h2 class="card-title">
+Styling the notes list, form, and buttons
+</h2> 
+<p class="card-text">
+<h3 id="-styling-the-notes-list-"><strong>Styling the Notes List</strong></h3>
+<ol>
+<li><strong>Selector for Notes List</strong>: Look for a selector that targets the element containing your notes, typically something like <strong><code>#notes-list</code></strong> or <strong><code>.notes-list</code></strong>.<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>list-style</code></strong>: Determines the style of the list, like removing bullet points.</li>
+<li><strong><code>padding</code></strong>, <strong><code>margin</code></strong>: Adjusts the spacing inside and outside the list.</li>
+<li><strong><code>border</code></strong>, <strong><code>background</code></strong>: Sets the border and background styles.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Individual Note Items</strong>: Each note might be an <strong><code>li</code></strong> or <strong><code>div</code></strong> element.<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>padding</code></strong>, <strong><code>margin</code></strong>: To create space around each note.</li>
+<li><strong><code>border-bottom</code></strong>: To separate notes.</li>
+<li><strong><code>font-size</code></strong>, <strong><code>color</code></strong>: For the text appearance.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="-styling-the-form-"><strong>Styling the Form</strong></h3>
+<ol>
+<li><strong>Form Selector</strong>: The form will likely have its own selector, such as <strong><code>#note-form</code></strong> or <strong><code>.note-form</code></strong>.<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>display</code></strong>: Often set to <strong><code>flex</code></strong> to align form elements.</li>
+<li><strong><code>padding</code></strong>, <strong><code>margin</code></strong>: For spacing.</li>
+<li><strong><code>background</code></strong>, <strong><code>border</code></strong>: To style the background and borders.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Input Fields</strong>:<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>border</code></strong>, <strong><code>border-radius</code></strong>: For the border style and rounded corners.</li>
+<li><strong><code>padding</code></strong>, <strong><code>font-size</code></strong>: For the text&#39;s spacing and size inside the input.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Submit Button</strong>:<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>background-color</code></strong>, <strong><code>color</code></strong>: For button colors.</li>
+<li><strong><code>border</code></strong>, <strong><code>border-radius</code></strong>: To style the border.</li>
+<li><strong><code>padding</code></strong>, <strong><code>margin</code></strong>: Adjusts the spacing.</li>
+<li><strong><code>cursor</code></strong>: Often set to <strong><code>pointer</code></strong> to change the mouse cursor on hover.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="-styling-buttons-edit-delete-"><strong>Styling Buttons (Edit, Delete)</strong></h3>
+<ol>
+<li><strong>Button Selectors</strong>: Buttons might be styled individually (<strong><code>#edit-button</code></strong>, <strong><code>#delete-button</code></strong>) or collectively (<strong><code>.button</code></strong>).<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>background-color</code></strong>, <strong><code>color</code></strong>: For the look of the button.</li>
+<li><strong><code>border</code></strong>: To define the button&#39;s border.</li>
+<li><strong><code>padding</code></strong>, <strong><code>margin</code></strong>: For size and spacing.</li>
+<li><strong><code>cursor</code></strong>: Set to <strong><code>pointer</code></strong> to indicate it&#39;s clickable.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hover Effects</strong>:<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>:hover</code></strong>: A pseudo-class to change styles when hovered over.</li>
+<li><strong><code>background-color</code></strong>, <strong><code>border-color</code></strong>: Common properties to change on hover.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Accessibility</strong>:<ul>
+<li><strong>Properties to Look For</strong>:<ul>
+<li><strong><code>focus</code></strong>: Styles for when the button is focused (for keyboard navigation).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</p></div></div></div></div></div>',
+	},
+
 
 	{:name => 'A FastAPI powered IMDB web service', 
 	:description => '<div class="container-fluid"><div class="row"><div class="col"><div class="card text-bg-light mb-3" style="width: 100%;"><div class="card-body"><h1 class="card-title">A FastAPI powered IMDB web service</h1><h2 class="card-title">Project Overview</h2><p class="card-text">This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project.</p><p class="card-text">This tutorial will guide you through understanding and setting up the project, highlighting its key components and how they interact. The project is structured for educational purposes, focusing on FastAPI, database interactions, and serving static files.</p><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"> <li class="nav-item mb-1"><b> Purpose: </b> An introductory project for database concepts using FastAPI</li><li class="nav-item mb-1"><b> Key Features: </b> <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"> <li class="nav-item mb-1"> FastAPI Application Setup. </li><li class="nav-item mb-1"> Serving Static Files. </li><li class="nav-item mb-1"> Simple API Endpoints. </li><li class="nav-item mb-1"> Integration with a Database (implied from the project&#39;s context). </li></ul> </li></ul> <a href="https://github.com/donald-f-ferguson/W4111_FastAPI_IMDB_Api" class="btn btn-primary" role="button">Project GitHub Repo</a></div></div></div></div></div><div class="container-fluid"><div class="row"><div class="col"><div class="card text-bg-light mb-3" style="width: 100%;"><div class="card-body"><h2 class="card-title">Table of Content</h2><ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"><li class="nav-item" style="font-size: larger;"><b>Project Overview and Setup - In Depth Understanding: </b><ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Goal and Scope</li><li class="nav-item mb-1">Key Technologies</li><li class="nav-item mb-1">Environment Setup</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Exploring Main Components - In Depth Understanding of <code> main.py </code> :</b> <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">FastAPI Application Instance</li><li class="nav-item mb-1">Routing</li><li class="nav-item mb-1">Request Handling</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Data Handling - In Depth Understanding of <code>data</code> Folder: </b> <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Data Source</li><li class="nav-item mb-1">Data Structure</li><li class="nav-item mb-1">Data Parsing</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Creating API Endpoints - In Depth Understanding of <code>service_factory.py</code> : </b> <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Service Abstraction</li><li class="nav-item mb-1">Endpoint Functionality</li><li class="nav-item mb-1">Response Formatting</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Testing and Documentation - In Depth Understanding of <code>test_main.http</code> : </b> <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">API Testing</li><li class="nav-item mb-1">Test Scenarios</li><li class="nav-item mb-1">Documentation Importance</li></ul></li><li class="nav-item" style="font-size: larger;"><b>Deployment and Further Improvements - In Depth Understanding of Deployment: </b> <ul class="nav flex-column" style="list-style-type: disc; padding-left: 20px;"><li class="nav-item mb-1">Deployment Platforms</li><li class="nav-item mb-1">Scalability and Performance</li><li class="nav-item mb-1">Continuous Development</li></ul></li></ul></div></div></div></div></div><div class="container-fluid"><div class="row"><div class="col"><div class="card text-bg-light mb-3" style="width: 100%;"><div class="card-body"><h2 class="card-title">Prerequisites</h2><ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"><li class="nav-item" style="font-size: larger;"><b>Python Programming Skills:</b> Proficiency in Python is necessary, as FastAPI and most related tools are Python-based.</li><li class="nav-item" style="font-size: larger;"><b>Understanding of FastAPI:</b> Knowledge of FastAPI, a modern, fast (high-performance) web framework for building APIs with Python 3.7+.</li><li class="nav-item" style="font-size: larger;"><b>Database Knowledge:</b> Familiarity with database systems (like PostgreSQL, MySQL, or SQLite) and SQL, as the project likely involves database interactions.</li><li class="nav-item" style="font-size: larger;"><b>API Design and Development:</b> Understanding of RESTful API principles and experience in designing and developing APIs.</li><li class="nav-item" style="font-size: larger;"><b>Dependency Management:</b> Ability to manage Python dependencies, typically using pip and requirements.txt.</li><li class="nav-item" style="font-size: larger;"><b>Basic Web Development Knowledge:</b> Understanding of basic web technologies like HTML, CSS, and JavaScript might be useful, especially for handling the frontend or static content.</li><li class="nav-item" style="font-size: larger;"><b>Version Control Systems:</b> Knowledge of version control systems, particularly Git, for managing the project&#39;s codebase.</li><li class="nav-item" style="font-size: larger;"><b>Testing and Debugging Skills:</b> Familiarity with testing frameworks and practices for debugging Python code and APIs.</li><li class="nav-item" style="font-size: larger;"><b>Environment Setup:</b> Skills in setting up and configuring Python development environments, including virtual environments.</li><li class="nav-item" style="font-size: larger;"><b>Reading Technical Documentation:</b> Ability to understand and follow technical documentation, as you&#39;ll likely need to refer to FastAPI documentation and any project-specific instructions.</li></div></div></div></div></div>', 
