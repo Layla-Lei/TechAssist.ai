@@ -391,6 +391,90 @@ DOM manipulation and event handling
 </li>
 </ol>
 </p></div></div></div></div></div>',
+:step4 => '<div class="container-fluid"> 
+<div class="row"> 
+<div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h1 class="card-title">
+STEP 4: Adding a Note (JavaScript)
+</h1> 
+</div></div></div></div></div>
+<div class="container-fluid"> 
+<div class="row"> <div class="col"> 
+<div class="card text-bg-light mb-3" style="width: 100%;"> 
+<div class="card-body"> 
+<h2 class="card-title">
+Implementing the Add Note functionality
+</h2> 
+<p class="card-text">
+<p>Starting with the simple functionality of adding a new note, let&#39;s break down the task and implement it across the files you have (<strong><code>board.js</code></strong>, <strong><code>cell.js</code></strong>, <strong><code>index.js</code></strong>).</p>
+<h3 id="-understanding-the-task-"><strong>Understanding the Task</strong></h3>
+<ol>
+<li><strong>User Action</strong>: The user enters note content into an input field and submits it.</li>
+<li><strong>Processing</strong>: The application needs to take this input and add it to a list or array of notes.</li>
+<li><strong>Display Update</strong>: The new note should be displayed on the webpage.</li>
+</ol>
+<h3 id="-file-responsibilities-"><strong>File Responsibilities</strong></h3>
+<ul>
+<li><strong>board.js</strong>: Manages the list of notes.</li>
+<li><strong>cell.js</strong>: Handles the display and individual note operations.</li>
+<li><strong>index.js</strong>: Coordinates the user input and invokes functions from other files.</li>
+</ul>
+<h3 id="-implementation-steps-"><strong>Implementation Steps</strong></h3>
+<ol>
+<li><strong>board.js</strong>:<ul>
+<li>Here, you&#39;ll manage the array of notes.</li>
+<li>Add a function to insert a new note into the array.</li>
+</ul>
+</li>
+</ol>
+
+<p>// board.js
+export let notes = [];</p>
+<p>export function addNote(noteContent) {
+    const note = {
+        id: Date.now(),
+        content: noteContent
+    };
+    notes.push(note);
+    return note;
+}</p>
+
+
+<p>// cell.js
+</p>
+<p>export function displayNote(note) {
+    const noteElement = document.createElement(&#39;li&#39;);
+    noteElement.textContent = note.content;
+    // Add more properties to noteElement as needed
+    document.getElementById(&#39;notes-list&#39;).appendChild(noteElement);
+}</p>
+
+
+<p>// index.js
+import { addNote, notes } from &#39;./board.js&#39;;
+import { displayNote } from &#39;./cell.js&#39;;</p>
+<p>document.getElementById(&#39;note-form&#39;).addEventListener(&#39;submit&#39;, function(event) {
+    event.preventDefault();
+    const noteInput = document.getElementById(&#39;note-input&#39;);
+    const noteContent = noteInput.value.trim();</p>
+<pre><code><span class="hljs-keyword">if</span> (noteContent) {
+    const <span class="hljs-keyword">new</span><span class="hljs-type">Note</span> = addNote(noteContent);
+    displayNote(<span class="hljs-keyword">new</span><span class="hljs-type">Note</span>);
+    noteInput.value = <span class="hljs-string">''</span>;
+}
+</code></pre><p>});</p>
+
+<h3 id="-explanation-"><strong>Explanation</strong></h3>
+<ul>
+<li><strong>index.js</strong>: Handles the form submission, retrieves the note content, and calls <strong><code>addNote</code></strong> from <strong><code>board.js</code></strong>.</li>
+<li><strong>board.js</strong>: <strong><code>addNote</code></strong> function adds the new note to the notes array and returns it.</li>
+<li><strong>cell.js</strong>: <strong><code>displayNote</code></strong> takes a note object and creates a corresponding DOM element to display the note.</li>
+</ul>
+
+</p></div></div></div></div></div>
+',
 	},
 
 
