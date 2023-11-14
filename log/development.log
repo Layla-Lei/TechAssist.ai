@@ -16676,3 +16676,28 @@ Processing by NewprojectsController#index as HTML
 http://0.0.0.0:3000/newprojects
   Rendered layouts/_flash.erb (1.4ms)
 Completed 200 OK in 3357ms (Views: 3356.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newprojects" for 127.0.0.1 at 2023-11-14 22:03:54 +0000
+Processing by NewprojectsController#index as HTML
+  Rendered newprojects/index.html.erb within layouts/application (12.0ms)
+http://0.0.0.0:3000/newprojects
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 366ms (Views: 366.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/newprojects" for 127.0.0.1 at 2023-11-14 22:03:58 +0000
+Processing by NewprojectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZZzQ40u58vnjIqKKv4O03yOHvelh7JiIw5fAjz9R4ck/RNKKiPBGlQvnGHoFfRcDUOpq4w8nD4HLI3/RyAVDVA==", "language"=>"java", "tech_area"=>"frontend", "tech_stack"=>"react", "skill_level"=>"beginner", "project_scale"=>"10", "commit"=>"Find Project"}
+Redirected to http://0.0.0.0:3000/projects
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-14 22:03:58 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.2ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."language" = ? AND "projects"."tech_area" = ? AND "projects"."tech_stack" = ? AND "projects"."skill_level" = ? AND "projects"."project_scale" = ?  [["language", "java"], ["tech_area", "frontend"], ["tech_stack", "react"], ["skill_level", "beginner"], ["project_scale", "10"]]
+  Rendered projects/index.html.erb within layouts/application (5.9ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 95.4ms | ActiveRecord: 4.0ms)
