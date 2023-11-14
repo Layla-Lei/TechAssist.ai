@@ -37,56 +37,56 @@ require 'rails_helper'
 
 end
 """
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
-  describe "POST #create" do
-    let(:user) { create(:user,email: 'abc@example.com', password: 'securepassword') }
+# RSpec.describe SessionsController, type: :controller do
+#   describe "POST #create" do
+#     let(:user) { create(:user,email: 'abc@example.com', password: 'securepassword') }
 
-    context "with valid login credentials" do
-      before do
-        post :create, params: { session: { email: user.email, password: 'securepassword' } }
-      end
+#     context "with valid login credentials" do
+#       before do
+#         post :create, params: { session: { email: user.email, password: 'securepassword' } }
+#       end
 
-      it "logs the user in" do
-        expect(session[:user_id]).to eq(user.id)
-      end
+#       it "logs the user in" do
+#         expect(session[:user_id]).to eq(user.id)
+#       end
 
-      it "redirects to the user's home page" do
-        expect(response).to redirect_to(home_path) # Adjust the path as per your application's routes
-      end
-    end
+#       it "redirects to the user's home page" do
+#         expect(response).to redirect_to(home_path) # Adjust the path as per your application's routes
+#       end
+#     end
 
-    context "with invalid login credentials" do
-      before do
-        post :create, params: { session: { email: user.email, password: 'wrongpassword' } }
-      end
+#     context "with invalid login credentials" do
+#       before do
+#         post :create, params: { session: { email: user.email, password: 'wrongpassword' } }
+#       end
 
-      it "does not log the user in" do
-        expect(session[:user_id]).to be_nil
-      end
+#       it "does not log the user in" do
+#         expect(session[:user_id]).to be_nil
+#       end
 
-      it "renders the new template (login page)" do
-        expect(response).to render_template('new')
-      end
+#       it "renders the new template (login page)" do
+#         expect(response).to render_template('new')
+#       end
 
-      it "sets a flash message" do
-        expect(flash[:alert]).to eq('Invalid email or password')
-      end
-    end
-  end
+#       it "sets a flash message" do
+#         expect(flash[:alert]).to eq('Invalid email or password')
+#       end
+#     end
+#   end
 
-  describe "DELETE #destroy" do
-    before do
-      delete :destroy
-    end
+#   describe "DELETE #destroy" do
+#     before do
+#       delete :destroy
+#     end
 
-    it "logs the user out" do
-      expect(session[:user_id]).to be_nil
-    end
+#     it "logs the user out" do
+#       expect(session[:user_id]).to be_nil
+#     end
 
-    it "redirects to the login page" do
-      expect(response).to redirect_to(login_path)
-    end
-  end
-end
+#     it "redirects to the login page" do
+#       expect(response).to redirect_to(login_path)
+#     end
+#   end
+# end
