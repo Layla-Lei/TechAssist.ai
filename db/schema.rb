@@ -26,15 +26,6 @@ ActiveRecord::Schema.define(version: 20231029190407) do
 
   add_index "interests", ["user_id"], name: "index_interests_on_user_id"
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "newprojects", force: :cascade do |t|
     t.string   "language"
     t.string   "tech_area"
