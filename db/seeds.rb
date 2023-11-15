@@ -986,7 +986,44 @@ By completing this step, you'll have successfully deployed your FastAPI applicat
 	:tech_area => 'data-science', 
 	:tech_stack => 'pandas', 
 	:skill_level => 'beginner', 
-	:project_scale => 10},
+	:project_scale => 10,
+	:step1 => '<div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <h1 class="card-title">STEP 1: Data Collection</h1> </div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <p class="card-text">Collect historical stock price data for energy sector companies. You can use financial APIs like Alpha Vantage, Yahoo Finance, or other sources to obtain this data.</p><p class="card-text">Here is a general guide on how you can do this using Python and the Alpha Vantage API as an example:</p></div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <h2 class="card-title">Get API Key</h2> <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"> <li class="nav-item" style="font-size: larger;"> <p class="card-text">Sign up for an account on the Alpha Vantage website.</p></li><li class="nav-item" style="font-size: larger;"> <p class="card-text">Obtain your free API key from the Alpha Vantage dashboard.</p></li></div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <h2 class="card-title">Install Required Libraries</h2> <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"> <li class="nav-item" style="font-size: larger;"> <p class="card-text">Install the necessary Python libraries using pip if you haven&apos;t already:</p><pre><code>
+	pip install requests pandas
+  </code></pre> </li></div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <h2 class="card-title">Write a Python Script</h2> <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"> <li class="nav-item" style="font-size: larger;"> <p class="card-text">Create a Python script to fetch historical stock price data. You can use the <b>requests</b> library to make API requests and <b>pandas</b> for data manipulation.</p><pre><code>
+import requests
+import pandas as pd
+
+# Replace &apos;YOUR_API_KEY&apos; with your actual Alpha Vantage API key
+API_KEY = &apos;YOUR_API_KEY&apos;
+symbol = &apos;AAPL&apos;  # Replace with the stock symbol of the energy sector company you
+# are interested in
+
+# Specify the time period for historical data
+interval = &apos;daily&apos;
+output_size = &apos;full&apos;
+
+# Alpha Vantage API endpoint for historical stock data
+url = f&apos;https://www.alphavantage.co/query?function=TIME_SERIES_{interval.upper()}&
+symbol={symbol}&apikey={API_KEY}&outputsize={output_size}&apos;
+
+# Make the API request
+response = requests.get(url)
+data = response.json()
+
+# Extract and organize the data
+if &apos;Time Series (Daily)&apos; in data:
+  historical_data = data[&apos;Time Series (Daily)&apos;]
+  df = pd.DataFrame(historical_data).T
+  df.index = pd.to_datetime(df.index)
+  df = df.sort_index(ascending=True)
+  df = df[[&apos;open&apos;, &apos;high&apos;, &apos;low&apos;, &apos;close&apos;, &apos;volume&apos;]]  # Adjust columns as needed
+
+  # Save the data to a CSV file
+  df.to_csv(f&apos;{symbol}_historical_stock_data.csv&apos;)
+else:
+  print(&apos;Error in retrieving data. Check the API response.&apos;)
+  </code></pre> </li></div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <h2 class="card-title">Run the Script</h2> <ul class="nav flex-column" style="list-style-type: decimal; padding-left: 20px;"> <li class="nav-item" style="font-size: larger;"> <p class="card-text">Save the script and run it using a Python interpreter.</p></li><li class="nav-item" style="font-size: larger;"> <p class="card-text">Make sure to replace &apos;YOUR_API_KEY&apos; with your actual Alpha Vantage API key and adjust the stock symbol and other parameters as needed.</p></li></div></div></div></div></div><div class="container-fluid"> <div class="row"> <div class="col"> <div class="card text-bg-light mb-3" style="width: 100%;"> <div class="card-body"> <p class="card-text">Once the script runs successfully, you should have a CSV file containing historical stock price data for the specified energy sector company.</p><p class="card-text">Remember to check the terms of use for the chosen financial API and adhere to any usage limits or guidelines. Additionally, you can explore other financial APIs like Yahoo Finance by adjusting the script accordingly.</p></div></div></div></div></div>',
+	},
 
 ]
 
