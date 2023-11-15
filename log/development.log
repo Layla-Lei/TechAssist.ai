@@ -17097,3 +17097,53 @@ Processing by ProjectsController#show as HTML
 http://0.0.0.0:3000/projects/1?step=1
   Rendered layouts/_flash.erb (0.2ms)
 Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1?step=0" for 127.0.0.1 at 2023-11-15 02:53:12 +0000
+Processing by ProjectsController#show as HTML
+  Parameters: {"step"=>"0", "id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserProject Load (0.4ms)[0m  SELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" = 1  ORDER BY "user_projects"."id" ASC LIMIT 1
+  Rendered projects/show.html.erb within layouts/application (10.3ms)
+http://0.0.0.0:3000/projects/1?step=0
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 1114ms (Views: 956.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2023-11-15 02:53:16 +0000
+Processing by ProjectsController#index as HTML
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT  "user_projects".* FROM "user_projects" WHERE "user_projects"."user_id" = 7 AND "user_projects"."project_id" IS NULL  ORDER BY "user_projects"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects"
+  [1m[36mProject Load (11.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (29.7ms)
+http://0.0.0.0:3000/projects
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 201ms (Views: 186.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2023-11-15 02:53:20 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUserProject Load (0.4ms)[0m  [1mSELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND ("user_projects"."process" != ?)[0m  [["process", 100]]
+  [1m[35mUserProject Load (1.0ms)[0m  SELECT * FROM "user_projects" LEFT JOIN projects ON projects.id = user_projects.project_id WHERE "user_projects"."user_id" = 7 AND "user_projects"."process" = ?  [["process", 100]]
+  Rendered users/show.html.erb within layouts/application (13.5ms)
+http://0.0.0.0:3000/users/7
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 56.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/questions?utf8=%E2%9C%93&message=can+you+tell+me+what+you+can+do+to+help&commit=Submit" for 127.0.0.1 at 2023-11-15 02:53:39 +0000
+Processing by QuestionsController#index as JS
+  Parameters: {"utf8"=>"✓", "message"=>"can you tell me what you can do to help", "commit"=>"Submit"}
+can you tell me what you can do to help
+  Rendered questions/index.js.erb (1.4ms)
+Completed 200 OK in 11797ms (Views: 90.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions?utf8=%E2%9C%93&message=can+you+tell+me+what+you+can+do+to+help&commit=Submit" for 127.0.0.1 at 2023-11-15 02:56:15 +0000
+Processing by QuestionsController#index as JS
+  Parameters: {"utf8"=>"✓", "message"=>"can you tell me what you can do to help", "commit"=>"Submit"}
+can you tell me what you can do to help
+  Rendered questions/index.js.erb (0.1ms)
+Completed 200 OK in 20182ms (Views: 5.3ms | ActiveRecord: 0.0ms)
