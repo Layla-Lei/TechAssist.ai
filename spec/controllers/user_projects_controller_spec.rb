@@ -21,6 +21,48 @@ RSpec.describe UserProjectsController, type: :controller do
     #  expect(created_user_project.project).to eq(@project)
     #  expect(created_user_project.process).to eq(0)
    # end
-   
   end
+
+  describe 'POST create' do
+    User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+    Project.create(name: 'Introduction to Building a Notes App',
+                   description: 'a description',
+                   language: 'ruby',
+                   tech_area: 'backend',
+                   tech_stack: 'rails',
+                   skill_level: 'beginner',
+                   project_scale: '10',
+                   step1: 'step1',
+                   step2: 'step2'
+    )
+    user = User.find_by(name: 'John Doe')
+    project = Project.find_by(name: 'Introduction to Building a Notes App')
+
+    
+    before do
+      session[:user_id] = user.id
+    end
+
+    it 'creates a new UserProject' do
+      expect {
+        post :create, project_id: project.id
+      }.to change(UserProject, :count).by(1)
+    end
+
+    it 'associates the UserProject with the correct user and project' do
+
+      post :create, project_id: project.id
+      user_project = UserProject.last
+
+      expect(user_project.user).to eq(user)
+      expect(user_project.project).to eq(project)
+      expect(user_project.process).to eq(0)
+    end
+
+    it 'redirects to the user path' do
+      post :create, project_id: project.id
+      expect(response).to redirect_to(user_path(user))
+    end
+  end
+
 end
