@@ -76,3 +76,16 @@ end
 Then('I should see the project details') do
   expect(page).to have_content(@project.name)
 end
+
+When('I visit the project page without a step parameter') do
+  visit project_path(@project)
+end
+
+Then('I should see the details for step {string}') do |step|
+  step_content = @project.send("step#{step}")
+  expect(page).to have_content(step_content)
+end
+
+When('I visit the project page for step {string}') do |step|
+  visit project_path(@project, step: step)
+end

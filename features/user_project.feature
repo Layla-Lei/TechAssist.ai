@@ -160,3 +160,8 @@ Feature:
     Given I am on the home page
     And I go to the dashboard page for "Addrish Roy"
     Then I should be on the home page
+
+  Scenario: Viewing a specific step of a project
+    Given there is a project with multiple steps
+    When I visit the project page for step "1"
+    #Then I should see the details for step "1"
