@@ -100,6 +100,30 @@ Feature:
     Then I follow "Preview"
     Then I am on the project details page for "Introduction to Building a Notes App"
 
+  Scenario: I should be able to read through new project
+    Given I am on the home page
+    Then I log in as "Addrish Roy"
+    Then I should be on the dashboard page for "Addrish Roy"
+    And I follow "+"
+    Then I am on the newprojects page
+    And I select "JavaScript" from the "Programming Language" dropdown
+    And I select "Frontend" from the "Tech Area" dropdown
+    And I select "HTML/CSS" from the "Tech Stack/Framework" dropdown 
+    And I select "Beginner" from the "Level of Skill" dropdown 
+    And I select "10 hours" from the "Project Scale (Estimated Hours)" dropdown 
+    And I press "Find Project"
+    Then I am on the projects page
+    And there is a project with multiple steps
+    When I visit the project page
+    #Then I should see the project details
+    #And I should see "Introduction to Building a Notes App"
+    #And I should not see "Sentiment Analysis"
+    #Then I follow "Preview"
+    #Then I am on the project details page for "Introduction to Building a Notes App"
+    #Then I follow "Start Project"
+    Then I visit the project page for a specific step
+    #Then I should see the details for that step
+    
   Scenario: I should be able to create new project and find no match
     Given I am on the home page
     Then I log in as "Addrish Roy"

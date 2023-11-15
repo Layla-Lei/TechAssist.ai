@@ -56,3 +56,23 @@ When /I press the "([^"]*)" button for the "(.*)" project/ do |button_text, proj
     button.click
   
 end
+
+Given('there is a project with multiple steps') do
+  @project = Project.create!(name: 'Test Project', description:'d', step1: 's1', step2: 's2')
+end
+
+When('I visit the project page for a specific step') do
+  visit project_path(@project, step: '1')
+end
+
+Then('I should see the details for that step') do
+  expect(page).to have_content('s1')
+end
+
+When('I visit the project page') do
+  visit project_path(@project)
+end
+
+Then('I should see the project details') do
+  expect(page).to have_content(@project.name)
+end
