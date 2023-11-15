@@ -34,14 +34,23 @@ RSpec.describe ProjectsController, type: :controller do
         end
 
         it 'decrements @step if project does not have step defined' do
-          allow(project).to receive(:step1).and_return(nil)
-          get :show, id: project.id, step: '1'
-          expect(assigns(:step)).to eq('1')
+          get :show, id: project.id, step: '3'
+          expect(assigns(:step)).to eq(2)
         end
 
         it 'sets @step to 0 for invalid step values' do
           get :show, id: project.id, step: '-1'
           expect(assigns(:step)).to eq('0')
+        end
+
+        it 'sets @step to 0 for if given step 0' do
+          get :show, id: project.id, step: '0'
+          expect(assigns(:step)).to eq('0')
+        end
+        
+        it 'sets @step to given step in other cases' do
+          get :show, id: project.id, step: '1'
+          expect(assigns(:step)).to eq('1')
         end
       end
 
