@@ -24,19 +24,12 @@ RSpec.describe UserProjectsController, type: :controller do
   end
 
   describe 'POST create' do
-    User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
-    Project.create(name: 'Introduction to Building a Notes App',
-                   description: 'a description',
-                   language: 'ruby',
-                   tech_area: 'backend',
-                   tech_stack: 'rails',
-                   skill_level: 'beginner',
-                   project_scale: '10',
-                   step1: 'step1',
-                   step2: 'step2'
-    )
-    user = User.find_by(name: 'John Doe')
-    project = Project.find_by(name: 'Introduction to Building a Notes App')
+    let!(:user) { 
+        User.create!(name: 'John Doe', email: 'john@example.com', password: 'password') 
+    }
+    let!(:project) { 
+        Project.create!(name: 'Introduction to Building a Notes App', description: 'a description', language: 'ruby', tech_area: 'backend', tech_stack: 'rails', skill_level: 'beginner', project_scale: '10', step1: 'step1', step2: 'step2')
+    }
 
     
     before do

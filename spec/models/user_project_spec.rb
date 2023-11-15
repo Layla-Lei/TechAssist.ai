@@ -8,7 +8,7 @@ RSpec.describe UserProject, type: :model do
     user = User.find_by_name('user1')
     project = Project.find_by_name('project1')
     UserProject.create(:user => user, :project => project, :process => 100)
-    expect(UserProject.where(:user_id => user, :project_id => project, :process => 100).count).to eq(1)
+    expect(UserProject.where(:user => user, :project => project, :process => 100).count).to eq(1)
   end
   it "should not create a new user-proj relation given a duplicate attribute" do
     User.create(:name => 'user1')
@@ -17,7 +17,7 @@ RSpec.describe UserProject, type: :model do
     project = Project.find_by_name('project1')
     UserProject.create(:user => user, :project => project, :process => 100)
     UserProject.create(:user => user, :project => project, :process => 100)
-    expect(UserProject.where(:user_id => user, :project_id => project, :process => 100).count).to eq(1)
+    expect(UserProject.where(:user => user, :project => project, :process => 100).count).to eq(1)
   end
   describe '.get_uncompleted_project_by_user' do
     it 'returns uncompleted projects for a given user' do
