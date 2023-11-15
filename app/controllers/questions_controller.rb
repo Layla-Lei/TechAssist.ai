@@ -1,8 +1,11 @@
 class QuestionsController < ApplicationController
+
+    skip_before_action :verify_authenticity_token, if: :test_env?
+
+
     def index
         question = params[:message]
         client = OpenAI::Client.new
-        logger.info(question)
         response = client.chat(
             parameters: {
                 model: "gpt-4-1106-preview", # Required.
@@ -15,7 +18,12 @@ class QuestionsController < ApplicationController
         respond_to do |format|
             format.js
         end
-        # logger.info(response.dig("choices", 0, "message", "content"))
+    end
+
+    private
+
+    def test_env?
+        Rails.env.test?
     end
 end
 
