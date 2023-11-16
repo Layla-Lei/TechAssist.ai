@@ -1,15 +1,19 @@
 # TechAssist.ai
 
 ## How to navigate the deployed app
-
 1. Create an account by typing in your name, email and password. Then use the account to log in.
 2. Then you are automatically navigated to the main page, the dashboard page for the user. Right now on your dashboard, there is no saved projects. You could click on the “+” button to find a project you want to build.
-3. You will be directed to /newprojects page, a page for users to select preferences for finding a project. If there is no exact matched project, you will be directed to all sample projects on the projects page. Since the database is not filled with many projects, that's likely the case.
-4. On the projects page, users can click on details and website of each project. The website button will currently leads you to the GitHub webpage.
-5. On the project details page, you can see the description of the project. If interested in working on this project, you can click “add to my projects”, which will add this project to your dashboard page and automatically navigate you to the dashboard.
-6. You can see the added project on the dashboard. You can click “complete” to mark complete.
-7. The project will be moved to completed section.
-8. You can log out the account by clicking the “logout” on the up right corner.
+3. You will be directed to /newprojects page, a page for users to select preferences for finding a project.
+4. Select "Javascript", "Frontend", "HTML/CSS", "Beginner", "10 hours", and click find projects.
+5. You find a matching project on the projects page. Click on "Preview".
+<img width="1274" alt="截屏2023-11-15 19 17 21" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/4548ef7b-fa0f-4aa4-97d4-cefba6315fdf">
+6. You will see the preview page of the project, click on "Add to my projects".
+<img width="1261" alt="截屏2023-11-15 19 18 42" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/4cc3c9e1-021c-4cdb-8260-dcc24e9e72de">
+7. The project is added to your dashboard! Click "go to project".
+<img width="555" alt="截屏2023-11-15 19 19 32" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/7c4e4208-6da9-442e-8e01-ded4f5e554dd">
+8. You will be redirected to /projects/1, click on "Start Project".
+9. Click on pages on the bottom "0" "1" "2"... to browse the project guide!
+<img width="774" alt="截屏2023-11-15 19 21 57" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/0daf691e-63d4-4b8b-9299-a5a0191fd7fa">
 
 ## Develop with Docker
 
