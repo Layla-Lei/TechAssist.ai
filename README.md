@@ -11,6 +11,7 @@
 <img width="1261" alt="截屏2023-11-15 19 18 42" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/4cc3c9e1-021c-4cdb-8260-dcc24e9e72de">
 7. The project is added to your dashboard! Click "go to project".
 <img width="555" alt="截屏2023-11-15 19 19 32" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/7c4e4208-6da9-442e-8e01-ded4f5e554dd">
+
 8. You will be redirected to /projects/1, click on "Start Project".
 9. Click on pages on the bottom "0" "1" "2"... to browse the project guide!
 <img width="774" alt="截屏2023-11-15 19 21 57" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/0daf691e-63d4-4b8b-9299-a5a0191fd7fa">
