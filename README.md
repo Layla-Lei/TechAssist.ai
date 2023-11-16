@@ -17,7 +17,7 @@
 <img width="774" alt="截屏2023-11-15 19 21 57" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/0daf691e-63d4-4b8b-9299-a5a0191fd7fa">
 
 10. See all projects on clicking "Projects" on the header and repeat the same thing!
-11. Click on "talk to your tech assist" to talk with our integrated chat bot. Type in the message you want to send and click submit. It should take a while for it to respond.
+
 ## Develop with Docker
 
 ```bash
