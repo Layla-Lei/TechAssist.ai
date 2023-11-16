@@ -13,6 +13,8 @@
 
 ## Develop with Docker
 
+docker hub: <https://hub.docker.com/repository/docker/yuanqinglei/techassist-ai/general>
+
 ```bash
 docker build -t tech_assist.ai .
 docker run --rm -it tech_assist.ai bash
