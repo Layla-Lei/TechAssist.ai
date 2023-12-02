@@ -1,9 +1,11 @@
-FROM ruby:2.6.6
+FROM ruby:2.7.8
 RUN apt-get update -qq && apt-get install -y nodejs curl gnupg
 RUN curl https://cli-assets.heroku.com/install.sh | sh && mkdir /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle update
+
+#COPY Gemfile.lock /app/Gemfile.lock
 COPY Rakefile /app/Rakefile
 COPY . /app
 RUN bundle install

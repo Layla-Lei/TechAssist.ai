@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.6.6'
-gem 'rails', '4.2.10'
+ruby '2.7.8'
+gem 'rails', '6.0.4'
 
 # for Heroku deployment 
 group :development, :test do
-  gem 'sqlite3', '1.3.11'
+  gem 'sqlite3'
   gem 'byebug'
   gem 'database_cleaner', '1.4.1'
   gem 'capybara', '2.4.4'
@@ -16,7 +16,6 @@ group :development, :test do
   gem 'sassc-rails'
   gem 'sprockets-rails'
   gem 'popper_js'
-  gem "ruby-openai"
   gem "dotenv-rails"
   gem "turbo-rails"
   
