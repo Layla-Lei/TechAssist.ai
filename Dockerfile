@@ -8,5 +8,5 @@ COPY Rakefile /app/Rakefile
 COPY . /app
 RUN bundle install
 RUN bundle exec rake db:migrate
-RUN bundle exec rake db:seed
+#RUN bundle exec rake db:seed
 CMD ["rails", "s", "-b", "0.0.0.0"]

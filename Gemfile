@@ -16,6 +16,9 @@ group :development, :test do
   gem 'sassc-rails'
   gem 'sprockets-rails'
   gem 'popper_js'
+  gem "ruby-openai"
+  gem "dotenv-rails"
+  gem "turbo-rails"
   
 end
 
