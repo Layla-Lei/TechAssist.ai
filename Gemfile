@@ -11,7 +11,7 @@ group :development, :test do
   gem 'capybara', '2.4.4'
   gem 'launchy'
   gem 'ZenTest', '4.11.2'
-  gem 'bcrypt', '3.1.7'
+  gem 'bcrypt'
   gem 'bootstrap', '~> 5.3.2'
   gem 'sassc-rails'
   gem 'sprockets-rails'

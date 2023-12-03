@@ -1,4 +1,4 @@
-class CreateUserProjects < ActiveRecord::Migration
+class CreateUserProjects < ActiveRecord::Migration[6.0]
   def change
     create_table :user_projects do |t|
       t.references :user, index: true, foreign_key: true
