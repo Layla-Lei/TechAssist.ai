@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_29_190407) do
+ActiveRecord::Schema.define(version: 2023_12_03_020047) do
+
+  create_table "chats", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "project_id", null: false
+    t.json "history"
+    t.text "q_and_a"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_chats_on_project_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
+  end
 
   create_table "interests", force: :cascade do |t|
     t.integer "user_id"
@@ -81,6 +92,7 @@ ActiveRecord::Schema.define(version: 2023_10_29_190407) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "chats", "users"
   add_foreign_key "interests", "users"
   add_foreign_key "user_projects", "projects"
   add_foreign_key "user_projects", "users"
