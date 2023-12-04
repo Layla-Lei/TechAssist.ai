@@ -3,7 +3,7 @@
 
 <% nested_comments.each do |comment, replies| %>
     <div style="margin-left: 20px;">
-      <strong><%= comment.user.username %>:</strong> <%= comment.body %>
+      <strong><%= comment.user.name %>:</strong> <%= comment.body %>
   
       <% if replies.present? %>
         <%= render partial: 'comments/nested_comments', locals: { nested_comments: replies } %>
