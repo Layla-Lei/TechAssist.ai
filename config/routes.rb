@@ -7,11 +7,16 @@ Rottenpotatoes::Application.routes.draw do
   resources :users
   resources :projects do
     member do
+      delete 'delete_review/:comment_id', to: 'projects#delete_review', as: :delete_review
+    end
+    member do
       patch :start
     end
+    post 'create_review', on: :member
+    resources :comment_threads
   end
   resources :newprojects
-  resources :chats
+  resources :questions
 
   #get '/' => 'users#index'
   post '/sessions' => 'sessions#create'

@@ -1,0 +1,12 @@
+<!-- app/views/projects/_nested_comments.html.erb -->
+
+
+<% nested_comments.each do |comment, replies| %>
+    <div style="margin-left: 20px;">
+      <strong><%= comment.user.name %>:</strong> <%= comment.body %>
+  
+      <% if replies.present? %>
+        <%= render partial: 'comments/nested_comments', locals: { nested_comments: replies } %>
+      <% end %>
+    </div>
+<% end %>
