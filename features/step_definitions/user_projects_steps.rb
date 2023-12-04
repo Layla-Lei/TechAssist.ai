@@ -42,3 +42,50 @@ Then /I log in as "Addrish Roy"/ do
       find('button[type="submit"]').click
   end
 end
+
+And /I should see the "([^"]*)" button for "(.*)"/ do |button_text, project_name|
+  
+  expect(page).to have_button(button_text, visible: :all)
+
+end
+
+When /I press the "([^"]*)" button for the "(.*)" project/ do |button_text, project_name|
+  
+    project_card = find('.card', text: project_name)
+    button = project_card.find_button(button_text, visible: :all)
+    button.click
+  
+end
+
+Given('there is a project with multiple steps') do
+  @project = Project.create!(name: 'Test Project', description:'d', step1: 's1', step2: 's2')
+end
+
+When('I visit the project page for a specific step') do
+  visit project_path(@project, step: '1')
+end
+
+Then('I should see the details for that step') do
+  expect(page).to have_content('s1')
+end
+
+When('I visit the project page') do
+  visit project_path(@project)
+end
+
+Then('I should see the project details') do
+  expect(page).to have_content(@project.name)
+end
+
+When('I visit the project page without a step parameter') do
+  visit project_path(@project)
+end
+
+Then('I should see the details for step {string}') do |step|
+  step_content = @project.send("step#{step}")
+  expect(page).to have_content(step_content)
+end
+
+When('I visit the project page for step {string}') do |step|
+  visit project_path(@project, step: step)
+end

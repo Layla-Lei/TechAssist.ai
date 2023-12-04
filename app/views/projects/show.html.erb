@@ -1,38 +1,71 @@
 <!--  app/views/projects/show.html.erb -->
 
 <div class="content">
-  <h2>Details about <em><%= @project.name %></em></h2>
-	<h3>Description:</h3>
-	<p id="description">A 
-		<%= @project.description %> project
-	</p>
-	<ul id="details">
-		<li>
-			Language:
-			<%= @project.language %>
-		</li>
-		<li>
-			Tech Area:
-			<%= @project.tech_area %>
-		</li>
-		<li>
-			Tech Stack:
-			<%= @project.tech_stack %>
-		</li>
-		<li>
-			Skill Level:
-			<%= @project.skill_level %>
-		</li>
-		<li>
-			Project Scale:
-			<%= @project.project_scale %>
-		</li>
-	</ul>
-	<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
-		<%= form_tag user_projects_path, :method => :post do %> 
-			<%= hidden_field_tag 'project_id', @project.id %>
-			<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
+
+	
+	<% if @user_project && @user_project.project_started %>
+
+		
+
+		<% if @step %>
+			<% if @step == '0' %>
+				<%= @project.description.html_safe %>
+			<% else %>
+                <% if @project.send("step#{@step}")[0] != "<" %>
+                    <div class="card" style="height: 100%">
+                        <div class="card-body">
+                            <%= markdown(@project.send("step#{@step}")) %>
+                        </div>
+                    </div>
+                <% else %>
+                    <%= @project.send("step#{@step}").html_safe %>
+                <% end %>
+			<% end %>
+		<% else %>
+		<%= @project.description.html_safe %>
 		<% end %>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item">
+				<%= link_to '<<', project_path(step: @step.to_i - 1, id: @project.id), class: 'page-link' %>
+				</li>
+
+				<% empty_count = [@project.step1, @project.step2, @project.step3, @project.step4, 
+									@project.step5, @project.step6, @project.step7, @project.step8, 
+									@project.step9, @project.step10, @project.step11, @project.step12, 
+									@project.step13, @project.step14, @project.step15].count(&:blank?) %>
+
+				<% step_count = 15 - empty_count%>
+
+				<% for i in 0..step_count %>
+					<li class="page-item"><%= link_to i, project_path(step: i, id: @project.id), class: 'page-link' %></li>
+				<% end %>
+
+				<%= link_to '>>', project_path(step: @step.to_i + 1, id: @project.id), class: 'page-link' %>
+				</li>
+			</ul>
+		</nav>
+
+	<% else %>
+
+		<% if UserProject.where(:user => session[:user_id], :project => @project).count == 0 %>
+			<%= form_tag user_projects_path, :method => :post do %> 
+				<%= hidden_field_tag 'project_id', @project.id %>
+				<%= @project.description.html_safe %>
+				<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
+			<% end %>
+		<% else %>
+			<%= form_tag user_projects_path, :method => :post do %> 
+				<%= hidden_field_tag 'project_id', @project.id %>
+				<%= @project.description.html_safe %>
+				<%= link_to 'Start Project', start_project_path(@project.id), method: :patch, class: 'btn btn-primary btn-block' %>
+
+			<% end %>
+		<% end %>
+
 	<% end %>
 
 </div>
+
+

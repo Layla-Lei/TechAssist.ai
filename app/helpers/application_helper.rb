@@ -1,2 +1,6 @@
-module ApplicationHelper	
+module ApplicationHelper
+    def markdown(text)
+        options = [:hard_wrap, :autolink, :no_intra_emphasis, :fenced_code, :prettify]
+        Markdown.new(text, *options).to_html.html_safe
+    end
 end	

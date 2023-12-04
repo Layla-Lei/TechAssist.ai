@@ -1,4 +1,4 @@
-class CreateNewprojects < ActiveRecord::Migration
+class CreateNewprojects < ActiveRecord::Migration[6.0]
     def change
       create_table :newprojects do |t|
         t.string :language

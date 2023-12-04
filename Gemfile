@@ -1,21 +1,23 @@
 source 'https://rubygems.org'
 
-ruby '2.6.6'
-gem 'rails', '4.2.10'
+ruby '2.7.8'
+gem 'rails', '6.0.4'
 
 # for Heroku deployment 
 group :development, :test do
-  gem 'sqlite3', '1.3.11'
+  gem 'sqlite3'
   gem 'byebug'
   gem 'database_cleaner', '1.4.1'
   gem 'capybara', '2.4.4'
   gem 'launchy'
   gem 'ZenTest', '4.11.2'
-  gem 'bcrypt', '3.1.7'
+  gem 'bcrypt'
   gem 'bootstrap', '~> 5.3.2'
   gem 'sassc-rails'
   gem 'sprockets-rails'
   gem 'popper_js'
+  gem "dotenv-rails"
+  gem "turbo-rails"
   
 end
 
@@ -39,3 +41,5 @@ gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 
 gem 'tzinfo-data'
+gem 'redcarpet'
+gem "ruby-openai", "~> 6.0"
