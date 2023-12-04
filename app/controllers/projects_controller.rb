@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
         else
             @comments=[]
         end
-        @new_comment = @existing_review || @project.comment_threads.build  # for the form
+        @new_comment = @existing_comment || @project.comment_threads.build  # for the form
         if params[:step] != nil
             if params[:step] == '0'
                 @step = params[:step]
