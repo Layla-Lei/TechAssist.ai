@@ -1,6 +1,6 @@
 Rottenpotatoes::Application.configure do
     # Settings specified here will take precedence over those in config/application.rb
-  
+    config.hosts << "ec2-18-224-199-118.us-east-2.compute.amazonaws.com"
     # Code is not reloaded between requests
     config.cache_classes = true
   
