@@ -38,10 +38,10 @@ class ChatsController < ApplicationController
       abstract = project.abstract
       @chat = Chat.new(user_id: user_id, project_id: project_id)
       @chat.message = "You are an assist helping user to replicate a project, here is a brief introduction of this project: #{abstract}"
-  
+      
       respond_to do |format|
         if @chat.save
-          format.html { redirect_to chat_url(@chat), notice: "Chat was successfully created." }
+          format.html { redirect_to chat_url(@chat) }
           format.json { render :show, status: :created, location: @chat }
           format.turbo_stream
         else

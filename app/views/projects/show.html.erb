@@ -6,7 +6,7 @@
 	<% if @user_project && @user_project.project_started %>
 
 		<div class="container-fluid">
-			<%= link_to 'Chat With Your Tech Assist', chats_path(project_id: @project.id, step:@step.to_i), :class => 'btn btn-primary', style: 'width: 100%; margin-bottom: 10px;' %>
+			<%= link_to 'Chat With Your Tech Assist', chats_path(project_id: @project.id, step:@step.to_i), :class => 'btn btn-primary', style: 'width: 30%; margin-bottom: 10px; padding: 10px;' %>
 		</div>
 
 		<% if @step %>

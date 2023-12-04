@@ -166,3 +166,70 @@ span.popup_link, a.popup_link {
 .popup_draghandle {
   cursor: move;
 }
+
+#history-area {
+  
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.you{
+  font-weight: bold;
+  
+}
+
+.assist{
+  background-color: #f7f7f7;
+  margin-top: 5px; 
+  margin-right: 15px; 
+  margin-bottom: 15px; 
+  padding: 10px;
+outline: 3px ridge rgba(20, 30, 225, 0.6);
+border-radius: 1rem;
+}
+
+
+.btn-outline-secondary {
+  background-color: #007bff;
+  color: white;
+}
+
+
+.btn-outline-secondary i {
+  margin-right: 5px; 
+  margin-left: 5px; 
+
+}
+
+
+.btn-outline-secondary:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+
+
+
+
+.message-form {
+  width: 100%; 
+  height: 50px; 
+  font-size: 16px; 
+  padding: 10px; 
+}
+
+
+
+
+.message-input {
+  margin-right: 10px; 
+}
+.form-control{
+  width: 100%; 
+  height: 55px; 
+  font-size: 16px; 
+  padding: 10px; 
+  margin-right: 10px; 
+
+}
