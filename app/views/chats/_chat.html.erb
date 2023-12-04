@@ -1,3 +1,4 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <turbo-frame id="current-chat">
   <div id="<%= dom_id chat %>" class="container-fluid vh-75">
   <div class="card" style="height: 100%">
@@ -6,10 +7,10 @@
         <% unless chat.q_and_a.blank? %>
           <% chat.q_and_a.drop(1).each do |question, answer|%>
             <div class='row mb-2'>
-              <div class='col-md-2'>
+              <div class='col-md-2 '>
                 You:
               </div>
-              <div class='col'>
+              <div class='col you'>
                 <%=simple_format question %>
               </div>
             </div>
@@ -17,7 +18,7 @@
               <div class='col-md-2'>
                 TechAssist:
               </div>
-              <div class='col'>
+              <div class='col assist'>
                 <%=simple_format answer%>
               </div>
             </div>
@@ -26,10 +27,13 @@
       </div>
     </div>
   </div>
-  <%= form_with(model: chat, html: { style: 'margin-top: 10px;' }) do |form| %>
+  <%= form_with(model: chat, id: 'message-form', html: { style: 'margin-top: 10px;' }) do |form| %>
     <div class="input-group mb-3">
       <%= form.text_field :message, placeholder: 'Send a message', class: 'form-control' %>
-      <%# <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa-duotone fa-paper-plane-top"></i></button> %>
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+    <i class="fas fa-paper-plane"></i>
+      </button>
+
     </div>
   <% end %>
 

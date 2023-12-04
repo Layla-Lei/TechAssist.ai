@@ -5,12 +5,12 @@ class Chat < ActiveRecord::Base
     belongs_to :project
   
     attr_accessor :message
-  
+
     def message=(message)
       self.history = { 'prompt' => message, 'history' => [] } if history.blank?
-  
+     
       messages = [
-        { 'role' => 'system', 'content' => history['prompt'] }
+        { 'role' => 'system', 'content' => history['prompt'] },
       ]
       q_and_a.each do |question, answer|
         messages << { 'role' => 'user', 'content' => question }
