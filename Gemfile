@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.8'
 gem 'rails', '6.0.4'
+gem 'tinymce-rails'
 
 # for Heroku deployment 
 group :development, :test do

@@ -5,7 +5,7 @@
     <title>TechAssist.ai</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', 'media' => 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'prototype' %>
     <%= javascript_include_tag 'effects' %>
     <%= javascript_include_tag 'dragdrop' %>
@@ -33,8 +33,15 @@
         
         <%= link_to projects_path, :class => 'btn btn-primary' do %>
           <div class="icon-text-container">
-              <%= image_tag 'projects.svg', alt: 'projects Icon' %>
+              <%= image_tag 'projects.svg', alt: 'Create Icon' %>
               <span>Projects</span>
+          </div>
+        <% end %>
+
+        <%= link_to new_project_path(step: 'base'), :class => 'btn btn-primary' do %>
+          <div class="icon-text-container">
+              <%= image_tag 'create.svg', alt: 'projects Icon' %>
+              <span>Create</span>
           </div>
         <% end %>
 

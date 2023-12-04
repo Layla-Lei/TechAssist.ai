@@ -1,0 +1,188 @@
+<!-- app/views/projects/new.html.erb -->
+
+<!-- Start of the Create Your Own Project section -->
+
+<% if @step == 'base'%>
+    <div class="container mt-4">
+        <!-- Project Creation Header -->
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Create Your Own Project</h2>
+                <p class="text-center lead">Welcome to the Project Creation Hub! 🚀</p>
+            </div>
+        </div>
+
+        <!-- Project Description -->
+        <div class="row mt-3">
+            <div class="col">
+                <p>Your Role: As a vital member of our community, you have the unique opportunity to share your projects with enthusiasts worldwide. Whether it's a back-end, data science, machine learning, or any other project, your contribution can inspire and educate others.</p>
+            </div>
+        </div>
+
+        <!-- Project Requirements -->
+        <div class="row mt-3">
+            <div class="col">
+                <h4>General Information Required:</h4>
+                <ol>
+                    <li><strong>Project Overview:</strong> Start with a compelling introduction. What is your project about? Why is it exciting or useful? This is your chance to catch the interest of fellow creators.</li>
+                    <li><strong>Table of Contents:</strong> Lay out a roadmap of your project. This helps users navigate through your project steps with ease.</li>
+                    <li><strong>Prerequisites (Optional):</strong> List any necessary skills, tools, or materials. This prepares users for what they need to dive into your project.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Step-by-Step Breakdown -->
+        <div class="row mt-3">
+            <div class="col">
+                <h4>The Heart of Your Project: Step-by-Step Breakdown</h4>
+                <ul>
+                    <li><strong>Clarity Is Key:</strong> Each step in your project should be clear and concise. Think about guiding someone who is completely new to your project.</li>
+                    <li><strong>Detailed Instructions:</strong> Break down your project into manageable steps. Think of it as a recipe; each step should lead logically to the next.</li>
+                    <li><strong>Visuals and Resources:</strong> Feel free to include images, diagrams, or links to resources. These can greatly enhance understanding and engagement.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Submission Guidelines -->
+        <div class="row mt-3">
+            <div class="col">
+                <h4>Before You Submit:</h4>
+                <p>Review for Clarity: Make sure your instructions are easy to follow. A well-explained project not only draws more viewers but also ensures successful implementation.</p>
+                <p>Encourage Participation: End with an invitation. Encourage others to try your project and share their experiences.</p>
+            </div>
+        </div>
+
+        <!-- Submission Button -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p>Click on the Create Project button below to get started. Once you publish the project, it will be available for the entire community to view, learn from, and enjoy!</p>
+                <p>Remember, your project could be the spark that ignites someone else's passion. Happy creating!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col text-center">
+        <%= link_to 'Create Project', new_project_path(step:'general'), class: 'btn btn-success' %>
+    </div>
+<% end %>
+
+<!-- End of the Create Your Own Project section -->
+
+
+<!-- Start of General Information Section -->
+
+<% if @step == 'general'%>
+
+
+<%= form_with(model: @project, url: projects_path, method: :post, local: true) do |form| %>
+    <!-- Title -->
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">General Information</h2>
+            <p class="text-center lead">Please provide the following basic information about your project.</p>
+        </div>
+    </div>
+
+    <!-- Project Name -->
+    <div class="row">
+        <div class="col">
+            <h4 class="mr-2 my-auto">Project Name:</h4>
+            <%= form.text_field :name, class: 'form-control', placeholder: 'Enter project name' %>
+        </div>
+    </div>
+
+    <br>
+    
+    <!-- Abstract -->
+    <div class="row">
+        <div class="col">
+            <h4 class="mr-2 my-auto">Write a brief abstract for your project</h4>
+            <%= form.text_area :abstract, class: 'form-control', placeholder: 'Enter project abstract', rows: 2 %>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row mt-3">
+        <div class="col">
+            <h4>Basic Information:</h4>
+        </div>
+    </div>
+
+    <!-- Programming Language -->
+    <div class="form-group mb-3">
+        <%= form.label :language, 'Select the Primary Programming Language for the Project', class: 'form-label' %>
+        <%= form.select :language, options_for_select([['Java', 'java'], ['Python', 'python'], ['Ruby', 'ruby'], ['JavaScript', 'javascript']]), {}, class: 'form-select' %>
+    </div>
+
+    <!-- Tech Area -->
+    <div class="form-group mb-3">
+        <%= form.label :tech_area, 'What Tech Area Does the Project Focus on?', class: 'form-label' %>
+        <%= form.select :tech_area, options_for_select([['Frontend', 'frontend'], ['Backend', 'backend'], ['Machine Learning', 'machine-learning'], ['System', 'system'], ['Data Science', 'data-science']]), {}, class: 'form-select' %>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="form-group mb-3">
+        <%= form.label :tech_stack, 'What is the Primary Tech Stack For the Project?', class: 'form-label' %>
+        <%= form.select :tech_stack, options_for_select([['React', 'react'], ['Angular', 'angular'], ['HTML/CSS', 'HTML/CSS'], ['Spring', 'spring'], ['Rails', 'rails'], ['Pandas', 'pandas']]), {}, class: 'form-select' %>
+    </div>
+
+    <!-- Skill Level -->
+    <div class="form-group mb-3">
+        <%= form.label :skill_level, 'What Skill Level is Required to Complete the Project?', class: 'form-label' %>
+        <%= form.select :skill_level, options_for_select([['Beginner', 'beginner'], ['Intermediate', 'intermediate'], ['Advanced', 'advanced']]), {}, class: 'form-select' %>
+    </div>
+
+    <!-- Expected Time -->
+    <div class="form-group mb-3">
+        <%= form.label :project_scale, 'What is the Expected Time to Complete the project?', class: 'form-label' %>
+        <%= form.select :project_scale, options_for_select([['10 hours', '10'], ['20 hours', '20']]), {}, class: 'form-select' %>
+    </div>
+
+    <!-- Project Description -->
+    <div class="container mt-4">
+        <div class="row mt-3">
+            <div class="col">
+                <h4>Project Description:</h4>
+                <%= form.text_area :description, class: 'tinymce' %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row mt-3">
+        <div class="col text-center">
+            <%= form.submit 'Next: Write Steps', class: 'btn btn-success' %>
+        </div>
+    </div>
+
+<% end %>
+
+<script>
+    tinymce.init({
+        selector: 'textarea.tinymce',
+        // TinyMCE options...
+    });
+</script>
+
+
+    <%= javascript_include_tag 'init_tinymce' %>
+
+
+<% end %>
+<!-- End of Project Description Section-->
+<!-- End of General Information Section -->
+
+
+
+<!-- Start of Details Section -->
+<% if @step == 'detail'%>
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Woohoo!</h2>
+            <p class="text-center lead">Project Successfully Created!</p>
+        </div>
+    </div>
+<% end %>
+<!-- End of Details Section -->
+
+
