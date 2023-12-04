@@ -16,7 +16,6 @@ Rottenpotatoes::Application.routes.draw do
     resources :comment_threads
   end
   resources :newprojects
-  resources :reviews
   resources :questions
 
   #get '/' => 'users#index'

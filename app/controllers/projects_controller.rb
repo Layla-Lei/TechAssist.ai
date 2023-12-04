@@ -26,6 +26,32 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def create
+        puts "Description: #{params[:project][:description]}"
+        @project = Project.new(project_params)
+        if @project.save
+          # Redirect to the next step with a success message
+          redirect_to new_project_path(step: 'detail'), notice: 'Project created successfully.'
+        else
+          # Render the form again with error messages
+          render :new
+        end
+    end
+      
+
+    def new
+        @project = Project.new
+        if params[:step] != nil
+            if params[:step] == 'base'
+                @step = 'base'
+            elsif params[:step] == 'general'
+                @step = 'general'
+            elsif params[:step] == 'detail'
+                @step = 'detail'
+            end
+        end
+    end
+
     def start
         @project = Project.find(params[:id])
         user_project_boolean = UserProject.where(user: session[:user_id], project: @project).first
@@ -84,10 +110,19 @@ class ProjectsController < ApplicationController
         end
     end
       
-      private
+    private
       
-      def comment_params
-        params.require(:comment).permit(:body)
-      end
-  end
+    def comment_params
+    params.require(:comment).permit(:body)
+    end
+  
+
+    private
+
+    def project_params
+        params.require(:project).permit(:name, :abstract, :description, :language, :tech_area, :tech_stack, :skill_level, :project_scale)
+    end
+end
+
+
   
