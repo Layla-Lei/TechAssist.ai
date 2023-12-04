@@ -16,7 +16,7 @@ Rottenpotatoes::Application.routes.draw do
     resources :comment_threads
   end
   resources :newprojects
-  resources :questions
+  resources :chats
 
   #get '/' => 'users#index'
   post '/sessions' => 'sessions#create'
