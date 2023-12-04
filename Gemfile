@@ -43,3 +43,5 @@ gem 'jquery-rails'
 gem 'tzinfo-data'
 gem 'redcarpet'
 gem "ruby-openai", "~> 6.0"
+gem 'acts_as_commentable_with_threading'
+gem 'simple_form'

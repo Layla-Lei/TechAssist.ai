@@ -10,6 +10,25 @@
 		<% if @step %>
 			<% if @step == '0' %>
 				<%= @project.description.html_safe %>
+				<h3>Submit a Review</h3>
+				<%= simple_form_for [@project, @new_comment], url: create_review_project_path(project_id:@project.id) do |f| %>
+				<%= f.input :body, label: 'Your Review', input_html: { rows: 4 } %>
+				<%= f.button :submit, class: 'btn btn-primary' %>
+				<% end %>
+				<% if @comments.any? %>
+					<h3>Reviews</h3>
+					<% @comments.each do |comment, nested_comments| %>
+					<div>
+						<%= comment.user.name %>: <%= comment.body %>
+						<% if comment.user == @current_user %>
+        					<%= link_to 'Delete', delete_review_project_path(project_id:project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      					<% end %>
+						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
+					</div>
+					<% end %>
+				<% else %>
+					<p>No reviews available.</p>
+				<% end %>
 			<% else %>
                 <% if @project.send("step#{@step}")[0] != "<" %>
                     <div class="card" style="height: 100%">
@@ -22,7 +41,26 @@
                 <% end %>
 			<% end %>
 		<% else %>
-		<%= @project.description.html_safe %>
+			<%= @project.description.html_safe %>
+			<h3>Submit a Review</h3>
+			<%= simple_form_for [@project, @new_comment], url: create_review_project_path(project_id:@project.id) do |f| %>
+			<%= f.input :body, label: 'Your Review', input_html: { rows: 4 } %>
+			<%= f.button :submit, class: 'btn btn-primary' %>
+			<% end %>
+			<% if @comments.any? %>
+				<h3>Reviews</h3>
+				<% @comments.each do |comment, nested_comments| %>
+				<div>
+					<%= comment.user.name %>: <%= comment.body %>
+					<% if comment.user == @current_user %>
+        					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+					<% end %>
+					<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
+				</div>
+				<% end %>
+			<% else %>
+				<p>No reviews available.</p>
+			<% end %>
 		<% end %>
 
 		<nav aria-label="Page navigation example">
@@ -53,12 +91,40 @@
 			<%= form_tag user_projects_path, :method => :post do %> 
 				<%= hidden_field_tag 'project_id', @project.id %>
 				<%= @project.description.html_safe %>
+				<% if @comments.any? %>
+					<h3>Reviews</h3>
+					<% @comments.each do |comment, nested_comments| %>
+					<div>
+						<%= comment.user.name %>: <%= comment.body %>
+						<% if comment.user == @current_user %>
+        					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      					<% end %>
+						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
+					</div>
+					<% end %>
+				<% else %>
+					<p>No reviews available.</p>
+				<% end %>
 				<%= submit_tag 'Add to my projects', :class => 'btn btn-primary btn-block' %>
 			<% end %>
 		<% else %>
 			<%= form_tag user_projects_path, :method => :post do %> 
 				<%= hidden_field_tag 'project_id', @project.id %>
 				<%= @project.description.html_safe %>
+				<% if @comments.any? %>
+					<h3>Reviews</h3>
+					<% @comments.each do |comment, nested_comments| %>
+					<div>
+						<%= comment.user.name %>: <%= comment.body %>
+						<% if comment.user == @current_user %>
+        					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      					<% end %>
+						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
+					</div>
+					<% end %>
+				<% else %>
+					<p>No reviews available.</p>
+				<% end %>
 				<%= link_to 'Start Project', start_project_path(@project.id), method: :patch, class: 'btn btn-primary btn-block' %>
 
 			<% end %>
