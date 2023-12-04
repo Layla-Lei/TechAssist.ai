@@ -540,7 +540,7 @@ function editNoteHandler(noteElement, noteId) {
 	:abstract => 'This project involves creating a simple FastAPI web application that interfaces with a MySQL database, focusing on a subset of IMDb data. FastAPI is a modern, fast web framework for building APIs with Python, and this project is an excellent opportunity to learn about creating and deploying web services, working with databases, and structuring a web application project.', 
 	:language => 'python', 
 	:tech_area => 'backend', 
-	:tech_stack => 'FASTAPI', 
+	:tech_stack => 'fastapi', 
 	:skill_level => 'beginner', 
 	:project_scale => 10,
 	:step1 => "

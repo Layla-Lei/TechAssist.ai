@@ -46,12 +46,6 @@
         <% end %>
 
         <div class='ml-auto'>
-          <p>
-            <span id="popup_link" class="popup_link">Talk with your tech assist!</span>
-          </p>
-        </div>
-        
-        <div class='ml-auto'>
           <%= link_to logout_path, method: :delete, :class => 'btn btn-primary' do %>
             <div class="icon-text-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
@@ -73,32 +67,5 @@
         <%= yield %>
       </main>
     </div>
-
-    <div id="popup" class="popup">
-        <div class="card-body">
-          <%= form_tag questions_path, remote: true, :method => :get do %>
-            <%= text_area_tag(:message, nil, style:"width: 100%", placeholder:"Message Tech Assist...") %>
-            <%= submit_tag "Submit" %>
-          <% end %>
-          <% if session[:res] %>
-            <div id="res">
-              <%= session[:res] %>
-            </div>
-          <% else %>
-            <div id="res">
-              Default Content
-            </div>
-          <% end %>
-        </div>
-        <div class="card-footer">
-          <p><a class="popup_draghandle" href="#">Drag handle</a></p>
-          <p><a class="popup_closebox" href="#">Close</a></p>
-        </div>
-    </div>
-    <script type="text/javascript">
-      //<![CDATA[
-      new Popup('popup','popup_link')
-      //]]>
-    </script>
   </body>
 </html>
