@@ -38,13 +38,15 @@ RSpec.describe UserProjectsController, type: :controller do
 
     it 'creates a new UserProject' do
       expect {
-        post :create, project_id: project.id
+        #post :create, project_id: project.id
+        post :create, params: { project_id: project.id }
       }.to change(UserProject, :count).by(1)
     end
 
     it 'associates the UserProject with the correct user and project' do
 
-      post :create, project_id: project.id
+      #post :create, project_id: project.id
+      post :create, params: { project_id: project.id }
       user_project = UserProject.last
 
       expect(user_project.user).to eq(user)
@@ -53,7 +55,8 @@ RSpec.describe UserProjectsController, type: :controller do
     end
 
     it 'redirects to the user path' do
-      post :create, project_id: project.id
+      #post :create, project_id: project.id
+      post :create, params: { project_id: project.id }
       expect(response).to redirect_to(user_path(user))
     end
   end

@@ -18,45 +18,53 @@ RSpec.describe ProjectsController, type: :controller do
       end
 
       it 'assigns @project' do
-        get :show, id: project.id
+        #get :show, id: project.id
+        get :show, params: { id: project.id }
         expect(assigns(:project)).to eq(project)
       end
 
       it 'assigns @user_project' do
-        get :show, id: project.id
+        #get :show, id: project.id
+        get :show, params: { id: project.id }
         expect(assigns(:user_project)).to eq(user_project)
       end
 
       context 'when step parameter is provided' do
         it 'assigns @step based on step parameter' do
-          get :show, id: project.id, step: '1'
+          #get :show, id: project.id, step: '1'
+          get :show, params: { id: project.id, step: '1' }
           expect(assigns(:step)).to eq('1')
         end
 
         it 'decrements @step if project does not have step defined' do
-          get :show, id: project.id, step: '3'
+          #get :show, id: project.id, step: '3'
+          get :show, params: { id: project.id, step: '3' }
           expect(assigns(:step)).to eq(2)
         end
 
         it 'sets @step to 0 for invalid step values' do
-          get :show, id: project.id, step: '-1'
+          #get :show, id: project.id, step: '-1'
+          get :show, params: { id: project.id, step: '-1' }
           expect(assigns(:step)).to eq('0')
         end
 
         it 'sets @step to 0 for if given step 0' do
-          get :show, id: project.id, step: '0'
+          #get :show, id: project.id, step: '0'
+          get :show, params: { id: project.id, step: '0' }
           expect(assigns(:step)).to eq('0')
         end
         
         it 'sets @step to given step in other cases' do
-          get :show, id: project.id, step: '1'
+          #get :show, id: project.id, step: '1'
+          get :show, params: { id: project.id, step: '1' }
           expect(assigns(:step)).to eq('1')
         end
       end
 
       context 'when step parameter is not provided' do
         it 'does not set @step' do
-          get :show, id: project.id
+          #get :show, id: project.id
+          get :show, params: { id: project.id }
           expect(assigns(:step)).to be_nil
         end
       end
