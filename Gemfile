@@ -9,7 +9,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
   gem 'database_cleaner', '2.0.2'
-  gem 'capybara', '2.4.4'
+  gem 'capybara', '~> 2.18'
   gem 'launchy'
   gem 'ZenTest', '4.11.2'
   gem 'bcrypt'
@@ -23,10 +23,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', '3.0.0.rc.1', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
-  gem 'rspec-rails', '3.7.2'
+  gem 'rspec-rails', '4.0.0'
   gem 'rails-controller-testing'
 end
 
