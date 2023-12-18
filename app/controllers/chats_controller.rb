@@ -22,9 +22,9 @@ class ChatsController < ApplicationController
     end
   
     # GET /chats/new
-    def new
-      @chat = Chat.new
-    end
+    # def new
+    #   @chat = Chat.new
+    # end
   
     # GET /chats/1/edit
     def edit
@@ -44,10 +44,10 @@ class ChatsController < ApplicationController
           format.html { redirect_to chat_url(@chat) }
           format.json { render :show, status: :created, location: @chat }
           format.turbo_stream
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @chat.errors, status: :unprocessable_entity }
-          format.turbo_stream
+        # else
+        #   format.html { render :new, status: :unprocessable_entity }
+        #   format.json { render json: @chat.errors, status: :unprocessable_entity }
+        #   format.turbo_stream
         end
       end
     end
@@ -58,22 +58,22 @@ class ChatsController < ApplicationController
         if @chat.update(chat_params)
           format.html { redirect_to chat_url(@chat)}
           format.json { render :show, status: :ok, location: @chat }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @chat.errors, status: :unprocessable_entity }
+        # else
+        #   format.html { render :edit, status: :unprocessable_entity }
+        #   format.json { render json: @chat.errors, status: :unprocessable_entity }
         end
       end
     end
   
     # DELETE /chats/1 or /chats/1.json
-    def destroy
-      @chat.destroy
+    # def destroy
+    #   @chat.destroy
   
-      respond_to do |format|
-        format.html { redirect_to chats_url, notice: "Chat was successfully destroyed." }
-        format.json { head :no_content }
-      end
-    end
+    #   respond_to do |format|
+    #     format.html { redirect_to chats_url, notice: "Chat was successfully destroyed." }
+    #     format.json { head :no_content }
+    #   end
+    # end
   
     private
     # Use callbacks to share common setup or constraints between actions.
@@ -86,8 +86,8 @@ class ChatsController < ApplicationController
     params.require(:chat).permit(:message)
     end
 
-    def test_env?
-        Rails.env.test?
-    end
+    # def test_env?
+    #     Rails.env.test?
+    # end
 end
   

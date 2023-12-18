@@ -32,6 +32,18 @@ module NavigationHelpers
     when /^the project details page for "(.*)"$/
       project_path(Project.find_by_name($1))
 
+    when /^the create chat page for "(.*)" step "(.*)"$/
+      project = Project.find_by_name($1)
+      puts 'project id'
+      puts project.id
+      chats_path(:project_id => project.id, :step => $2.to_i)
+
+    when /^"(.*)"'s chat page for "(.*)"$/
+      project = Project.find_by_name($2)
+      user = User.find_by_name($1)
+      chat = Chat.where(:user => user, :project => project).first
+      chat_path(chat)
+
     else
       begin
         page_name =~ /^the (.*) page$/
