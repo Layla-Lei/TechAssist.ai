@@ -117,25 +117,25 @@
     <!-- Tech Area -->
     <div class="form-group mb-3">
         <%= form.label :tech_area, 'What Tech Area Does the Project Focus on?', class: 'form-label' %>
-        <%= form.select :tech_area, options_for_select([['Frontend', 'frontend'], ['Backend', 'backend'], ['Machine Learning', 'machine-learning'], ['System', 'system'], ['Data Science', 'data-science']]), {}, class: 'form-select' %>
+        <%= form.select :tech_area, options_for_select([['Frontend', 'frontend'], ['Backend', 'backend'], ['Machine Learning', 'machine-learning'], ['System', 'system'], ['Data Science', 'data-science']]), {}, { id: 'tech-area', class: 'form-select' } %>
     </div>
 
     <!-- Tech Stack -->
     <div class="form-group mb-3">
         <%= form.label :tech_stack, 'What is the Primary Tech Stack For the Project?', class: 'form-label' %>
-        <%= form.select :tech_stack, options_for_select([['React', 'react'], ['Angular', 'angular'], ['HTML/CSS', 'HTML/CSS'], ['Spring', 'spring'], ['Rails', 'rails'], ['Pandas', 'pandas']]), {}, class: 'form-select' %>
+        <%= form.select :tech_stack, options_for_select([['React', 'react'], ['Angular', 'angular'], ['HTML/CSS', 'HTML/CSS'], ['Spring', 'spring'], ['Rails', 'rails'], ['Pandas', 'pandas']]), {}, { id: 'tech-stack', class: 'form-select' } %>
     </div>
 
     <!-- Skill Level -->
     <div class="form-group mb-3">
         <%= form.label :skill_level, 'What Skill Level is Required to Complete the Project?', class: 'form-label' %>
-        <%= form.select :skill_level, options_for_select([['Beginner', 'beginner'], ['Intermediate', 'intermediate'], ['Advanced', 'advanced']]), {}, class: 'form-select' %>
+        <%= form.select :skill_level, options_for_select([['Beginner', 'beginner'], ['Intermediate', 'intermediate'], ['Advanced', 'advanced']]), {}, { id: 'level-skill', class: 'form-select' } %>
     </div>
 
     <!-- Expected Time -->
     <div class="form-group mb-3">
         <%= form.label :project_scale, 'What is the Expected Time to Complete the project?', class: 'form-label' %>
-        <%= form.select :project_scale, options_for_select([['10 hours', '10'], ['20 hours', '20']]), {}, class: 'form-select' %>
+        <%= form.select :project_scale, options_for_select([['10 hours', '10'], ['20 hours', '20']]), {}, { id: 'scale', class: 'form-select' } %>
     </div>
 
     <!-- Project Description -->
