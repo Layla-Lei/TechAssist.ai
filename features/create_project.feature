@@ -7,10 +7,11 @@ Feature: Create a project
     Given I am logged in as "Addrish Roy"
     Given I am on the home page
 
-  Scenario: User can create a project
+  Scenario: User can navigate to the page for creating project
     Given I am on the home page
     Then I log in as "Addrish Roy"
     Then I should be on the dashboard page for "Addrish Roy"
     And I follow "Create"
     Then I am on the create page
+    And I should see "Create Your Own Project"
     
