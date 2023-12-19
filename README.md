@@ -17,6 +17,7 @@
 <img width="774" alt="截屏2023-11-15 19 21 57" src="https://github.com/Layla-Lei/TechAssist.ai/assets/60533542/0daf691e-63d4-4b8b-9299-a5a0191fd7fa">
 
 10. See all projects on clicking "Projects" on the header and repeat the same thing!
+11. New Feature: Go into one project and chat with the project helpter!
 
 ## Develop with Docker
 
