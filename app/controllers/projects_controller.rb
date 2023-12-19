@@ -97,18 +97,18 @@ class ProjectsController < ApplicationController
         end
     end
 
-    def delete_review
-        @project = Project.find(params[:project_id])
-        @comment = @project.comment_threads.find(params[:comment_id])
-        @current_user=session[:user_id]
-        # Ensure that only the owner of the comment can delete it
-        if @comment.user == session[:user_id]
-          @comment.destroy
-          redirect_to @project, notice: 'Review deleted successfully.'
-        else
-          redirect_to @project, alert: "You can't delete someone else's review."
-        end
-    end
+    # def delete_review
+    #     @project = Project.find(params[:project_id])
+    #     @comment = @project.comment_threads.find(params[:comment_id])
+    #     @current_user=session[:user_id]
+    #     # Ensure that only the owner of the comment can delete it
+    #     if @comment.user == session[:user_id]
+    #       @comment.destroy
+    #       redirect_to @project, notice: 'Review deleted successfully.'
+    #     else
+    #       redirect_to @project, alert: "You can't delete someone else's review."
+    #     end
+    # end
       
     private
       

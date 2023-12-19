@@ -22,9 +22,9 @@
 					<% @comments.each do |comment, nested_comments| %>
 					<div>
 						<%= comment.user.name %>: <%= comment.body %>
-						<% if comment.user == @current_user %>
+						<!-- <% if comment.user == @current_user %>
         					<%= link_to 'Delete', delete_review_project_path(project_id:project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-      					<% end %>
+      					<% end %> -->
 						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
 					</div>
 					<% end %>
@@ -54,9 +54,9 @@
 				<% @comments.each do |comment, nested_comments| %>
 				<div>
 					<%= comment.user.name %>: <%= comment.body %>
-					<% if comment.user == @current_user %>
+					<!-- <% if comment.user == @current_user %>
         					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-					<% end %>
+					<% end %> -->
 					<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
 				</div>
 				<% end %>
@@ -98,9 +98,9 @@
 					<% @comments.each do |comment, nested_comments| %>
 					<div>
 						<%= comment.user.name %>: <%= comment.body %>
-						<% if comment.user == @current_user %>
+						<!-- <% if comment.user == @current_user %>
         					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-      					<% end %>
+      					<% end %> -->
 						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
 					</div>
 					<% end %>
@@ -118,9 +118,9 @@
 					<% @comments.each do |comment, nested_comments| %>
 					<div>
 						<%= comment.user.name %>: <%= comment.body %>
-						<% if comment.user == @current_user %>
+						<!-- <% if comment.user == @current_user %>
         					<%= link_to 'Delete', delete_review_project_path(project_id:@project.id, comment_id:comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-      					<% end %>
+      					<% end %> -->
 						<%= render partial: 'comments/nested_comments', locals: { nested_comments: nested_comments } if nested_comments.present? %>
 					</div>
 					<% end %>
