@@ -43,7 +43,10 @@ module NavigationHelpers
       user = User.find_by_name($1)
       chat = Chat.where(:user => user, :project => project).first
       chat_path(chat)
-
+    
+    when /^the create page$/
+      new_project_path(step: 'base')
+      
     else
       begin
         page_name =~ /^the (.*) page$/
