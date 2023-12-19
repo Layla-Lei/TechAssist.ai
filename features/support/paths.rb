@@ -49,7 +49,10 @@ module NavigationHelpers
 
     when /^the edit page$/
       new_project_path(step: 'general')
-      
+
+    when /^the successful create page$/
+      new_project_path(step: 'detail')
+
     else
       begin
         page_name =~ /^the (.*) page$/

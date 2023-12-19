@@ -21,3 +21,13 @@ Feature: Create a project
     Then I follow "Create Project"
     Then I am on the edit page
     And I should see "General Information"
+    Then I fill in "Enter project name" with "1"
+    Then I fill in "Enter project abstract" with "1"
+    #And I select "Java" from the "Programming Language" dropdown 
+    #And I select "Frontend" from the "Tech Area" dropdown
+    #And I select "HTML/CSS" from the "Tech Stack/Framework" dropdown 
+    #And I select "Beginner" from the "Level of Skill" dropdown 
+    #And I select "10 hours" from the "Project Scale (Estimated Hours)" dropdown 
+    #And I follow "Next: Write Steps"
+    Then I am on the successful create page
+    And I should see "Woohoo!"
