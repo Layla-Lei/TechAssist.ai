@@ -46,6 +46,9 @@ module NavigationHelpers
     
     when /^the create page$/
       new_project_path(step: 'base')
+
+    when /^the edit page$/
+      new_project_path(step: 'general')
       
     else
       begin
