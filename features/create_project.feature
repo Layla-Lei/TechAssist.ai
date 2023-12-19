@@ -23,7 +23,7 @@ Feature: Create a project
     And I should see "General Information"
     Then I fill in "Enter project name" with "1"
     Then I fill in "Enter project abstract" with "1"
-    #And I select "Java" from the "Programming Language" dropdown 
+    And I select "Java" from the "language" dropdown 
     #And I select "Frontend" from the "Tech Area" dropdown
     #And I select "HTML/CSS" from the "Tech Stack/Framework" dropdown 
     #And I select "Beginner" from the "Level of Skill" dropdown 
